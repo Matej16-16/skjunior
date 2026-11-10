@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrácia | ŠK Junior Ivanka pri Nitre</title>
+  <link rel="icon" type="image/jpeg" href="SK_Junior_logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Ikony -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Písma -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Teko:wght@600;700&display=swap">
+
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background-color: #F1F5F9; color: #1E293B; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Teko', sans-serif; text-transform: uppercase; letter-spacing: 0.03em; }
+    .admin-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .btn-pink { background: linear-gradient(135deg, #FF3388 0%, #D61C68 100%); color: white; font-weight: 700; transition: all 0.2s; }
+    .btn-pink:hover { background: linear-gradient(135deg, #FF559E 0%, #E62075 100%); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255, 51, 136, 0.4); }
+    .nav-tab-active { background-color: #0F172A; color: #FFFFFF; font-weight: 700; border-left: 4px solid #FF3388; }
+    .nav-tab { color: #475569; font-weight: 600; transition: all 0.2s; }
+    .nav-tab:hover { background-color: #F8FAFC; color: #0F172A; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0B0F19]">
+
+  <!-- ============================================================== -->
+  <!-- 0. PRIHLASOVACIA OBRAZOVKA (MENO: admin, HESLO: admin123)     -->
+  <!-- ============================================================== -->
+  <div id="admin-login-screen" class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-[#111827] border border-slate-800 rounded-2xl p-8 max-w-md w-full shadow-2xl relative overflow-hidden">
+      <!-- Klubový ružový gradient pásik -->
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#FF3388] via-[#FF559E] to-[#D61C68]"></div>
+
+      <div class="text-center mb-6 pt-2">
+        <img src="SK_Junior_logo.jpg" alt="Logo ŠK Junior" class="w-20 h-20 mx-auto object-contain bg-white rounded-2xl p-1 mb-3 shadow-lg border border-pink-500/30">
+        <h2 class="text-3xl font-heading font-black text-white tracking-wider">ŠK JUNIOR</h2>
+        <span class="text-xs text-pink-400 font-bold uppercase tracking-widest block mt-0.5">Vstup do administrácie webu</span>
+      </div>
+
+      <!-- Chybová hláška pri nesprávnom prihlásení -->
+      <div id="login-error-msg" class="hidden mb-4 p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-xs text-red-400 font-semibold flex items-center gap-2">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span>Nesprávne prihlasovacie meno alebo heslo!</span>
+      </div>
+
+      <form id="admin-login-form" onsubmit="handleAdminLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wider">Prihlasovacie meno</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
+              <i class="fa-solid fa-user text-xs"></i>
+            </span>
+            <input type="text" id="login-username" required placeholder="admin" autocomplete="username" class="w-full bg-[#1F2937] border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wider">Heslo</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
+              <i class="fa-solid fa-lock text-xs"></i>
+            </span>
+            <input type="password" id="login-password" required placeholder="admin123" autocomplete="current-password" class="w-full bg-[#1F2937] border border-slate-700 rounded-xl pl-10 pr-10 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-500 hover:text-slate-300">
+              <i id="password-toggle-icon" class="fa-solid fa-eye text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-pink w-full py-3.5 rounded-xl font-bold text-sm tracking-wider uppercase shadow-lg shadow-pink-500/20 hover:shadow-pink-500/40 transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <i class="fa-solid fa-right-to-bracket"></i> Prihlásiť sa
+        </button>
+      </form>
+
+      <div class="mt-6 pt-5 border-t border-slate-800 text-center">
+        <a href="index.html" class="text-xs text-slate-400 hover:text-white transition inline-flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-left text-[10px]"></i> Návrat na hlavnú stránku webu
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- APLIKÁCIA ADMINISTRÁCIE (VIDITEĽNÁ LEN PO PRIHLÁSENÍ)          -->
+  <!-- ============================================================== -->
+  <div id="admin-app" class="hidden min-h-screen flex flex-col bg-[#F1F5F9]">
+
+    <!-- TOP BAR -->
+    <header class="bg-[#0F172A] text-white border-b-4 border-[#FF3388] sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        
+        <div class="flex items-center gap-3">
+          <img src="SK_Junior_logo.jpg" alt="Logo" class="w-10 h-10 object-contain rounded bg-white p-0.5">
+          <div>
+            <span class="font-heading text-2xl font-bold tracking-wider block leading-none">ŠK JUNIOR</span>
+            <span class="text-[10px] text-pink-400 font-bold uppercase tracking-widest">Vizuálna Správa Webu</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 text-xs">
+          <button onclick="resetToInitialData()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-3 py-2 rounded-lg font-bold flex items-center gap-1.5 transition border border-slate-700" title="Zosúladí údaje v prehliadači so súborom js/data.js">
+            <i class="fa-solid fa-rotate text-pink-400"></i>
+            <span>Zosúladiť s data.js</span>
+          </button>
+          <a href="index.html" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-3.5 py-2 rounded-lg font-bold flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-arrow-up-right-from-square text-pink-400"></i>
+            <span>Zobraziť web</span>
+          </a>
+          <button onclick="downloadUpdatedDataJs()" class="btn-pink px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow">
+            <i class="fa-solid fa-download"></i>
+            <span>Stiahnuť data.js</span>
+          </button>
+          <button onclick="logoutAdmin()" class="bg-red-950/70 hover:bg-red-800 text-red-200 hover:text-white px-3 py-2 rounded-lg font-bold flex items-center gap-1.5 transition border border-red-800/60 ml-1" title="Odhlásiť sa z administrácie">
+            <i class="fa-solid fa-right-from-bracket text-red-400"></i>
+            <span>Odhlásiť sa</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+  <!-- HLAVNÝ OBSAH S BOČNÝM PANELOM -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full flex flex-col lg:flex-row gap-8">
+    
+    <!-- BOČNÉ MENU ZÁLOŽIEK -->
+    <aside class="w-full lg:w-64 shrink-0">
+      <div class="admin-card overflow-hidden sticky top-24">
+        <div class="p-4 bg-slate-50 border-b border-slate-100">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Sekcie administrácie</span>
+        </div>
+        <nav class="flex flex-col py-2" id="admin-nav-tabs">
+          <button onclick="switchTab('club')" id="nav-tab-club" class="nav-tab nav-tab-active px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-solid fa-building text-sm w-4"></i>
+            <span>Klubové údaje & Kontakty</span>
+          </button>
+          <button onclick="switchTab('teams')" id="nav-tab-teams" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-solid fa-users text-sm w-4"></i>
+            <span>Tímy & Futbalnet</span>
+          </button>
+          <button onclick="switchTab('matches')" id="nav-tab-matches" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-regular fa-calendar-days text-sm w-4"></i>
+            <span>Zápasové centrum</span>
+          </button>
+          <button onclick="switchTab('articles')" id="nav-tab-articles" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-regular fa-newspaper text-sm w-4"></i>
+            <span>Aktuality & Články</span>
+          </button>
+          <button onclick="switchTab('gallery')" id="nav-tab-gallery" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-solid fa-camera text-sm w-4"></i>
+            <span>Fotogaléria</span>
+          </button>
+          <button onclick="switchTab('partners')" id="nav-tab-partners" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-solid fa-handshake-simple text-sm w-4"></i>
+            <span>Sponzori & Partneri</span>
+          </button>
+          <button onclick="switchTab('management')" id="nav-tab-management" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-solid fa-user-tie text-sm w-4"></i>
+            <span>Vedenie klubu</span>
+          </button>
+          <button onclick="switchTab('history')" id="nav-tab-history" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3">
+            <i class="fa-solid fa-clock-rotate-left text-sm w-4"></i>
+            <span>História klubu</span>
+          </button>
+          <button onclick="switchTab('backup')" id="nav-tab-backup" class="nav-tab px-4 py-3 text-left text-xs flex items-center gap-3 border-t border-slate-100 text-slate-700">
+            <i class="fa-solid fa-floppy-disk text-sm w-4 text-pink-600"></i>
+            <span>Záloha a Uloženie</span>
+          </button>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- OBSAHOVÝ PANEL -->
+    <main class="flex-grow min-w-0">
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 1: KLUBOVÉ ÚDAJE & KONTAKTY                           -->
+      <!-- ============================================================== -->
+      <section id="panel-club" class="admin-panel space-y-6">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+          <div>
+            <h2 class="text-3xl font-heading font-black text-slate-900">Základné klubové údaje</h2>
+            <p class="text-xs text-slate-500">Oficiálny názov, kontakty, adresa a fakturačné údaje ŠK Junior.</p>
+          </div>
+          <button onclick="saveClubInfoForm()" class="btn-pink px-5 py-2.5 rounded-lg text-xs flex items-center gap-2">
+            <i class="fa-solid fa-check"></i> Uložiť klubové údaje
+          </button>
+        </div>
+
+        <form id="form-club-info" onsubmit="event.preventDefault(); saveClubInfoForm();" class="space-y-6">
+          
+          <div class="admin-card p-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-800 border-b border-slate-100 pb-2">Názov a identita klubu</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Skrátený názov klubu</label>
+                <input type="text" id="ci-name" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Celý oficiálny názov</label>
+                <input type="text" id="ci-fullname" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-semibold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Rok založenia klubu</label>
+                <input type="number" id="ci-founded" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Motto klubu</label>
+                <input type="text" id="ci-motto" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card p-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-800 border-b border-slate-100 pb-2">Adresa a štadión</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Ulica a číslo</label>
+                <input type="text" id="ci-street" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Mesto a PSČ</label>
+                <input type="text" id="ci-city" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-semibold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Názov areálu / ihriska</label>
+                <input type="text" id="ci-stadium" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card p-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-800 border-b border-slate-100 pb-2">Kontakty & Sociálne siete</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Hlavný telefónny kontakt</label>
+                <input type="text" id="ci-phone" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-semibold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Hlavný email</label>
+                <input type="email" id="ci-email" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-semibold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Facebook odkaz</label>
+                <input type="url" id="ci-facebook" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Instagram odkaz</label>
+                <input type="url" id="ci-instagram" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card p-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-800 border-b border-slate-100 pb-2">Fakturačné údaje & Bankové spojenie</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">IČO</label>
+                <input type="text" id="ci-ico" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-mono">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Názov banky</label>
+                <input type="text" id="ci-bank" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-xs font-bold text-slate-700 mb-1">IBAN (pre členské príspevky a dary)</label>
+                <input type="text" id="ci-iban" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-mono font-bold text-pink-600">
+              </div>
+            </div>
+          </div>
+
+          <div class="text-right">
+            <button type="submit" class="btn-pink px-8 py-3 rounded-xl text-sm font-bold shadow-lg">
+              <i class="fa-solid fa-floppy-disk mr-2"></i> Uložiť zmeny klubových údajov
+            </button>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 2: TÍMY & FUTBALNET PÁROVANIE (KĽÚČOVÁ ČASŤ)         -->
+      <!-- ============================================================== -->
+      <section id="panel-teams" class="admin-panel space-y-6 hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+          <div>
+            <h2 class="text-3xl font-heading font-black text-slate-900">Správa tímov & Futbalnet</h2>
+            <p class="text-xs text-slate-500">Párovanie tabuliek a zápasov zo Sportnet Futbalnet pre každú kategóriu.</p>
+          </div>
+          
+          <!-- Prepínač spravovaného tímu -->
+          <div class="flex items-center gap-2">
+            <label class="text-xs font-bold text-slate-700">Tím:</label>
+            <select id="admin-team-selector" onchange="loadAdminTeamData(this.value)" class="bg-white border-2 border-slate-800 rounded-lg px-3 py-1.5 text-xs font-bold">
+              <option value="a-tim">A-tím (Dospelí)</option>
+              <option value="u19">U19 Starší dorast</option>
+              <option value="u15">U15 Starší žiaci</option>
+              <option value="u13">U13 Mladší žiaci</option>
+              <option value="u11">U11 Staršia prípravka</option>
+              <option value="u9">U9 Mladšia prípravka</option>
+              <option value="u7">U7 Predprípravka</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Rýchly info box: Automatická týždenná synchronizácia -->
+        <div class="bg-pink-50/50 border-2 border-pink-500 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-[#0F172A] text-pink-400 flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Týždenná automatická synchronizácia z Futbalnetu</h4>
+              <p class="text-xs text-slate-600 mt-0.5">
+                Všetky kategórie (A-tím, U19, U15, U13, U11, U9) sú jednorazovo napárované na oficiálne dáta Sportnetu.
+              </p>
+              <div class="text-[11px] text-slate-500 mt-1">
+                Pre týždennú aktualizáciu stačí spustiť skript <code class="bg-white px-1.5 py-0.5 rounded border border-slate-300 font-mono text-slate-800">spustit_tyzdennu_synchronizaciu.bat</code> alebo kliknúť na tlačidlo vpravo.
+              </div>
+            </div>
+          </div>
+          <button onclick="forceSyncWithDataJs(); alert('Dáta boli úspešne obnovené a zosynchronizované s js/data.js!'); location.reload();" class="btn-pink px-5 py-2.5 rounded-lg text-xs font-bold shrink-0 flex items-center gap-2 shadow">
+            <i class="fa-solid fa-rotate mr-1"></i> Obnoviť dáta teraz
+          </button>
+        </div>
+
+        <!-- 1. FUTBALNET PÁROVANIE S PREVODNÍKOM DO NÁŠHO DIZAJNU -->
+        <div class="admin-card p-6 space-y-5 border-l-4 border-pink-600">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-pink-100 text-pink-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-link text-sm"></i>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Prepojenie s Futbalnetom (sportnet.sme.sk)</h3>
+                <p class="text-[11px] text-slate-500">Zadajte odkazy a preneste tabuľku aj rozpis zápasov priamo do nášho klubového dizajnu.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span id="team-info-badge" class="hidden sm:inline-block bg-pink-50 text-pink-600 border border-pink-200 text-[11px] font-bold px-2.5 py-1 rounded"></span>
+              <a id="team-futbalnet-link-btn" href="https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/" target="_blank" class="text-xs font-bold text-pink-600 hover:text-pink-700 flex items-center gap-1">
+                Otvoriť Futbalnet <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">URL adresa tímu na Futbalnete:</label>
+              <input type="url" id="team-sportnet-url" placeholder="https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/tim/dospeli-m-a/" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">URL adresa ligovej súťaže / tabuľky:</label>
+              <input type="url" id="team-competition-url" placeholder="https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/tim/dospeli-m-a/tabulky/" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+          </div>
+
+          <!-- Rýchly import tabuľky z Futbalnetu -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+            <label class="block text-xs font-bold text-slate-800">
+              <i class="fa-solid fa-wand-magic-sparkles text-pink-600 mr-1"></i> Rýchly import skopírovanej tabuľky zo Sportnetu:
+            </label>
+            <p class="text-[11px] text-slate-500">
+              Na stránke Futbalnetu označte a skopírujte myšou riadky tabuľky (Ctrl+C), vložte ich sem (Ctrl+V) a kliknite na tlačidlo. Systém automaticky vytvorí tabuľku v našom klubovom dizajne!
+            </p>
+            <textarea id="team-import-table-text" rows="3" placeholder="1. ŠK Junior 11 8 2 1 28:10 26&#10;2. FK Slovan 11 7 3 1 24:9 24..." class="w-full bg-white border border-slate-300 rounded-lg p-2.5 text-xs font-mono"></textarea>
+            
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button onclick="parseAndSaveTableForCurrentTeam()" class="btn-pink px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5">
+                <i class="fa-solid fa-table"></i> Preformátovať a uložiť tabuľku do nášho dizajnu
+              </button>
+              <button onclick="saveTeamFutbalnetUrls()" class="bg-[#0F172A] hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-xs font-bold">
+                Uložiť URL odkazy
+              </button>
+            </div>
+          </div>
+
+          <!-- Rýchly import rozpisu zápasov z Futbalnetu -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+            <label class="block text-xs font-bold text-slate-800">
+              <i class="fa-solid fa-calendar-check text-pink-600 mr-1"></i> Rýchly import rozpisu zápasov zo Sportnetu:
+            </label>
+            <p class="text-[11px] text-slate-500">
+              Skopírujte rozpis zápasov zo Sportnetu a vložte ho sem. Zápasy sa zobrazia v našom krásnom dizajne!
+            </p>
+            <textarea id="team-import-matches-text" rows="3" placeholder="12. kolo 08.11.2026 14:00 ŠK Junior - FK Slovan&#10;13. kolo 15.11.2026 13:30 FK Čaňa - ŠK Junior..." class="w-full bg-white border border-slate-300 rounded-lg p-2.5 text-xs font-mono"></textarea>
+            
+            <button onclick="parseAndSaveMatchesForCurrentTeam()" class="btn-pink px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-calendar-plus"></i> Preformátovať a uložiť rozpis zápasov
+            </button>
+          </div>
+
+        </div>
+
+        <!-- 2. NÁHĽAD AKTUÁLNEJ TABUĽKY V KLUBOVOM DIZAJNE -->
+        <div class="admin-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <h3 class="text-lg font-bold text-slate-900">Aktuálna tabuľka tímu (Náhľad)</h3>
+            <span class="text-xs text-slate-400">Takto sa tabuľka zobrazuje návštevníkom na webe</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left" id="admin-team-table-preview">
+              <!-- JS -->
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. NÁHĽAD A SPRÁVA ROZPISU ZÁPASOV TÍMU -->
+        <div class="admin-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Rozpis a výsledky zápasov tímu (Náhľad)</h3>
+              <p class="text-xs text-slate-500">Zápasy zobrazené v našom klubovom dizajne na webe</p>
+            </div>
+            <span id="admin-team-matches-count" class="text-xs font-bold bg-pink-100 text-pink-600 px-2.5 py-1 rounded">0 zápasov</span>
+          </div>
+
+          <!-- Rýchle pridanie jedného zápasu ručne -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+            <span class="text-xs font-bold text-slate-800 block">Pridať nový zápas do kalendára tímu:</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <input type="text" id="tm-new-round" placeholder="Kolo (napr. 12. kolo)" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+              <div>
+                <input type="text" id="tm-new-date" placeholder="Dátum (napr. 15.11.2026)" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+              <div>
+                <input type="text" id="tm-new-time" placeholder="Čas (napr. 14:00)" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <input type="text" id="tm-new-home" placeholder="Domáci tím" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold">
+              </div>
+              <div>
+                <input type="text" id="tm-new-away" placeholder="Hosťujúci tím" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-bold">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <input type="text" id="tm-new-score" placeholder="Výsledok (napr. 3:1, alebo nechajte prázdne)" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+              <div>
+                <input type="text" id="tm-new-venue" placeholder="Miesto / Štadión" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+            </div>
+            <div class="text-right">
+              <button onclick="addMatchToCurrentTeam()" class="btn-pink px-4 py-2 rounded-lg text-xs font-bold">
+                <i class="fa-solid fa-plus mr-1"></i> Pridať zápas
+              </button>
+            </div>
+          </div>
+
+          <!-- Zoznam zápasov tímu -->
+          <div id="admin-team-matches-list" class="space-y-2">
+            <!-- JS -->
+          </div>
+        </div>
+
+        <!-- 3. SÚPISKA HRÁČOV -->
+        <div class="admin-card p-6 space-y-5">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <h3 class="text-lg font-bold text-slate-900">Súpiska hráčov</h3>
+            <span id="admin-roster-count" class="text-xs font-bold bg-pink-100 text-pink-600 px-2.5 py-1 rounded">0 hráčov</span>
+          </div>
+
+          <!-- Formulár na pridanie hráča -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="text-xs font-bold text-slate-700 block mb-2">Pridať nového hráča do súpisky:</span>
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+              <div>
+                <input type="number" id="new-player-number" placeholder="Číslo dresu" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+              <div class="sm:col-span-2">
+                <input type="text" id="new-player-name" placeholder="Meno a priezvisko hráča" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold">
+              </div>
+              <div>
+                <select id="new-player-pos" class="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs">
+                  <option value="Brankár">Brankár</option>
+                  <option value="Obranca">Obranca</option>
+                  <option value="Stredopoliar">Stredopoliar</option>
+                  <option value="Útočník">Útočník</option>
+                  <option value="Hráč v poli">Hráč v poli</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mt-3 pt-2">
+              <input type="number" id="new-player-year" placeholder="Rok narodenia (napr. 2008)" class="w-48 bg-white border border-slate-300 rounded-lg p-2 text-xs">
+              <button onclick="addPlayerToCurrentTeam()" class="btn-pink px-4 py-2 rounded-lg text-xs font-bold">
+                <i class="fa-solid fa-user-plus mr-1"></i> Pridať hráča
+              </button>
+            </div>
+          </div>
+
+          <!-- Zoznam hráčov -->
+          <div id="admin-roster-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <!-- JS -->
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 3: ZÁPASOVÉ CENTRUM & TÝŽDEŇ                           -->
+      <!-- ============================================================== -->
+      <section id="panel-matches" class="admin-panel space-y-6 hidden">
+        <div class="pb-4 border-b border-slate-200">
+          <h2 class="text-3xl font-heading font-black text-slate-900">Zápasové centrum</h2>
+          <p class="text-xs text-slate-500">Úprava výsledku posledného zápasu, upútavka na najbližší zápas a týždenný kalendár.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Posledný zápas -->
+          <div class="admin-card p-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2 flex items-center gap-2">
+              <i class="fa-solid fa-flag-checkered text-pink-600"></i> Posledný odohratý zápas (A-tím)
+            </h3>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Súťaž a kolo</label>
+              <input type="text" id="lm-comp" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Domáci tím</label>
+                <input type="text" id="lm-home-team" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Góly domácich</label>
+                <input type="number" id="lm-home-score" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold text-center">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Hosťujúci tím</label>
+                <input type="text" id="lm-away-team" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Góly hostí</label>
+                <input type="number" id="lm-away-score" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold text-center">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Strelci gólov</label>
+              <input type="text" id="lm-scorers" placeholder="58' Tóth, 68' Franko" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Dátum / Návštevnosť</label>
+              <input type="text" id="lm-date" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <button onclick="saveLastMatchData()" class="btn-pink w-full py-2.5 rounded-lg text-xs font-bold">
+              Uložiť výsledok posledného zápasu
+            </button>
+          </div>
+
+          <!-- Najbližší zápas -->
+          <div class="admin-card p-6 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2 flex items-center gap-2">
+              <i class="fa-regular fa-clock text-pink-600"></i> Najbližší nadchádzajúci zápas (A-tím)
+            </h3>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Súťaž</label>
+              <input type="text" id="nm-comp" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Domáci tím</label>
+                <input type="text" id="nm-home-team" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Hosťujúci tím</label>
+                <input type="text" id="nm-away-team" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Dátum</label>
+                <input type="text" id="nm-date" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Čas výkopu</label>
+                <input type="text" id="nm-time" placeholder="14:00" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs font-bold text-center">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Miesto stretnutia / Štadión</label>
+              <input type="text" id="nm-venue" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+            </div>
+            <button onclick="saveNextMatchData()" class="btn-pink w-full py-2.5 rounded-lg text-xs font-bold">
+              Uložiť upútavku najbližšieho zápasu
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Týždenný kalendár zápasov -->
+        <div class="admin-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <h3 class="text-lg font-bold text-slate-900">Týždenný kalendár zápasov na titulnej stránke</h3>
+            <span class="text-xs text-slate-500">Zobrazuje sa všetkým návštevníkom na úvode</span>
+          </div>
+
+          <div id="admin-matches-list" class="space-y-3">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 4: AKTUALITY & ČLÁNKY                                  -->
+      <!-- ============================================================== -->
+      <section id="panel-articles" class="admin-panel space-y-6 hidden">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+          <div>
+            <h2 class="text-3xl font-heading font-black text-slate-900">Správa aktualít</h2>
+            <p class="text-xs text-slate-500">Pridávajte nové články, reportáže zo zápasov a oznamy pre rodičov a fanúšikov.</p>
+          </div>
+        </div>
+
+        <!-- Formulár na nový článok -->
+        <div class="admin-card p-6 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Napísať a publikovať nový článok</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Názov článku *</label>
+              <input type="text" id="art-title" placeholder="Napr. Výborný zápas A-tímu v domácom prostredí" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-bold">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kategória *</label>
+              <select id="art-category" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+                <option value="A-tím">A-tím</option>
+                <option value="Mládež">Mládež</option>
+                <option value="Klub">Klub</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Autor článku</label>
+              <input type="text" id="art-author" placeholder="Redakcia ŠK Junior" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">
+                <i class="fa-regular fa-image text-pink-600 mr-1"></i> Titulná fotka článku
+              </label>
+              <input type="file" id="art-image-file" accept="image/*" class="w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-pink-50 file:text-pink-600 hover:file:bg-pink-100 cursor-pointer bg-slate-50 border border-slate-300 rounded-lg p-1.5 mb-1.5">
+              <input type="text" id="art-image" placeholder="alebo zadajte URL adresu fotky..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+              <div id="art-image-preview-box" class="hidden mt-2 p-2 bg-pink-50/50 border border-pink-200 rounded-lg flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5 overflow-hidden">
+                  <div class="w-10 h-10 rounded bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                    <img id="art-image-preview-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Náhľad" class="max-w-full max-h-full object-cover">
+                  </div>
+                  <div class="truncate">
+                    <span id="art-image-file-name" class="text-xs font-bold text-slate-800 block truncate">foto.jpg</span>
+                    <span class="text-[10px] text-emerald-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Fotka pripravená</span>
+                  </div>
+                </div>
+                <button type="button" onclick="clearArticleImageInput()" class="text-xs text-red-500 hover:text-red-700 font-bold px-2 py-1 hover:bg-red-50 rounded shrink-0">
+                  <i class="fa-solid fa-xmark mr-1"></i>Zrušiť
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Krátky úvod (perex) *</label>
+            <textarea id="art-excerpt" rows="2" placeholder="Jedna alebo dve vety zhrňujúce článok na titulke..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Celý obsah článku *</label>
+            <textarea id="art-content" rows="6" placeholder="Napíšte kompletný text správy alebo komentára..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
+          </div>
+
+          <button onclick="publishArticleFromAdmin()" class="btn-pink px-6 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2">
+            <i class="fa-solid fa-plus"></i> Publikovať článok na web
+          </button>
+        </div>
+
+        <!-- Zoznam článkov -->
+        <div class="admin-card p-6 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Publikované články</h3>
+          <div id="admin-articles-list" class="space-y-3">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 5: FOTOGALÉRIA                                        -->
+      <!-- ============================================================== -->
+      <section id="panel-gallery" class="admin-panel space-y-6 hidden">
+        <div class="pb-4 border-b border-slate-200">
+          <h2 class="text-3xl font-heading font-black text-slate-900">Správa fotogalérie</h2>
+          <p class="text-xs text-slate-500">Pridávajte momentky zo zápasov, turnajov a klubového života.</p>
+        </div>
+
+        <div class="admin-card p-6 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Pridať novú fotografiu</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Názov momentu *</label>
+              <input type="text" id="gal-title" placeholder="Napr. Radosť z gólu v 89. minúte" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kategória *</label>
+              <select id="gal-category" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+                <option value="A-tím">A-tím</option>
+                <option value="Mládež">Mládež</option>
+                <option value="Areál">Areál</option>
+                <option value="Klub">Klub</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">
+                <i class="fa-regular fa-image text-pink-600 mr-1"></i> Fotografia *
+              </label>
+              <input type="file" id="gal-file" accept="image/*" class="w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-pink-50 file:text-pink-600 hover:file:bg-pink-100 cursor-pointer bg-slate-50 border border-slate-300 rounded-lg p-1.5 mb-1.5">
+              <input type="text" id="gal-url" placeholder="alebo zadajte URL adresu fotky..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+              <div id="gal-preview-box" class="hidden mt-2 p-2 bg-pink-50/50 border border-pink-200 rounded-lg flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5 overflow-hidden">
+                  <div class="w-10 h-10 rounded bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                    <img id="gal-preview-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Náhľad" class="max-w-full max-h-full object-cover">
+                  </div>
+                  <div class="truncate">
+                    <span id="gal-file-name" class="text-xs font-bold text-slate-800 block truncate">foto.jpg</span>
+                    <span class="text-[10px] text-emerald-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Fotka pripravená</span>
+                  </div>
+                </div>
+                <button type="button" onclick="clearGalleryImageInput()" class="text-xs text-red-500 hover:text-red-700 font-bold px-2 py-1 hover:bg-red-50 rounded shrink-0">
+                  <i class="fa-solid fa-xmark mr-1"></i>Zrušiť
+                </button>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Dátum / Obdobie</label>
+              <input type="text" id="gal-date" placeholder="November 2026" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+          </div>
+          <button onclick="addPhotoFromAdmin()" class="btn-pink px-6 py-2.5 rounded-lg text-xs font-bold">
+            <i class="fa-solid fa-camera mr-1"></i> Pridať fotografiu do galérie
+          </button>
+        </div>
+
+        <div class="admin-card p-6 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Fotografie v galérii</h3>
+          <div id="admin-gallery-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 6: SPONZORI & PARTNERI                                 -->
+      <!-- ============================================================== -->
+      <section id="panel-partners" class="admin-panel space-y-6 hidden">
+        <div class="pb-4 border-b border-slate-200">
+          <h2 class="text-3xl font-heading font-black text-slate-900">Sponzori a partneri klubu</h2>
+          <p class="text-xs text-slate-500">Partneri sa zobrazujú v sponzorskom páse aj v sekcii O klube.</p>
+        </div>
+
+        <div class="admin-card p-6 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Pridať nového partnera</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Názov partnera / firmy *</label>
+              <input type="text" id="part-name" placeholder="Napr. Obec Ivanka pri Nitre" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-bold">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Úroveň partnerstva *</label>
+              <select id="part-tier" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+                <option value="Generálny partner">Generálny partner</option>
+                <option value="Hlavný partner">Hlavný partner</option>
+                <option value="Technický partner">Technický partner</option>
+                <option value="Partner mládeže">Partner mládeže</option>
+                <option value="Mediálny partner">Mediálny partner</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">
+                <i class="fa-regular fa-image text-pink-600 mr-1"></i> Logo partnera (Obrázok / URL)
+              </label>
+              <!-- Nahratie obrázka priamo zo zariadenia -->
+              <input type="file" id="part-logo-file" accept="image/*" class="w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-pink-50 file:text-pink-600 hover:file:bg-pink-100 cursor-pointer bg-slate-50 border border-slate-300 rounded-lg p-1.5 mb-1.5">
+              <!-- Alebo vloženie URL adresy -->
+              <input type="text" id="part-logo" placeholder="alebo zadajte URL adresu obrázka..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 text-xs">
+              <!-- Živý náhľad vybraného loga -->
+              <div id="part-logo-preview-box" class="hidden mt-2 p-2 bg-pink-50/50 border border-pink-200 rounded-lg flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5 overflow-hidden">
+                  <div class="w-10 h-10 rounded bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                    <img id="part-logo-preview-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Náhľad loga" class="max-w-full max-h-full object-contain">
+                  </div>
+                  <div class="truncate">
+                    <span id="part-logo-file-name" class="text-xs font-bold text-slate-800 block truncate">logo.png</span>
+                    <span class="text-[10px] text-emerald-600 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Obrázok pripravený</span>
+                  </div>
+                </div>
+                <button type="button" onclick="clearPartnerLogoInput()" class="text-xs text-red-500 hover:text-red-700 font-bold px-2 py-1 hover:bg-red-50 rounded shrink-0">
+                  <i class="fa-solid fa-xmark mr-1"></i>Zrušiť
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Popis spolupráce</label>
+            <input type="text" id="part-desc" placeholder="Podpora športovej infraštruktúry a talentovanej mládeže" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+          </div>
+          <button onclick="addPartnerFromAdmin()" class="btn-pink px-6 py-2.5 rounded-lg text-xs font-bold">
+            <i class="fa-solid fa-plus mr-1"></i> Pridať partnera
+          </button>
+        </div>
+
+        <div class="admin-card p-6 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Aktuálni partneri</h3>
+          <div id="admin-partners-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 7: VEDENIE KLUBU                                       -->
+      <!-- ============================================================== -->
+      <section id="panel-management" class="admin-panel space-y-6 hidden">
+        <div class="pb-4 border-b border-slate-200">
+          <h2 class="text-3xl font-heading font-black text-slate-900">Vedenie a manažment klubu</h2>
+          <p class="text-xs text-slate-500">Predstavitelia klubu zobrazení v sekcii O klube na hlavnej stránke.</p>
+        </div>
+
+        <!-- Formulár: Pridať člena vedenia -->
+        <div class="admin-card p-6 space-y-4 border-l-4 border-pink-600">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+            <i class="fa-solid fa-user-plus text-pink-600 mr-1.5"></i> Pridať nového člena vedenia
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Meno a priezvisko *</label>
+              <input type="text" id="mgmt-new-name" placeholder="Napr. Ing. Jaroslav Horňák" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-bold">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Rola / Funkcia *</label>
+              <input type="text" id="mgmt-new-role" placeholder="Napr. Prezident klubu / Šéftréner mládeže" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Telefón</label>
+              <input type="text" id="mgmt-new-phone" placeholder="+421 910 907 795" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Email</label>
+              <input type="email" id="mgmt-new-email" placeholder="vedenie@skjunior.sk" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Popis pôsobnosti / Bio</label>
+            <input type="text" id="mgmt-new-bio" placeholder="Zodpovedá za metodiku, infraštruktúru a rozvoj mládežníckej akadémie..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs">
+          </div>
+          <button onclick="addMgmtMemberFromAdmin()" class="btn-pink px-6 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2">
+            <i class="fa-solid fa-plus"></i> Pridať člena vedenia
+          </button>
+        </div>
+
+        <!-- Zoznam členov vedenia -->
+        <div class="admin-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <h3 class="text-lg font-bold text-slate-900">Aktuálne vedenie klubu</h3>
+            <span class="text-xs text-slate-400">Údaje môžete priamo upravovať alebo mazať</span>
+          </div>
+          <div id="admin-management-list" class="space-y-4">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 8: HISTÓRIA KLUBU                                      -->
+      <!-- ============================================================== -->
+      <section id="panel-history" class="admin-panel space-y-6 hidden">
+        <div class="pb-4 border-b border-slate-200">
+          <h2 class="text-3xl font-heading font-black text-slate-900">História a míľniky klubu</h2>
+          <p class="text-xs text-slate-500">Časová os kľúčových úspechov a založenia klubu ŠK Junior.</p>
+        </div>
+
+        <!-- Formulár: Pridať míľnik -->
+        <div class="admin-card p-6 space-y-4 border-l-4 border-pink-600">
+          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+            <i class="fa-solid fa-clock-rotate-left text-pink-600 mr-1.5"></i> Pridať nový míľnik do histórie
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Rok *</label>
+              <input type="text" id="hist-new-year" placeholder="2020" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-bold text-center">
+            </div>
+            <div class="md:col-span-3">
+              <label class="block text-xs font-bold text-slate-700 mb-1">Názov udalosti / Míľnika *</label>
+              <input type="text" id="hist-new-title" placeholder="Napr. Založenie klubu ŠK Junior Ivanka pri Nitre" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs font-semibold">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Podrobný popis udalosti *</label>
+            <textarea id="hist-new-text" rows="3" placeholder="Popíšte význam tohto míľnika v živote a rozvoji klubu..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs"></textarea>
+          </div>
+          <button onclick="addHistoryItemFromAdmin()" class="btn-pink px-6 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2">
+            <i class="fa-solid fa-plus"></i> Pridať míľnik do histórie
+          </button>
+        </div>
+
+        <!-- Zoznam míľnikov histórie -->
+        <div class="admin-card p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <h3 class="text-lg font-bold text-slate-900">Časová os histórie klubu</h3>
+            <span class="text-xs text-slate-400">Míľniky zobrazené v časovej osi sekcie O klube</span>
+          </div>
+          <div id="admin-history-list" class="space-y-4">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- ZÁLOŽKA 9: ZÁLOHA & ULOŽENIE                                   -->
+      <!-- ============================================================== -->
+      <section id="panel-backup" class="admin-panel space-y-6 hidden">
+        <div class="pb-4 border-b border-slate-200">
+          <h2 class="text-3xl font-heading font-black text-slate-900">Záloha a trvalé ukladanie</h2>
+          <p class="text-xs text-slate-500">Zmeny vykonané v tejto administrácii sa okamžite prejavia na webe. Pre trvalé nasadenie na hosting si stiahnite data.js.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="admin-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl mb-3">
+                <i class="fa-solid fa-file-code"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">Stiahnuť súbor data.js</h3>
+              <p class="text-xs text-slate-500 mb-4">Stiahne kompletný aktualizovaný súbor so všetkými vašimi zmenami pripravený na nahratie do priečinka <code>js/data.js</code>.</p>
+            </div>
+            <button onclick="downloadUpdatedDataJs()" class="btn-pink py-3 rounded-lg text-xs font-bold">
+              <i class="fa-solid fa-download mr-1.5"></i> Stiahnuť súbor data.js
+            </button>
+          </div>
+
+          <div class="admin-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-2xl mb-3">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">Skopírovať kód do schránky</h3>
+              <p class="text-xs text-slate-500 mb-4">Môžete kód skopírovať a ručne vložiť do Poznámkového bloku v súbore <code>js/data.js</code>.</p>
+            </div>
+            <button onclick="copyDataJsCode()" class="bg-[#0F172A] hover:bg-slate-800 text-white py-3 rounded-lg text-xs font-bold">
+              <i class="fa-solid fa-copy mr-1.5"></i> Skopírovať do schránky
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-card p-6 border-red-200 bg-red-50/50">
+          <h4 class="text-sm font-bold text-red-900 mb-1">Obnova a reset</h4>
+          <p class="text-xs text-red-700 mb-3">Ak chcete vrátiť pôvodné dáta zo súboru data.js a zmazať úpravy v pamäti prehliadača:</p>
+          <button onclick="resetToInitialData()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-xs font-bold">
+            <i class="fa-solid fa-rotate-left mr-1"></i> Zosúladiť s js/data.js (Resetovať pamäť)
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  </div><!-- Koniec #admin-app -->
+
+  <!-- JAVASCRIPT LOGIKA ADMINISTRÁCIE -->
+  <script src="js/data.js"></script>
+  <script src="js/sportnet.js"></script>
+  <script src="js/admin-page.js"></script>
+</body>
+</html>

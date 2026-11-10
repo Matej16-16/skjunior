@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="sk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ŠK Junior | Oficiálny web futbalového klubu</title>
+  <meta name="description" content="Oficiálna stránka futbalového klubu ŠK Junior v modernom športovom štýle. Zápasové centrum, rozpisy, tabuľky Sportnet Futbalnet, A-tím a mládež U7-U19.">
+  <link rel="icon" type="image/jpeg" href="SK_Junior_logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Ikony -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Vlastný štýl v štýle FC Nitra -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#F4F6F9] text-slate-800 min-h-screen flex flex-col antialiased selection:bg-[#FF3388] selection:text-white">
+
+  <!-- ============================================================== -->
+  <!-- 1. HORNÁ LIŠTA (TOP BAR V ŠTÝLE FC NITRA)                     -->
+  <!-- ============================================================== -->
+  <div class="fcn-topbar py-2 px-4 sm:px-6 lg:px-8 hidden md:block">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5 text-slate-400">
+          <i class="fa-solid fa-location-dot text-pink-500"></i> <span id="topbar-address">Futbalový areál ŠK Junior, Novozámocká, Ivanka pri Nitre</span>
+        </span>
+        <a id="topbar-phone-link" href="tel:+421910907795" class="flex items-center gap-1.5 text-slate-400 hover:text-white transition">
+          <i class="fa-solid fa-phone text-pink-500"></i> <span id="topbar-phone">+421 910 907 795</span>
+        </a>
+        <a id="topbar-email-link" href="mailto:skjuniorivanka@gmail.com" class="flex items-center gap-1.5 text-slate-400 hover:text-white transition">
+          <i class="fa-solid fa-envelope text-pink-500"></i> <span id="topbar-email">skjuniorivanka@gmail.com</span>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a id="topbar-futbalnet-link" href="https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/" target="_blank" rel="noopener noreferrer" class="text-xs hover:text-white transition-colors flex items-center gap-1 text-slate-400 font-semibold">
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Futbalnet Profil
+        </a>
+        <a href="admin.html" class="text-xs font-bold text-pink-400 hover:text-pink-300 flex items-center gap-1 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
+          <i class="fa-solid fa-sliders text-[10px]"></i> Administrácia
+        </a>
+        <div class="flex items-center gap-2 pl-2 border-l border-slate-700">
+          <a id="topbar-facebook" href="https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#" target="_blank" class="text-slate-400 hover:text-pink-400"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+          <a id="topbar-instagram" href="https://www.instagram.com/skjunior_ivanka/" target="_blank" class="text-slate-400 hover:text-pink-400"><i class="fa-brands fa-instagram text-xs"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- 2. HLAVNÉ MENU (HEADER V ŠTÝLE FC NITRA)                      -->
+  <!-- ============================================================== -->
+  <header class="sticky top-0 z-40 fcn-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo a Názov -->
+        <a href="#uvod" class="fcn-nav-link flex items-center gap-3.5 group !p-0" data-section="uvod">
+          <img src="SK_Junior_logo.jpg" alt="Logo ŠK Junior" class="h-14 w-14 object-contain rounded-lg p-0.5 bg-white shadow-md">
+          <div class="text-left">
+            <span class="font-heading text-3xl font-black tracking-wider text-white block leading-none group-hover:text-pink-400 transition-colors">
+              ŠK JUNIOR
+            </span>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-pink-400 block mt-0.5">
+              Futbalový klub
+            </span>
+          </div>
+        </a>
+
+        <!-- Hlavná Navigácia -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="#uvod" class="fcn-nav-link active" data-section="uvod">Úvod</a>
+          <a href="#aktuality" class="fcn-nav-link" data-section="aktuality">Aktuality</a>
+          
+          <!-- Dropdown Tímy -->
+          <div class="nav-dropdown-wrapper group">
+            <a href="#timy" class="fcn-nav-link inline-flex items-center gap-1.5" data-section="timy">
+              <span>Tímy</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-pink-400"></i>
+            </a>
+            <div class="nav-dropdown-menu w-64 shadow-2xl">
+              <div class="bg-[#0F172A] border border-slate-700 rounded-xl p-2.5 text-white shadow-2xl space-y-1">
+                <div class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-pink-400">Seniori</div>
+                <button onclick="navigateToTeam('a-tim')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors flex items-center justify-between">
+                  <span>A-tím (Muži)</span>
+                  <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-pink-400 font-bold">VIII. liga</span>
+                </button>
+                <div class="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-pink-400 border-t border-slate-800 mt-1">Mládežnícka akadémia</div>
+                <button onclick="navigateToTeam('u19')" class="w-full text-left px-3 py-1.5 text-xs text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors">Starší dorast U19</button>
+                <button onclick="navigateToTeam('u15')" class="w-full text-left px-3 py-1.5 text-xs text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors">Starší žiaci U15</button>
+                <button onclick="navigateToTeam('u13')" class="w-full text-left px-3 py-1.5 text-xs text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors">Mladší žiaci U13</button>
+                <button onclick="navigateToTeam('u11')" class="w-full text-left px-3 py-1.5 text-xs text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors">Prípravka U11</button>
+                <button onclick="navigateToTeam('u9')" class="w-full text-left px-3 py-1.5 text-xs text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors">Predprípravka U9</button>
+                <button onclick="navigateToTeam('u7')" class="w-full text-left px-3 py-1.5 text-xs text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors">Futbalová školička U7</button>
+              </div>
+            </div>
+          </div>
+
+          <a href="#galeria" class="fcn-nav-link" data-section="galeria">Galéria</a>
+          
+          <!-- Dropdown O klube -->
+          <div class="nav-dropdown-wrapper group">
+            <a href="#oklube" class="fcn-nav-link inline-flex items-center gap-1.5" data-section="oklube">
+              <span>O klube</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-pink-400"></i>
+            </a>
+            <div class="nav-dropdown-menu w-64 right-0 lg:left-0 shadow-2xl">
+              <div class="bg-[#0F172A] border border-slate-700 rounded-xl p-2.5 text-white space-y-1 shadow-2xl">
+                <div class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-pink-400">O klube ŠK Junior</div>
+                <button onclick="navigateToAboutSubSection('manazment')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors flex items-center gap-2.5">
+                  <i class="fa-solid fa-users-gear text-pink-400 text-xs w-4"></i>
+                  <span>Vedenie klubu</span>
+                </button>
+                <button onclick="navigateToAboutSubSection('historia')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors flex items-center gap-2.5">
+                  <i class="fa-solid fa-landmark text-pink-400 text-xs w-4"></i>
+                  <span>História klubu</span>
+                </button>
+                <button onclick="navigateToAboutSubSection('partneri')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors flex items-center gap-2.5">
+                  <i class="fa-solid fa-handshake text-pink-400 text-xs w-4"></i>
+                  <span>Partneri & Sponzori</span>
+                </button>
+                <button onclick="navigateToAboutSubSection('kontakty')" class="w-full text-left px-3 py-2 text-xs font-semibold text-slate-200 hover:bg-[#FF3388] hover:text-white rounded-lg transition-colors flex items-center gap-2.5 border-t border-slate-800 pt-2">
+                  <i class="fa-solid fa-address-book text-pink-400 text-xs w-4"></i>
+                  <span>Kontakty a údaje</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Pravý roh: E-SHOP tlačidlo s "UŽ ČOSKORO" hláškou -->
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <button class="eshop-trigger btn-fcn-primary px-4 py-2.5 text-xs flex items-center gap-2">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>FANSHOP</span>
+              <span class="badge-pulse absolute -top-2.5 -right-2 bg-yellow-400 text-black text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow">
+                Už čoskoro
+              </span>
+            </button>
+          </div>
+
+          <!-- Mobilné menu tlačidlo -->
+          <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded bg-slate-800 text-white">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobilné menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#070D18] border-b border-slate-800 px-4 pt-3 pb-6 space-y-2">
+      <a href="#uvod" class="fcn-nav-link block py-2" data-section="uvod">Úvod</a>
+      <a href="#aktuality" class="fcn-nav-link block py-2" data-section="aktuality">Aktuality</a>
+      <a href="#timy" class="fcn-nav-link block py-2" data-section="timy">Tímy (A-tím & Mládež)</a>
+      <a href="#galeria" class="fcn-nav-link block py-2" data-section="galeria">Galéria</a>
+      <div>
+        <a href="#oklube" class="fcn-nav-link block py-2" data-section="oklube">O klube</a>
+        <div class="pl-4 pb-1 space-y-1 text-xs border-l-2 border-slate-700 ml-2">
+          <button onclick="navigateToAboutSubSection('manazment')" class="block py-1 text-slate-300 hover:text-pink-400">Vedenie klubu</button>
+          <button onclick="navigateToAboutSubSection('historia')" class="block py-1 text-slate-300 hover:text-pink-400">História klubu</button>
+          <button onclick="navigateToAboutSubSection('partneri')" class="block py-1 text-slate-300 hover:text-pink-400">Partneri & Sponzori</button>
+          <button onclick="navigateToAboutSubSection('kontakty')" class="block py-1 text-slate-300 hover:text-pink-400">Kontakty a údaje</button>
+        </div>
+      </div>
+      <div class="pt-3">
+        <button class="eshop-trigger w-full btn-fcn-primary py-2.5 text-xs">
+          <i class="fa-solid fa-cart-shopping mr-1.5"></i> Klubový Fanshop (Už čoskoro)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- HLAVNÝ OBSAH                                                  -->
+  <!-- ============================================================== -->
+  <main class="flex-grow">
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- SEKCOIA 1: ÚVOD (V ŠTÝLE FC NITRA S MATCH CENTEROM)         -->
+    <!-- ------------------------------------------------------------ -->
+    <section id="uvod" class="space-y-12 pb-16">
+      
+      <!-- MATCH CENTER (ZÁPASOVÉ CENTRUM) - TITULNÝ PÁS -->
+      <div class="bg-white border-b border-slate-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 bg-pink-600 rounded-sm"></span>
+              <h2 class="text-2xl sm:text-3xl font-heading font-black text-slate-900 tracking-wide">
+                Zápasové centrum A-tímu
+              </h2>
+            </div>
+            <a href="https://sportnet.sme.sk/futbalnet/" target="_blank" class="text-xs font-bold text-pink-600 hover:text-pink-700 inline-flex items-center gap-1">
+              Sportnet Futbalnet <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Trojica kariet: Posledný zápas | Najbližší zápas | Ligová tabuľka -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- 1. Karta: Posledný zápas -->
+            <div id="last-match-card" class="match-center-card">
+              <!-- JS -->
+            </div>
+
+            <!-- 2. Karta: Najbližší zápas -->
+            <div id="next-match-card" class="match-center-card">
+              <!-- JS -->
+            </div>
+
+            <!-- 3. Karta: Mini Ligová tabuľka -->
+            <div id="home-mini-table" class="match-center-card md:col-span-2 lg:col-span-1">
+              <!-- JS -->
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MAGAZÍNOVÝ LAYOUT AKTUALÍT (VEĽKÝ ČLÁNOK + BOČNÝ ZOZNAM) -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-6 pb-2 border-b border-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 bg-pink-600 rounded-sm"></span>
+            <h2 class="text-2xl sm:text-3xl font-heading font-black text-slate-900 tracking-wide">
+              Aktuality a správy z klubu
+            </h2>
+          </div>
+          <a href="#aktuality" onclick="switchSection('aktuality')" class="text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-pink-600 inline-flex items-center gap-1">
+            Všetky články <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <div id="home-news-magazine" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- JS -->
+        </div>
+      </div>
+
+      <!-- ROZPIS ZÁPASOV NA NAJBLIŽŠÍ TÝŽDEŇ PRE VŠETKY KATEGÓRIE -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-1">
+                Kalendár všetkých kategórií
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-heading font-black text-slate-900">
+                Rozpis zápasov na najbližší týždeň
+              </h3>
+            </div>
+
+            <!-- Filtre -->
+            <div class="flex items-center gap-2">
+              <button data-match-filter="all" class="btn-fcn-primary text-xs px-3.5 py-1.5 font-bold">Všetky</button>
+              <button data-match-filter="a-tim" class="bg-gray-100 hover:bg-gray-200 text-slate-700 text-xs px-3.5 py-1.5 font-bold rounded">A-tím</button>
+              <button data-match-filter="mladez" class="bg-gray-100 hover:bg-gray-200 text-slate-700 text-xs px-3.5 py-1.5 font-bold rounded">Mládež</button>
+            </div>
+          </div>
+
+          <!-- Mriežka zápasov -->
+          <div id="home-matches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- JS -->
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FANSHOP BANNER V ŠTÝLE FCNR.SK -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="fanshop-banner p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+          <div class="flex items-center gap-5">
+            <div class="w-16 h-16 rounded-xl bg-pink-600 text-white flex items-center justify-center text-3xl shrink-0">
+              <i class="fa-solid fa-shirt"></i>
+            </div>
+            <div>
+              <span class="inline-block bg-yellow-400 text-black text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded mb-1">
+                Oficiálny fanshop • Už čoskoro
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-heading font-black text-white">
+                Originálne dresy, mikiny a suveníry ŠK Junior
+              </h3>
+              <p class="text-xs text-slate-300 mt-1 max-w-xl">
+                Pripravujeme novú kolekciu klubového oblečenia pre hráčov, rodičov a fanúšikov.
+              </p>
+            </div>
+          </div>
+          <button class="eshop-trigger btn-fcn-primary px-6 py-3 text-xs font-bold shrink-0">
+            Otvoriť Fanshop info
+          </button>
+        </div>
+      </div>
+
+      <!-- SPONZORSKÝ PÁS (AKO NA FCNITRA.SK) -->
+      <div class="sponsor-strip py-8 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Generálni a hlavní partneri klubu</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center opacity-85 hover:opacity-100 transition-opacity">
+            <div class="text-center font-bold text-slate-800 text-sm tracking-wider">OBEC IVANKA PRI NITRE</div>
+            <div class="text-center font-bold text-slate-800 text-sm tracking-wider">MACRON SLOVENSKO</div>
+            <div class="text-center font-bold text-slate-800 text-sm tracking-wider">NITRIANSKY KRAJ</div>
+            <div class="text-center font-bold text-slate-800 text-sm tracking-wider">ZsFZ NITRA</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- SEKCOIA 2: AKTUALITY                                        -->
+    <!-- ------------------------------------------------------------ -->
+    <section id="aktuality" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden space-y-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-300">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-1">Klubové správy</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black text-slate-900">Všetky aktuality</h2>
+        </div>
+
+        <button onclick="document.getElementById('admin-toggle-btn').click(); switchAdminTab('articles')" 
+                class="btn-fcn-primary px-4 py-2 text-xs font-bold inline-flex items-center gap-1.5 self-start sm:self-auto">
+          <i class="fa-solid fa-pen-to-square"></i> Pridať nový článok
+        </button>
+      </div>
+
+      <!-- Filtre a Hľadanie -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <button data-news-category="all" class="btn-fcn-primary text-xs px-4 py-2 font-bold">Všetky</button>
+          <button data-news-category="A-tím" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">A-tím</button>
+          <button data-news-category="Mládež" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">Mládež</button>
+          <button data-news-category="Klub" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">Klub</button>
+        </div>
+
+        <div class="relative w-full sm:w-72">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+          <input type="text" id="news-search-input" placeholder="Hľadať v článkoch..." 
+                 class="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-4 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-pink-500 shadow-sm">
+        </div>
+      </div>
+
+      <!-- Mriežka článkov -->
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JS -->
+      </div>
+
+    </section>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- SEKCOIA 3: TÍMY (A-TÍM & MLÁDEŽ U7-U19)                     -->
+    <!-- ------------------------------------------------------------ -->
+    <section id="timy" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden space-y-8">
+      
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-1">Prehľad kategórií</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-slate-900">Tímy klubu ŠK Junior</h2>
+        <p class="text-xs text-slate-600 mt-1">Súpisky, realizačné tímy, zápasové rozpisy a oficiálne tabuľky Sportnet.</p>
+      </div>
+
+      <!-- Prepínač tímov -->
+      <div id="team-selector-buttons">
+        <!-- JS -->
+      </div>
+
+      <!-- Detail tímu -->
+      <div id="team-detail-container">
+        <!-- JS -->
+      </div>
+
+    </section>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- SEKCOIA 4: GALÉRIA                                          -->
+    <!-- ------------------------------------------------------------ -->
+    <section id="galeria" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden space-y-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-300">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-1">Fotogaléria</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black text-slate-900">Zápasy a život klubu</h2>
+        </div>
+
+        <button onclick="document.getElementById('admin-toggle-btn').click(); switchAdminTab('gallery')" 
+                class="btn-fcn-primary px-4 py-2 text-xs font-bold inline-flex items-center gap-1.5 self-start sm:self-auto">
+          <i class="fa-solid fa-camera"></i> Pridať fotografiu
+        </button>
+      </div>
+
+      <!-- Filtre -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button data-gallery-filter="all" class="btn-fcn-primary text-xs px-4 py-2 font-bold">Všetky</button>
+        <button data-gallery-filter="A-tím" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">A-tím</button>
+        <button data-gallery-filter="Mládež" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">Mládež</button>
+        <button data-gallery-filter="Areál" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">Areál</button>
+        <button data-gallery-filter="Klub" class="bg-white hover:bg-slate-100 text-slate-700 text-xs px-4 py-2 font-bold rounded border border-slate-200">Klub</button>
+      </div>
+
+      <!-- Mriežka fotografií -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JS -->
+      </div>
+
+    </section>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- SEKCOIA 5: O KLUBE                                          -->
+    <!-- ------------------------------------------------------------ -->
+    <section id="oklube" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-1">Informácie o klube</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-slate-900">O klube ŠK Junior</h2>
+        <p class="text-xs text-slate-600 mt-1">Vedenie, história, partneri a kontaktné spojenie.</p>
+      </div>
+
+      <!-- 1. MANAŽMENT -->
+      <div id="oklube-manazment" class="scroll-mt-24">
+        <h3 class="text-2xl font-heading font-black text-slate-900 mb-4 pb-2 border-b border-slate-200">
+          Vedenie a manažment klubu
+        </h3>
+        <div id="management-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- JS -->
+        </div>
+      </div>
+
+      <!-- 2. HISTÓRIA -->
+      <div id="oklube-historia" class="scroll-mt-24">
+        <h3 class="text-2xl font-heading font-black text-slate-900 mb-4 pb-2 border-b border-slate-200">
+          História klubu a kľúčové míľniky
+        </h3>
+        <div class="bg-white rounded-xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+          <div id="history-timeline-container">
+            <!-- JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PARTNERI -->
+      <div id="oklube-partneri" class="scroll-mt-24">
+        <h3 class="text-2xl font-heading font-black text-slate-900 mb-4 pb-2 border-b border-slate-200">
+          Partneri a sponzori
+        </h3>
+        <div id="partners-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- JS -->
+        </div>
+      </div>
+
+      <!-- 4. KONTAKTY & FAKTÚRY -->
+      <div id="oklube-kontakty" class="scroll-mt-24">
+        <h3 class="text-2xl font-heading font-black text-slate-900 mb-4 pb-2 border-b border-slate-200">
+          Kontaktné a fakturačné údaje
+        </h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-pink-600 mb-1">Sídlo a štadión</h4>
+              <p class="font-bold text-slate-900" id="contact-club-fullname">ŠK Junior Ivanka pri Nitre</p>
+              <p class="text-xs text-slate-600" id="contact-club-address">Novozámocká, 951 12 Ivanka pri Nitre</p>
+              <p class="text-xs text-slate-500 mt-0.5" id="contact-club-stadium">Futbalový areál ŠK Junior</p>
+            </div>
+
+            <div class="border-t border-slate-100 pt-3 space-y-2 text-xs">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-pink-600 mb-1">Sekretariát & Kontakty</h4>
+              <p class="text-slate-700">
+                <i class="fa-solid fa-phone text-pink-600 mr-2"></i> 
+                <a id="contact-club-phone-link" href="tel:+421910907795" class="hover:text-pink-600 font-bold"><span id="contact-club-phone">+421 910 907 795</span></a>
+              </p>
+              <p class="text-slate-700">
+                <i class="fa-solid fa-envelope text-pink-600 mr-2"></i> 
+                <a id="contact-club-email-link" href="mailto:skjuniorivanka@gmail.com" class="hover:text-pink-600 font-semibold"><span id="contact-club-email">skjuniorivanka@gmail.com</span></a>
+              </p>
+            </div>
+
+            <div class="border-t border-slate-100 pt-3 space-y-1.5 text-xs text-slate-600">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-pink-600 mb-1">Fakturačné údaje</h4>
+              <div class="flex justify-between"><span>IČO:</span> <span class="font-mono font-bold text-slate-800" id="contact-club-ico">53316711</span></div>
+              <div class="flex justify-between"><span>Banka:</span> <span class="font-bold text-slate-800" id="contact-club-bank">Všeobecná úverová banka, a.s.</span></div>
+              <div class="pt-1">
+                <span class="block text-[11px]">IBAN (Členské príspevky / dary):</span> 
+                <span class="font-mono font-bold text-pink-600 text-[11px] block select-all" id="contact-club-iban">SK31 0200 0000 0043 6564 7155</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm lg:col-span-2">
+            <h4 class="text-xl font-heading font-black text-slate-900 mb-2">Kontaktný formulár</h4>
+            <form onsubmit="event.preventDefault(); alert('Správa bola úspešne odoslaná sekretariátu klubu!'); this.reset();" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Meno a priezvisko *</label>
+                  <input type="text" required placeholder="Ján Novák" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Email *</label>
+                  <input type="email" required placeholder="novak@email.sk" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Správa *</label>
+                <textarea rows="3" required placeholder="Vaša otázka, nábor dieťaťa alebo spolupráca..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500"></textarea>
+              </div>
+              <button type="submit" class="btn-fcn-primary px-6 py-2.5 text-xs font-bold">Odoslať správu</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- PÄTIČKA STRÁNKY (FOOTER V ŠTÝLE FC NITRA)                     -->
+  <!-- ============================================================== -->
+  <footer class="bg-[#050B14] text-white pt-14 pb-10 border-t-4 border-pink-600 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="SK_Junior_logo.jpg" alt="ŠK Junior" class="w-12 h-12 object-contain bg-white rounded p-0.5">
+            <div>
+              <span class="font-heading text-2xl font-black text-white block leading-none">ŠK JUNIOR</span>
+              <span class="text-[10px] text-pink-400 font-bold uppercase tracking-wider">Futbalový klub</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Tradičný futbalový klub zameraný na všestranný rozvoj mládežníckych talentov a seniorského tímu.
+          </p>
+          <div class="flex items-center gap-2">
+            <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:text-pink-400 flex items-center justify-center text-xs"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:text-pink-400 flex items-center justify-center text-xs"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" class="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:text-pink-400 flex items-center justify-center text-xs"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-4">Rýchle odkazy</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#uvod" class="hover:text-white transition-colors">Úvodná stránka</a></li>
+            <li><a href="#aktuality" class="hover:text-white transition-colors">Aktuality</a></li>
+            <li><a href="#timy" onclick="navigateToTeam('a-tim')" class="hover:text-white transition-colors">A-tím (Muži)</a></li>
+            <li><a href="#timy" onclick="navigateToTeam('u19')" class="hover:text-white transition-colors">Dorast U19 a Žiaci</a></li>
+            <li><a href="#galeria" class="hover:text-white transition-colors">Fotogaléria</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-4">Futbalové portály</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/" target="_blank" class="hover:text-pink-400">ŠK Junior na Sportnet Futbalnet</a></li>
+            <li><a href="https://futbalsfz.sk" target="_blank" class="hover:text-pink-400">Slovenský futbalový zväz</a></li>
+            <li><button class="eshop-trigger hover:text-pink-400 text-left">Oficiálny Fanshop (Už čoskoro)</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-pink-400 mb-4">Kontakt</h4>
+          <p class="text-xs text-slate-400 mb-1" id="footer-address">Futbalový areál ŠK Junior, Novozámocká, Ivanka pri Nitre</p>
+          <p class="text-xs text-pink-400 font-bold mb-1"><a id="footer-phone-link" href="tel:+421910907795" class="hover:text-pink-300"><span id="footer-phone">+421 910 907 795</span></a></p>
+          <p class="text-xs text-slate-300"><a id="footer-email-link" href="mailto:skjuniorivanka@gmail.com" class="hover:text-pink-300"><span id="footer-email">skjuniorivanka@gmail.com</span></a></p>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p id="footer-copyright">© 2026 ŠK Junior Ivanka pri Nitre. Všetky práva vyhradené.</p>
+        <p>V štýle modernej futbalovej prezentácie klubu.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- SPRÁVA OBSAHU (ADMIN TLAČIDLO V PRAVOM DOLNOM ROHU)          -->
+  <!-- ============================================================== -->
+  <div class="fixed bottom-5 right-5 z-40 flex items-center gap-2">
+    <a href="admin.html" class="bg-[#0F172A] hover:bg-pink-600 text-white border-2 border-pink-500 px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 text-xs font-bold transition-all transform hover:scale-105">
+      <i class="fa-solid fa-sliders text-pink-400"></i>
+      <span>Vizuálny Admin (/admin)</span>
+    </a>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODÁL: E-SHOP "UŽ ČOSKORO"                                    -->
+  <!-- ============================================================== -->
+  <div id="eshop-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl text-center">
+      <button id="eshop-close-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="w-16 h-16 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-3xl mx-auto mb-4 shadow">
+        <i class="fa-solid fa-shirt"></i>
+      </div>
+      
+      <span class="inline-block bg-yellow-400 text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+        Už čoskoro
+      </span>
+      
+      <h3 class="text-3xl font-heading font-black text-slate-900 mb-2">
+        Pripravujeme klubový FANSHOP!
+      </h3>
+      
+      <p class="text-xs text-slate-600 leading-relaxed mb-6">
+        Čoskoro tu nájdete oficiálne dresy ŠK Junior, tréningové súpravy, mikiny, šály, čiapky a suveníry pre hráčov aj fanúšikov.
+      </p>
+
+      <button onclick="document.getElementById('eshop-modal').classList.add('hidden'); document.body.classList.remove('overflow-hidden');" class="btn-fcn-primary w-full py-2.5 text-xs font-bold">
+        Rozumiem
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODÁL: DETAIL ČLÁNKU                                          -->
+  <!-- ============================================================== -->
+  <div id="article-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full my-8 relative shadow-2xl overflow-hidden">
+      <button onclick="closeArticleModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/70 text-white hover:text-pink-400 flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="article-modal-content">
+        <!-- JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODÁL: LIGHTBOX FOTOGALÉRIE                                   -->
+  <!-- ============================================================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-black/95 backdrop-blur-md hidden">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-pink-400 text-2xl z-10">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="max-w-5xl max-h-[80vh] flex items-center justify-center overflow-hidden">
+      <img id="lightbox-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Zväčšená fotografia" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
+    </div>
+    <div id="lightbox-caption" class="text-sm text-slate-300 mt-4 text-center"></div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODÁL: NASTAVENIE PREPOJENIA SO SPORTNET FUTBALNET & IMPORTÉR -->
+  <!-- ============================================================== -->
+  <div id="sportnet-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 my-8 relative shadow-2xl">
+      <button onclick="closeSportnetModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-5 pb-4 border-b border-slate-200">
+        <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-link"></i>
+        </div>
+        <div>
+          <h3 id="sportnet-team-title" class="text-xl font-heading font-black text-slate-900">Prepojenie so Sportnet Futbalnet</h3>
+          <p class="text-xs text-slate-500">Párovanie živej tabuľky, rozpisu zápasov a prevod do klubového dizajnu</p>
+        </div>
+      </div>
+
+      <!-- Návod ako napárovať -->
+      <div class="bg-pink-50/60 border border-pink-200 rounded-xl p-4 mb-5 text-xs text-slate-700 space-y-1.5">
+        <div class="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
+          <i class="fa-solid fa-circle-question text-pink-600"></i> Ako napárovať dáta zo Sportnetu?
+        </div>
+        <p>1. Otvorte portál <a href="https://sportnet.sme.sk/futbalnet/" target="_blank" class="text-pink-600 underline font-semibold">sportnet.sme.sk/futbalnet/</a> a vyhľadajte váš tím alebo súťaž.</p>
+        <p>2. Skopírujte odkaz z adresného riadka a vložte ho do poľa nižšie.</p>
+        <p>3. <strong>Pre okamžitý krásny formát:</strong> Stačí označiť a skopírovať tabuľku priamo z Futbalnetu do poľa <em>„Rýchly import skopírovanej tabuľky“</em> a kliknúť na <em>Preformátovať</em>!</p>
+      </div>
+
+      <!-- Formulár s URL a Importérom -->
+      <form id="sportnet-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">URL adresa tímu / klubu na Sportnet Futbalnet:</label>
+          <input type="url" id="sportnet-team-url-input" required placeholder="https://sportnet.sme.sk/futbalnet/k/sk-junior/..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">URL adresa súťaže / tabuľky (pre živý Sportnet náhľad):</label>
+          <input type="url" id="sportnet-comp-url-input" placeholder="https://sportnet.sme.sk/futbalnet/z/vsfz/s/.../tabulky/" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+        </div>
+
+        <div class="flex items-center gap-3 pt-1">
+          <button type="button" id="sportnet-autofetch-btn" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-xs font-bold inline-flex items-center gap-1.5">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Automaticky stiahnuť tabuľku z URL
+          </button>
+          <button type="submit" class="btn-fcn-primary px-5 py-2 text-xs font-bold rounded">
+            Uložiť URL prepojenie
+          </button>
+        </div>
+      </form>
+
+      <!-- Rýchly import skopírovaného textu tabuľky -->
+      <div class="mt-6 pt-5 border-t border-slate-200">
+        <label class="block text-xs font-bold text-slate-800 mb-1">
+          <i class="fa-solid fa-wand-magic-sparkles text-pink-600 mr-1"></i> Rýchly import skopírovanej tabuľky z webu Futbalnetu:
+        </label>
+        <p class="text-[11px] text-slate-500 mb-2">
+          Označte na webe Futbalnetu riadky tabuľky (Ctrl+C), vložte ich sem (Ctrl+V) a kliknite na tlačidlo. Systém automaticky vytvorí tabuľku v našom klubovom dizajne!
+        </p>
+        <textarea id="sportnet-raw-text-input" rows="4" placeholder="1. FK Slovan 11 8 2 1 28:10 26&#10;2. ŠK Junior 11 7 3 1 24:9 24&#10;3. TJ Sokol 11 7 1 3 21:13 22..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 text-xs font-mono text-slate-800 focus:outline-none focus:border-pink-500"></textarea>
+        
+        <div class="flex justify-between items-center mt-2">
+          <button type="button" id="sportnet-parse-btn" class="btn-fcn-primary px-5 py-2 text-xs font-bold rounded inline-flex items-center gap-1.5">
+            <i class="fa-solid fa-arrow-down-short-wide"></i> Preformátovať a uložiť do klubového dizajnu
+          </button>
+          <button type="button" onclick="closeSportnetModal()" class="text-xs text-slate-500 hover:text-slate-800">
+            Zavrieť
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODÁL: SPRÁVA WEBU (ADMIN PANEL)                              -->
+  <!-- ============================================================== -->
+  <div id="admin-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-4xl w-full my-8 p-6 sm:p-8 relative shadow-2xl">
+      <button id="admin-close-btn" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 pb-6 border-b border-slate-200">
+        <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-sliders"></i>
+        </div>
+        <div>
+          <h3 class="text-2xl font-heading font-black text-slate-900">Správa obsahu klubu ŠK Junior</h3>
+          <p class="text-xs text-slate-500">Pridávanie a úprava článkov, zápasov, fotografií a zálohovanie dát</p>
+        </div>
+      </div>
+
+      <!-- Prepínač záložiek -->
+      <div class="flex border-b border-slate-200 my-6 gap-2 overflow-x-auto pb-2">
+        <button onclick="switchAdminTab('articles')" id="admin-tab-btn-articles" class="admin-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-pink-600 text-white">
+          <i class="fa-solid fa-newspaper mr-1"></i> Pridať článok
+        </button>
+        <button onclick="switchAdminTab('matches')" id="admin-tab-btn-matches" class="admin-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">
+          <i class="fa-regular fa-calendar-plus mr-1"></i> Pridať zápas
+        </button>
+        <button onclick="switchAdminTab('gallery')" id="admin-tab-btn-gallery" class="admin-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">
+          <i class="fa-solid fa-camera mr-1"></i> Pridať fotku
+        </button>
+        <button onclick="switchAdminTab('export')" id="admin-tab-btn-export" class="admin-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">
+          <i class="fa-solid fa-floppy-disk mr-1"></i> Export & Záloha
+        </button>
+      </div>
+
+      <!-- PANEL: ČLÁNOK -->
+      <div id="admin-tab-articles" class="admin-tab-panel space-y-4">
+        <h4 class="text-sm font-bold text-slate-800">Nový článok do Aktualít</h4>
+        <form id="admin-add-article-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Názov článku *</label>
+              <input type="text" id="new-art-title" required placeholder="Napr. Výborný zápas U15" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kategória *</label>
+              <select id="new-art-category" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+                <option value="A-tím">A-tím</option>
+                <option value="Mládež">Mládež</option>
+                <option value="Klub">Klub</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Autor</label>
+              <input type="text" id="new-art-author" placeholder="Redakcia ŠK Junior" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">URL fotky</label>
+              <input type="url" id="new-art-image" placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Krátky úvod (perex) *</label>
+            <textarea id="new-art-excerpt" rows="2" required placeholder="Jedna alebo dve vety zhrňujúce článok..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Celý text článku *</label>
+            <textarea id="new-art-content" rows="5" required placeholder="Celý text..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500"></textarea>
+          </div>
+
+          <button type="submit" class="btn-fcn-primary px-6 py-2.5 text-xs font-bold">
+            <i class="fa-solid fa-plus mr-1"></i> Publikovať článok
+          </button>
+        </form>
+      </div>
+
+      <!-- PANEL: ZÁPAS -->
+      <div id="admin-tab-matches" class="admin-tab-panel space-y-4 hidden">
+        <h4 class="text-sm font-bold text-slate-800">Pridať zápas do kalendára</h4>
+        <form id="admin-add-match-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Tím *</label>
+              <select id="new-match-team" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+                <option value="a-tim">A-tím (Muži)</option>
+                <option value="u19">U19 Dorast</option>
+                <option value="u15">U15 Žiaci</option>
+                <option value="u13">U13 Žiaci</option>
+                <option value="u11">U11 Prípravka</option>
+                <option value="u9">U9 Predprípravka</option>
+                <option value="u7">U7 Predprípravka</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Súper *</label>
+              <input type="text" id="new-match-opponent" required placeholder="Napr. FK Trebišov" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Miesto *</label>
+              <select id="new-match-ishome" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+                <option value="true">Domáci zápas</option>
+                <option value="false">Zápas vonku</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Súťaž</label>
+              <input type="text" id="new-match-comp" placeholder="V. liga / II. liga" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kolo</label>
+              <input type="text" id="new-match-round" placeholder="12. kolo" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Dátum *</label>
+              <input type="date" id="new-match-date" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Čas výkopu *</label>
+              <input type="time" id="new-match-time" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Ihrisko / Štadión</label>
+            <input type="text" id="new-match-venue" placeholder="Areál ŠK Junior - hlavná plocha" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+          </div>
+
+          <button type="submit" class="btn-fcn-primary px-6 py-2.5 text-xs font-bold">
+            <i class="fa-solid fa-plus mr-1"></i> Pridať zápas
+          </button>
+        </form>
+      </div>
+
+      <!-- PANEL: FOTO -->
+      <div id="admin-tab-gallery" class="admin-tab-panel space-y-4 hidden">
+        <h4 class="text-sm font-bold text-slate-800">Pridať fotografiu do galérie</h4>
+        <form id="admin-add-gallery-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Názov fotky *</label>
+              <input type="text" id="new-gal-title" required placeholder="Gólová radosť" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kategória *</label>
+              <select id="new-gal-category" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+                <option value="A-tím">A-tím</option>
+                <option value="Mládež">Mládež</option>
+                <option value="Areál">Areál</option>
+                <option value="Klub">Klub</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">URL fotky *</label>
+              <input type="url" id="new-gal-url" required placeholder="https://images.unsplash.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Obdobie / Dátum</label>
+              <input type="text" id="new-gal-date" placeholder="November 2026" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2 text-xs text-slate-800 focus:outline-none focus:border-pink-500">
+            </div>
+          </div>
+
+          <button type="submit" class="btn-fcn-primary px-6 py-2.5 text-xs font-bold">
+            <i class="fa-solid fa-camera mr-1"></i> Pridať fotografiu
+          </button>
+        </form>
+      </div>
+
+      <!-- PANEL: EXPORT -->
+      <div id="admin-tab-export" class="admin-tab-panel space-y-4 hidden">
+        <h4 class="text-sm font-bold text-slate-800">Export & Záloha dát</h4>
+        <p class="text-xs text-slate-600">Všetky úpravy sa ukladajú v prehliadači. Tu si ich môžete stiahnuť alebo skopírovať do súboru js/data.js pre trvalé uloženie:</p>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <button id="admin-copy-js-btn" class="btn-fcn-primary px-4 py-2 text-xs font-bold">
+            <i class="fa-solid fa-copy mr-1"></i> Skopírovať kód do schránky
+          </button>
+          <button id="admin-export-btn" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 text-xs font-bold rounded">
+            <i class="fa-solid fa-download mr-1"></i> Stiahnuť súbor JSON
+          </button>
+          <button id="admin-reset-btn" class="text-xs text-red-600 hover:underline font-bold ml-auto">
+            Resetovať na predvolené dáta
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT MODULY -->
+  <script src="js/data.js"></script>
+  <script src="js/sportnet.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+
+</body>
+</html>
