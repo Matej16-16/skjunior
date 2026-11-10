@@ -1,0 +1,276 @@
+/* ==============================================================
+   ŠK JUNIOR - DIZAJN A ŠTÝL V ŠTÝLE FC NITRA (fcnitra.sk)
+   Futbalový štýl:
+   - Profesionálny klubový Match Center (Zápasové centrum)
+   - Bielo-modrá / tmavá prémiová paleta s klubovou neónovou ružovou ŠK Junior
+   - Magazínový layout aktualít (veľký hlavný článok + bočný zoznam)
+   - Sponzorský pás a ligová tabuľka priamo na titulke
+   ============================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Teko:wght@500;600;700&display=swap');
+
+:root {
+  --club-dark: #0B0F19;
+  --club-charcoal: #1E293B;
+  --club-pink: #FF3388;
+  --club-pink-hover: #FF559E;
+  --club-pink-dark: #D61C68;
+  --fcn-dark: #070D18;
+  --fcn-bg-light: #F8FAFC;
+  --fcn-card: #FFFFFF;
+  --fcn-text-dark: #0F172A;
+  --fcn-text-muted: #64748B;
+  --fcn-border: #E2E8F0;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--fcn-bg-light);
+  color: var(--fcn-text-dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* FC Nitra Horná lišta (Top Bar) */
+.fcn-topbar {
+  background-color: #050B14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
+  font-size: 0.75rem;
+}
+
+/* Hlavné Menu - Klubový štýl */
+.fcn-header {
+  background: var(--club-dark);
+  border-bottom: 4px solid var(--club-pink);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.fcn-nav-link {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #E2E8F0;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.fcn-nav-link:hover,
+.fcn-nav-link.active {
+  color: #FFFFFF;
+}
+
+.fcn-nav-link.active::after,
+.fcn-nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 3px;
+  background-color: var(--club-pink);
+  border-radius: 2px;
+}
+
+/* Tlačidlá */
+.btn-fcn-primary {
+  background: linear-gradient(135deg, #FF3388 0%, #D61C68 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(255, 51, 136, 0.35);
+}
+
+.btn-fcn-primary:hover {
+  background: linear-gradient(135deg, #FF559E 0%, #E62075 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 51, 136, 0.5);
+}
+
+.btn-fcn-navy {
+  background: var(--club-dark);
+  color: #FFFFFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-fcn-navy:hover {
+  background: var(--club-charcoal);
+  color: var(--club-pink);
+}
+
+/* ZÁPASOVÉ CENTRUM (MATCH CENTER) - KLUBOVÝ ŠTÝL */
+.match-center-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.match-center-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 51, 136, 0.15);
+  border-color: #FBCFE8;
+}
+
+.match-badge-live {
+  background-color: #EF4444;
+  color: white;
+  animation: pulseLive 1.5s infinite;
+}
+
+@keyframes pulseLive {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Magazínové karty článkov */
+.news-hero-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--club-dark);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+}
+
+.news-card-white {
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  transition: all 0.25s ease;
+}
+
+.news-card-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 51, 136, 0.1);
+  border-color: #F472B6;
+}
+
+/* Ligová Tabuľka - klubový štýl */
+.fcn-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.fcn-table th {
+  background: var(--club-dark);
+  color: #FFFFFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 0.75rem;
+}
+
+.fcn-table td {
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #EDF2F7;
+  color: #334155;
+}
+
+.fcn-table tr:hover td {
+  background-color: #F8FAFC;
+}
+
+.fcn-table tr.highlight-junior td {
+  background-color: #FFF1F7;
+  font-weight: 700;
+  color: var(--club-pink-dark);
+  border-left: 4px solid var(--club-pink);
+}
+
+/* Sponzorský pásik */
+.sponsor-strip {
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Fanshop Banner v klubových farbách */
+.fanshop-banner {
+  background: linear-gradient(135deg, #0B0F19 0%, #1E293B 100%);
+  border-left: 6px solid var(--club-pink);
+  border-radius: 12px;
+  color: #FFFFFF;
+}
+
+/* Tlačidlo E-SHOP pulzovanie */
+.badge-pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 51, 136, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 51, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 51, 136, 0); }
+}
+
+/* Vlastný scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--club-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--club-pink);
+}
+
+/* Navigačný dropdown po nabehnutí myšou */
+.nav-dropdown-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  padding-top: 8px;
+}
+.nav-dropdown-wrapper:hover .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+  display: block !important;
+}
+
+/* Klubový štýl pre ligovú tabuľku */
+.fcn-league-table-header {
+  background: linear-gradient(135deg, #0B0F19 0%, #1E293B 100%);
+  color: #FFFFFF;
+  border-bottom: 2px solid var(--club-pink);
+}
+.fcn-match-row-even {
+  background-color: #F8FAFC;
+}
+.fcn-match-row-odd {
+  background-color: #FFFFFF;
+}
+.fcn-match-row:hover {
+  background-color: #FFF1F7;
+}
+
