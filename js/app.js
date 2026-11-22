@@ -212,25 +212,44 @@ window.navigateToAboutSubSection = navigateToAboutSubSection;
 // --------------------------------------------------------------
 // 2. MATCH CENTER (ZÁPASOVÉ CENTRUM V ŠTÝLE FC NITRA)
 // --------------------------------------------------------------
+let activeHomeMatchCategory = "all";
+let activeHomeMatchType = "all";
+
 function initHomeMatchCenter() {
   renderLastMatch();
   renderNextMatch();
   renderMiniLeagueTable();
   renderHomeMatchesGrid();
 
-  // Filter týždenného kalendára zápasov
-  const matchFilterButtons = document.querySelectorAll("[data-match-filter]");
-  matchFilterButtons.forEach(btn => {
+  // 1. Kategória tímu (Všetky tímy / A-tím / Mládež)
+  const catButtons = document.querySelectorAll("[data-match-filter]");
+  catButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      matchFilterButtons.forEach(b => {
+      catButtons.forEach(b => {
         b.classList.remove("btn-fcn-primary", "text-white");
-        b.classList.add("bg-gray-100", "text-slate-700");
+        b.classList.add("text-slate-600");
       });
       btn.classList.add("btn-fcn-primary", "text-white");
-      btn.classList.remove("bg-gray-100", "text-slate-700");
+      btn.classList.remove("text-slate-600");
 
-      const filter = btn.getAttribute("data-match-filter");
-      renderHomeMatchesGrid(filter);
+      activeHomeMatchCategory = btn.getAttribute("data-match-filter") || "all";
+      renderHomeMatchesGrid();
+    });
+  });
+
+  // 2. Typ zápasov (Všetky / Výsledky / Program)
+  const typeButtons = document.querySelectorAll("[data-match-type]");
+  typeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      typeButtons.forEach(b => {
+        b.classList.remove("bg-white", "text-slate-900", "shadow-sm");
+        b.classList.add("text-slate-600");
+      });
+      btn.classList.add("bg-white", "text-slate-900", "shadow-sm");
+      btn.classList.remove("text-slate-600");
+
+      activeHomeMatchType = btn.getAttribute("data-match-type") || "all";
+      renderHomeMatchesGrid();
     });
   });
 }
@@ -384,23 +403,83 @@ function renderMiniLeagueTable() {
   `;
 }
 
-function renderHomeMatchesGrid(filter = "all") {
+function getAllClubMatches() {
+  const all = [];
+  if (currentData.teams) {
+    const teamKeys = ['a-tim', 'u19', 'u15', 'u13', 'u11', 'u9', 'u7'];
+    teamKeys.forEach(teamKey => {
+      const team = currentData.teams[teamKey];
+      if (team && Array.isArray(team.matches)) {
+        team.matches.forEach(m => {
+          all.push({
+            ...m,
+            teamKey: teamKey,
+            teamName: team.name || teamKey.toUpperCase(),
+            competition: team.league || team.badge || ''
+          });
+        });
+      }
+    });
+  }
+  if (all.length === 0 && Array.isArray(currentData.upcomingMatches)) {
+    return currentData.upcomingMatches;
+  }
+  return all;
+}
+
+function parseMatchDateSort(dateStr, timeStr = "14:00") {
+  if (!dateStr) return 0;
+  try {
+    const parts = dateStr.split(".");
+    if (parts.length >= 3) {
+      const day = parts[0].padStart(2, '0');
+      const mon = parts[1].padStart(2, '0');
+      const yr = parts[2].trim();
+      const timeClean = (timeStr || "14:00").replace(":", "").padStart(4, '0');
+      return parseInt(`${yr}${mon}${day}${timeClean}`, 10) || 0;
+    }
+  } catch (e) {}
+  return 0;
+}
+
+function renderHomeMatchesGrid() {
   const container = document.getElementById("home-matches-grid");
   if (!container) return;
 
-  let matches = currentData.upcomingMatches || [];
-  if (filter !== "all") {
-    matches = matches.filter(m => {
-      if (filter === "a-tim") return m.teamKey === "a-tim";
-      if (filter === "mladez") return m.teamKey !== "a-tim";
+  const allMatches = getAllClubMatches();
+  
+  // 1. Filter kategórie (a-tim / mladez / all)
+  let filtered = allMatches;
+  if (activeHomeMatchCategory !== "all") {
+    filtered = filtered.filter(m => {
+      if (activeHomeMatchCategory === "a-tim") return m.teamKey === "a-tim";
+      if (activeHomeMatchCategory === "mladez") return m.teamKey !== "a-tim";
       return true;
     });
   }
 
-  if (matches.length === 0) {
+  // 2. Filter typu zápasov (finished / scheduled / all)
+  if (activeHomeMatchType === "finished") {
+    filtered = filtered.filter(m => m.status === "finished" || (m.score && m.score.trim() !== "" && !m.score.includes("-:-") && m.score !== "-"));
+    // Zoradiť najnovšie odohrané zápasy navrchu
+    filtered.sort((a, b) => parseMatchDateSort(b.date, b.time) - parseMatchDateSort(a.date, a.time));
+  } else if (activeHomeMatchType === "scheduled") {
+    filtered = filtered.filter(m => m.status === "scheduled" || (!m.score || m.score.trim() === "" || m.score === "-" || m.score.includes("-:-")));
+    // Zoradiť najbližšie budúce zápasy navrchu
+    filtered.sort((a, b) => parseMatchDateSort(a.date, a.time) - parseMatchDateSort(b.date, b.time));
+  } else {
+    // Všetky zápasy: zoradíme chronologicky zostupne (najčerstvejšie hore)
+    filtered.sort((a, b) => parseMatchDateSort(b.date, b.time) - parseMatchDateSort(a.date, a.time));
+  }
+
+  // Zobrazíme najviac 15 najrelevantnejších zápasov
+  const displayMatches = filtered.slice(0, 15);
+
+  if (displayMatches.length === 0) {
     container.innerHTML = `
-      <div class="col-span-full text-center py-8 text-slate-400">
-        Pre vybranú kategóriu nie sú na najbližší týždeň naplánované žiadne zápasy.
+      <div class="col-span-full text-center py-12 text-slate-400">
+        <i class="fa-regular fa-futbol text-3xl mb-2 block opacity-40"></i>
+        Pre vybranú kategóriu a filter nie sú k dispozícii žiadne zápasy.
       </div>
     `;
     return;
@@ -408,16 +487,24 @@ function renderHomeMatchesGrid(filter = "all") {
 
   container.innerHTML = `
     <div class="col-span-full bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden divide-y divide-slate-100">
-      ${matches.map((m, idx) => {
+      ${displayMatches.map((m, idx) => {
         const rowBgClass = idx % 2 === 1 ? 'fcn-match-row-even' : 'fcn-match-row-odd';
         const isJuniorHome = (m.homeTeam || '').toLowerCase().includes('junior');
         const isJuniorAway = (m.awayTeam || '').toLowerCase().includes('junior');
+        const isFinished = m.status === 'finished' || (m.score && m.score.trim() !== '' && !m.score.includes('-:-') && m.score !== '-');
 
         return `
           <div class="fcn-match-row flex items-center justify-between py-3.5 px-3 sm:px-6 ${rowBgClass} transition-colors">
-            <!-- Dátum, čas a kategória -->
-            <div class="w-32 sm:w-48 shrink-0">
-              <span class="block text-[10px] font-bold uppercase text-pink-600 tracking-wider truncate">${m.teamName || m.competition || ''}</span>
+            <!-- Dátum, čas a odznak stavu -->
+            <div class="w-36 sm:w-52 shrink-0">
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-bold uppercase text-pink-600 tracking-wider truncate max-w-[120px] sm:max-w-[150px]">${m.teamName || m.competition || ''}</span>
+                ${isFinished ? `
+                  <span class="inline-flex items-center text-[9px] font-black uppercase text-emerald-600 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Výsledok</span>
+                ` : `
+                  <span class="inline-flex items-center text-[9px] font-black uppercase text-pink-600 bg-pink-50 px-1.5 py-0.2 rounded border border-pink-200">Program</span>
+                `}
+              </div>
               <span class="font-bold text-slate-800 text-xs sm:text-sm">${m.date} ${m.time || ''}</span>
             </div>
 
@@ -430,8 +517,8 @@ function renderHomeMatchesGrid(filter = "all") {
             <img src="${m.homeLogo || 'SK_Junior_logo.jpg'}" alt="${m.homeTeam}" class="w-6 h-6 sm:w-7 sm:h-7 object-contain shrink-0 mx-1" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
 
             <!-- Skóre / pomlčka -->
-            <div class="w-8 sm:w-12 text-center font-bold text-slate-700 text-xs sm:text-sm shrink-0">
-              ${m.score ? m.score : '-'}
+            <div class="w-10 sm:w-16 text-center font-bold text-xs sm:text-base shrink-0">
+              ${isFinished ? `<span class="text-[#FF3388] font-black">${m.score}</span>` : `<span class="text-slate-400 font-normal">-</span>`}
             </div>
 
             <!-- Logo hostia -->
@@ -766,7 +853,7 @@ function renderTeamDetail(teamKey) {
         <i class="fa-solid fa-table mr-1.5"></i> Ligová tabuľka
       </button>
       <button onclick="setTeamTab('matches')" id="tab-btn-matches" class="team-tab-btn px-6 py-3 rounded-t-lg text-xs font-bold uppercase tracking-wider transition-colors bg-white text-slate-600 hover:text-slate-900">
-        <i class="fa-solid fa-calendar-days mr-1.5"></i> Najbližšie zápasy (${(team.matches || []).length})
+        <i class="fa-solid fa-futbol mr-1.5"></i> Zápasy (${(team.matches || []).length})
       </button>
       <button onclick="setTeamTab('roster')" id="tab-btn-roster" class="team-tab-btn px-6 py-3 rounded-t-lg text-xs font-bold uppercase tracking-wider transition-colors bg-white text-slate-600 hover:text-slate-900">
         <i class="fa-solid fa-users mr-1.5"></i> Hráčska súpiska (${(team.roster || []).length})
@@ -981,8 +1068,36 @@ function renderTeamTableLayout(team) {
 }
 
 // --------------------------------------------------------------
-// NAJBLIŽŠIE ZÁPASY (PRESNÝ FORMÁT PODĽA VZORU FC NITRA)
+// ZÁPASY KATEGÓRIE (VÝSLEDKY & PROGRAM)
 // --------------------------------------------------------------
+let currentTeamMatchesSubFilter = 'all'; // 'all', 'finished', 'scheduled'
+
+function filterTeamMatchesRows(type) {
+  currentTeamMatchesSubFilter = type;
+  
+  // Tlačidlá
+  document.querySelectorAll(".team-matches-filter-btn").forEach(btn => {
+    const btnType = btn.getAttribute("data-team-match-filter");
+    if (btnType === type) {
+      btn.classList.add("bg-[#FF3388]", "text-white");
+      btn.classList.remove("bg-white", "text-slate-700");
+    } else {
+      btn.classList.remove("bg-[#FF3388]", "text-white");
+      btn.classList.add("bg-white", "text-slate-700");
+    }
+  });
+
+  // Riadky
+  document.querySelectorAll(".team-match-item-row").forEach(row => {
+    const rowStatus = row.getAttribute("data-match-status");
+    if (type === 'all' || rowStatus === type) {
+      row.classList.remove("hidden");
+    } else {
+      row.classList.add("hidden");
+    }
+  });
+}
+
 function renderTeamMatchesLayout(team) {
   const matches = team.matches || [];
 
@@ -990,19 +1105,40 @@ function renderTeamMatchesLayout(team) {
     return `
       <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center space-y-4">
         <h3 class="text-3xl sm:text-4xl font-heading font-black tracking-tight">
-          <span class="text-[#0F172A]">NAJBLIŽŠIE</span> <span class="text-[#FF3388]">ZÁPASY</span>
+          <span class="text-[#0F172A]">ZÁPASY</span> <span class="text-[#FF3388]">KATEGÓRIE</span>
         </h3>
-        <p class="text-sm text-slate-400">Pre tento tím nie sú na najbližšie obdobie naplánované žiadne zápasy.</p>
+        <p class="text-sm text-slate-400">Pre tento tím nie sú v systéme evidované žiadne zápasy.</p>
       </div>
     `;
   }
 
+  const finishedCount = matches.filter(m => m.status === 'finished' || (m.score && m.score.trim() !== '' && !m.score.includes('-:-') && m.score !== '-')).length;
+  const scheduledCount = matches.length - finishedCount;
+
   return `
     <div class="space-y-6">
-      <!-- Nadpis sekcie podľa FC Nitra -->
-      <h3 class="text-3xl sm:text-5xl font-heading font-black tracking-tight">
-        <span class="text-[#0F172A]">NAJBLIŽŠIE</span> <span class="text-[#FF3388]">ZÁPASY</span>
-      </h3>
+      <!-- Nadpis sekcie a filtre výsledkov / programu -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-0.5">Kompletný kalendár súťaže</span>
+          <h3 class="text-3xl sm:text-5xl font-heading font-black tracking-tight">
+            <span class="text-[#0F172A]">ZÁPASY</span> <span class="text-[#FF3388]">${team.name || ''}</span>
+          </h3>
+        </div>
+
+        <!-- Prepínač: Všetky / Výsledky / Program -->
+        <div class="inline-flex rounded-lg bg-slate-100 p-1 text-xs font-bold border border-slate-200 self-start sm:self-auto">
+          <button onclick="filterTeamMatchesRows('all')" data-team-match-filter="all" class="team-matches-filter-btn px-3.5 py-1.5 rounded-md ${currentTeamMatchesSubFilter === 'all' ? 'bg-[#FF3388] text-white' : 'bg-white text-slate-700'} shadow-sm transition">
+            Všetky (${matches.length})
+          </button>
+          <button onclick="filterTeamMatchesRows('finished')" data-team-match-filter="finished" class="team-matches-filter-btn px-3.5 py-1.5 rounded-md ${currentTeamMatchesSubFilter === 'finished' ? 'bg-[#FF3388] text-white' : 'bg-white text-slate-700'} transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Výsledky (${finishedCount})
+          </button>
+          <button onclick="filterTeamMatchesRows('scheduled')" data-team-match-filter="scheduled" class="team-matches-filter-btn px-3.5 py-1.5 rounded-md ${currentTeamMatchesSubFilter === 'scheduled' ? 'bg-[#FF3388] text-white' : 'bg-white text-slate-700'} transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-pink-500"></span> Program (${scheduledCount})
+          </button>
+        </div>
+      </div>
 
       <!-- Zoznam zápasov s pruhovaným pozadím -->
       <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden divide-y divide-slate-100">
@@ -1010,12 +1146,25 @@ function renderTeamMatchesLayout(team) {
           const rowBgClass = idx % 2 === 1 ? 'fcn-match-row-even' : 'fcn-match-row-odd';
           const isJuniorHome = (m.homeTeam || '').toLowerCase().includes('junior');
           const isJuniorAway = (m.awayTeam || '').toLowerCase().includes('junior');
+          const isFinished = m.status === 'finished' || (m.score && m.score.trim() !== '' && !m.score.includes('-:-') && m.score !== '-');
+          const rowStatus = isFinished ? 'finished' : 'scheduled';
+          const isHidden = (currentTeamMatchesSubFilter !== 'all' && currentTeamMatchesSubFilter !== rowStatus) ? 'hidden' : '';
 
           return `
-            <div class="fcn-match-row flex items-center justify-between py-3.5 px-3 sm:px-6 ${rowBgClass} transition-colors">
-              <!-- Dátum a čas -->
-              <div class="w-28 sm:w-44 font-bold text-slate-800 text-xs sm:text-sm shrink-0">
-                ${m.date} ${m.time || ''}
+            <div class="team-match-item-row fcn-match-row flex items-center justify-between py-3.5 px-3 sm:px-6 ${rowBgClass} ${isHidden} transition-colors" data-match-status="${rowStatus}">
+              <!-- Dátum, kolo a stav -->
+              <div class="w-32 sm:w-48 shrink-0">
+                <div class="flex items-center gap-1.5 mb-0.5">
+                  <span class="text-[10px] font-bold uppercase text-pink-600 tracking-wider truncate">${m.round || 'Zápas'}</span>
+                  ${isFinished ? `
+                    <span class="inline-flex items-center text-[9px] font-black uppercase text-emerald-600 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Koniec</span>
+                  ` : `
+                    <span class="inline-flex items-center text-[9px] font-black uppercase text-pink-600 bg-pink-50 px-1.5 py-0.2 rounded border border-pink-200">Plánovaný</span>
+                  `}
+                </div>
+                <div class="font-bold text-slate-800 text-xs sm:text-sm">
+                  ${m.date} ${m.time || ''}
+                </div>
               </div>
 
               <!-- Domáci tím (zarovnaný doprava) -->
@@ -1027,8 +1176,8 @@ function renderTeamMatchesLayout(team) {
               <img src="${m.homeLogo || 'SK_Junior_logo.jpg'}" alt="${m.homeTeam}" class="w-6 h-6 sm:w-7 sm:h-7 object-contain shrink-0 mx-1" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
 
               <!-- Skóre / pomlčka -->
-              <div class="w-8 sm:w-12 text-center font-bold text-slate-700 text-xs sm:text-sm shrink-0">
-                ${m.score ? m.score : '-'}
+              <div class="w-10 sm:w-16 text-center font-bold text-xs sm:text-base shrink-0">
+                ${isFinished ? `<span class="text-[#FF3388] font-black">${m.score}</span>` : `<span class="text-slate-400 font-normal">-</span>`}
               </div>
 
               <!-- Logo hostia -->
@@ -1189,6 +1338,10 @@ function initSportnetModalLogic() {
 // --------------------------------------------------------------
 // 6. GALÉRIA & LIGHTBOX
 // --------------------------------------------------------------
+let currentLightboxAlbum = [];
+let currentLightboxIndex = 0;
+let currentLightboxMeta = { title: '', category: '', date: '' };
+
 function initGallery() {
   renderGallery();
 
@@ -1217,16 +1370,48 @@ function renderGallery() {
     items = items.filter(g => (g.category || '').toLowerCase() === activeGalleryCategory.toLowerCase());
   }
 
-  container.innerHTML = items.map(photo => {
-    const photoSrc = photo.url || photo.image || 'SK_Junior_logo.jpg';
+  if (items.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-full text-center py-12 text-slate-400">
+        <i class="fa-regular fa-images text-4xl mb-2 block opacity-40"></i>
+        Pre túto kategóriu nie sú zatiaľ pridané žiadne fotografie.
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = items.map((item, index) => {
+    const photosList = Array.isArray(item.photos) && item.photos.length > 0
+      ? item.photos
+      : [item.url || item.image || 'SK_Junior_logo.jpg'];
+    const coverSrc = item.image || photosList[0] || 'SK_Junior_logo.jpg';
+    const photoCount = photosList.length;
+
     return `
-      <div class="news-card-white overflow-hidden group relative cursor-pointer" onclick="openLightbox('${photoSrc}', '${photo.title || ''}', '${photo.category || ''}', '${photo.date || ''}')">
-        <div class="h-64 overflow-hidden bg-slate-900">
-          <img src="${photoSrc}" alt="${photo.title || 'Fotografia'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
+      <div class="news-card-white overflow-hidden group relative cursor-pointer" onclick="openAlbumLightbox(${index}, 0)">
+        <div class="h-64 overflow-hidden bg-slate-900 relative">
+          <img src="${coverSrc}" alt="${item.title || 'Fotografia'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
+          
+          <!-- Odznak s počtom fotografií -->
+          <div class="absolute top-3 right-3 bg-[#0F172A]/85 backdrop-blur-sm border border-slate-700 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5">
+            <i class="fa-solid fa-images text-pink-400"></i>
+            <span>${photoCount} ${photoCount === 1 ? 'fotka' : (photoCount < 5 ? 'fotky' : 'fotiek')}</span>
+          </div>
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-xs text-white font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-expand text-pink-400"></i> Otvoriť fotogalériu (${photoCount})
+            </span>
+          </div>
         </div>
+        
         <div class="p-4 bg-white">
-          <span class="text-[11px] font-bold text-[#FF3388] uppercase block mb-1">${photo.category || 'Klub'} • ${photo.date || ''}</span>
-          <h4 class="font-bold text-sm text-slate-800 group-hover:text-[#FF3388] transition-colors">${photo.title || ''}</h4>
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[11px] font-bold text-[#FF3388] uppercase tracking-wider">${item.category || 'Klub'}</span>
+            <span class="text-[11px] text-slate-400 font-semibold">${item.date || ''}</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-800 group-hover:text-[#FF3388] transition-colors leading-snug">${item.title || ''}</h4>
+          ${item.description ? `<p class="text-xs text-slate-500 mt-1 line-clamp-2">${item.description}</p>` : ''}
         </div>
       </div>
     `;
@@ -1235,6 +1420,9 @@ function renderGallery() {
 
 function initLightbox() {
   const modal = document.getElementById("lightbox-modal");
+  const prevBtn = document.getElementById("lightbox-prev");
+  const nextBtn = document.getElementById("lightbox-next");
+
   if (modal) {
     modal.addEventListener("click", (e) => {
       if (e.target === modal || e.target.closest("#lightbox-close")) {
@@ -1242,21 +1430,136 @@ function initLightbox() {
       }
     });
   }
-}
 
-function openLightbox(url, title, category, date) {
-  const modal = document.getElementById("lightbox-modal");
-  const img = document.getElementById("lightbox-img");
-  const caption = document.getElementById("lightbox-caption");
-  if (!modal || !img) return;
-
-  img.src = url;
-  if (caption) {
-    caption.innerHTML = `<span class="text-pink-400 font-bold">${category}</span> — ${title} ${date ? `(${date})` : ''}`;
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      prevLightboxPhoto();
+    });
   }
 
-  modal.classList.remove("hidden");
-  document.body.classList.add("overflow-hidden");
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nextLightboxPhoto();
+    });
+  }
+
+  // Klávesová navigácia: Esc na zatvorenie, šípky doľava / doprava na prepínanie fotiek
+  window.addEventListener("keydown", (e) => {
+    const modalEl = document.getElementById("lightbox-modal");
+    if (!modalEl || modalEl.classList.contains("hidden")) return;
+
+    if (e.key === "Escape") {
+      closeLightbox();
+    } else if (e.key === "ArrowLeft") {
+      prevLightboxPhoto();
+    } else if (e.key === "ArrowRight") {
+      nextLightboxPhoto();
+    }
+  });
+
+  // Podpora gest na dotykových zariadeniach (Swipe na mobile)
+  let touchStartX = 0;
+  if (modal) {
+    modal.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) {
+        prevLightboxPhoto(); // potiahnutie doprava -> predchádzajúca
+      } else if (touchStartX - touchEndX > 50) {
+        nextLightboxPhoto(); // potiahnutie doľava -> nasledujúca
+      }
+    }, { passive: true });
+  }
+}
+
+function openAlbumLightbox(albumIndex, photoIndex = 0) {
+  let items = currentData.gallery || [];
+  if (activeGalleryCategory !== "all") {
+    items = items.filter(g => (g.category || '').toLowerCase() === activeGalleryCategory.toLowerCase());
+  }
+
+  const album = items[albumIndex];
+  if (!album) return;
+
+  const photos = Array.isArray(album.photos) && album.photos.length > 0
+    ? album.photos
+    : [album.url || album.image || 'SK_Junior_logo.jpg'];
+
+  currentLightboxAlbum = photos;
+  currentLightboxIndex = photoIndex >= 0 && photoIndex < photos.length ? photoIndex : 0;
+  currentLightboxMeta = {
+    title: album.title || '',
+    category: album.category || 'Klub',
+    date: album.date || ''
+  };
+
+  updateLightboxView();
+
+  const modal = document.getElementById("lightbox-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+}
+
+function updateLightboxView() {
+  const img = document.getElementById("lightbox-img");
+  const caption = document.getElementById("lightbox-caption");
+  const counter = document.getElementById("lightbox-counter");
+  const prevBtn = document.getElementById("lightbox-prev");
+  const nextBtn = document.getElementById("lightbox-next");
+
+  if (!img) return;
+
+  const currentPhoto = currentLightboxAlbum[currentLightboxIndex] || 'SK_Junior_logo.jpg';
+  img.src = currentPhoto;
+
+  if (caption) {
+    caption.innerHTML = `<span class="text-pink-400 font-bold">${currentLightboxMeta.category}</span> — ${currentLightboxMeta.title} ${currentLightboxMeta.date ? `(${currentLightboxMeta.date})` : ''}`;
+  }
+
+  if (counter) {
+    if (currentLightboxAlbum.length > 1) {
+      counter.innerHTML = `Fotografia <span class="text-white font-bold text-sm">${currentLightboxIndex + 1}</span> z <span class="text-white font-bold text-sm">${currentLightboxAlbum.length}</span>`;
+      if (prevBtn) prevBtn.classList.remove("hidden");
+      if (nextBtn) nextBtn.classList.remove("hidden");
+    } else {
+      counter.innerHTML = '';
+      if (prevBtn) prevBtn.classList.add("hidden");
+      if (nextBtn) nextBtn.classList.add("hidden");
+    }
+  }
+}
+
+function nextLightboxPhoto() {
+  if (currentLightboxAlbum.length <= 1) return;
+  currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxAlbum.length;
+  updateLightboxView();
+}
+
+function prevLightboxPhoto() {
+  if (currentLightboxAlbum.length <= 1) return;
+  currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxAlbum.length) % currentLightboxAlbum.length;
+  updateLightboxView();
+}
+
+// Spätná kompatibilita pre staré volania openLightbox
+function openLightbox(url, title, category, date) {
+  currentLightboxAlbum = [url || 'SK_Junior_logo.jpg'];
+  currentLightboxIndex = 0;
+  currentLightboxMeta = { title: title || '', category: category || 'Klub', date: date || '' };
+  updateLightboxView();
+
+  const modal = document.getElementById("lightbox-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
 }
 
 function closeLightbox() {

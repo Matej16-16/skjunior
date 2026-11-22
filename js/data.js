@@ -241,7 +241,7 @@ const CLUB_DATA = {
         { pos: 3, team: "FK Veča", logo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", p: 12, w: 9, d: 0, l: 3, score: "46:21", pts: 27, isCurrent: false },
         { pos: 4, team: "Futbalový klub FC 31 Jarok", logo: "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo", p: 12, w: 8, d: 1, l: 3, score: "37:20", pts: 25, isCurrent: false },
         { pos: 5, team: "OFK Golianovo", logo: "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo", p: 12, w: 7, d: 1, l: 4, score: "39:23", pts: 22, isCurrent: false },
-        { pos: 6, team: "TJ Družstevník Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", p: 12, w: 6, d: 3, l: 3, score: "26:22", pts: 21, isCurrent: true },
+        { pos: 6, team: "TJ Družstevník Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", p: 12, w: 6, d: 3, l: 3, score: "26:22", pts: 21, isCurrent: false },
         { pos: 7, team: "FC Cabaj-Čápor", logo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo", p: 12, w: 5, d: 0, l: 7, score: "27:35", pts: 15, isCurrent: false },
         { pos: 8, team: "OFK Branč", logo: "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo", p: 12, w: 4, d: 2, l: 6, score: "29:29", pts: 14, isCurrent: false },
         { pos: 9, team: "TJ Nové Sady", logo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", p: 12, w: 4, d: 2, l: 6, score: "27:39", pts: 14, isCurrent: false },
@@ -266,7 +266,7 @@ const CLUB_DATA = {
         { id: "m-a-tim-49ff8eb5", round: "17. kolo", date: "11.04.2027", time: "15:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK DYNAMO Trnovec nad Váhom", awayLogo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
         { id: "m-a-tim-49ff9214", round: "18. kolo", date: "18.04.2027", time: "16:00", homeTeam: "ŠK Rumanová", homeLogo: "https://api.sportnet.online/data/ppo/sk-rumanova.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
         { id: "m-a-tim-49ff9271", round: "19. kolo", date: "25.04.2027", time: "16:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Lužianky", awayLogo: "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff9122", round: "20. kolo", date: "02.05.2027", time: "16:30", homeTeam: "TJ Družstevník Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
+        { id: "m-a-tim-49ff9122", round: "20. kolo", date: "02.05.2027", time: "16:30", homeTeam: "TJ Družstevník Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
         { id: "m-a-tim-49ff9462", round: "21. kolo", date: "09.05.2027", time: "16:30", homeTeam: "TJ Nové Sady", homeLogo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
       ],
       roster: [
@@ -526,12 +526,12 @@ const CLUB_DATA = {
         { pos: 37, team: "OFK Hosťovce", logo: "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo", p: 16, w: 1, d: 2, l: 13, score: "15:88", pts: 5, isCurrent: false },
         { pos: 38, team: "ŠK Nitra-Dolné Krškany", logo: "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo", p: 20, w: 1, d: 1, l: 18, score: "19:105", pts: 4, isCurrent: false },
         { pos: 39, team: "OFK Sľažany", logo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", p: 20, w: 1, d: 1, l: 18, score: "11:103", pts: 4, isCurrent: false },
-        { pos: 40, team: "TJ Družstevník Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", p: 16, w: 1, d: 0, l: 15, score: "9:75", pts: 3, isCurrent: true },
+        { pos: 40, team: "TJ Družstevník Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", p: 16, w: 1, d: 0, l: 15, score: "9:75", pts: 3, isCurrent: false },
         { pos: 41, team: "OFK Lužianky", logo: "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo", p: 0, w: 0, d: 0, l: 0, score: "0:0", pts: 0, isCurrent: false },
         { pos: 42, team: "OFK Čifáre", logo: "https://api.sportnet.online/data/ppo/ofk-cifare.futbalnet.sk/logo", p: 11, w: 0, d: 0, l: 11, score: "7:106", pts: 0, isCurrent: false }
       ],
       matches: [
-        { id: "m-u11-f02d30d3", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "TJ Družstevník Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "1 : 7", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
+        { id: "m-u11-f02d30d3", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "TJ Družstevník Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "1 : 7", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
         { id: "m-u11-f02fd784", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "FK Nitra B", homeLogo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "3 : 0", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
         { id: "m-u11-f02e3d4c", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "FK DYNAMO Trnovec nad Váhom", homeLogo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "0 : 4", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
         { id: "m-u11-f02ae4eb", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Čakajovce", awayLogo: "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo", score: "1 : 5", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
@@ -691,11 +691,49 @@ const CLUB_DATA = {
     }
   ],
 
-  // 8. FOTOGALÉRIA
+  // 8. FOTOGALÉRIA (S PODPOROU CELÝCH ALBUMOV A 30+ FOTOGRAFIÍ)
   gallery: [
-    { title: "Jesenný turnaj prípraviek U11 a U9", category: "Turnaje", date: "24.10.2026", image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800", url: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200", caption: "Úspešné vystúpenie našich najmenších nádejí" },
-    { title: "Tréningový kemp mládeže v areáli ŠK Junior", category: "Tréningy", date: "15.09.2026", image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800", url: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200", caption: "Zlepšovanie herných činností jednotlivca" },
-    { title: "Majstrovský zápas dorastu U19", category: "Zápasy", date: "18.10.2026", image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800", url: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200", caption: "Boj o dôležité body v IV. lige ZsFZ" }
+    {
+      id: "alb-01",
+      title: "Jesenný turnaj prípraviek U11 a U9 v Ivanke pri Nitre",
+      category: "Mládež",
+      date: "24.10.2026",
+      image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
+      description: "Kompletný fotoreport z vydareného turnaja našich nádejí.",
+      photos: [
+        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
+        "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1200",
+        "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200",
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
+      ]
+    },
+    {
+      id: "alb-02",
+      title: "Zápas dorastu U19 a ligové momenty",
+      category: "Zápasy",
+      date: "15.11.2026",
+      image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800",
+      description: "Zábery z ligového zápasu a tímových akcií.",
+      photos: [
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
+        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200"
+      ]
+    },
+    {
+      id: "alb-03",
+      title: "Tréningový kemp a areál ŠK Junior",
+      category: "Klub",
+      date: "15.09.2026",
+      image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
+      description: "Tréningy všetkých kategórií a život v areáli klubu.",
+      photos: [
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
+      ]
+    }
   ],
 
   // 9. SPONZORI A PARTNERI
@@ -707,7 +745,7 @@ const CLUB_DATA = {
   ],
 
   // 10. METADÁTA PRE AUTOMATICKÚ SYNCHRONIZÁCIU
-  dataVersion: 60,
+  dataVersion: 70,
   lastSyncTimestamp: Date.now()
 };
 

@@ -46,7 +46,7 @@ const SportnetService = {
           l: parseInt(singleLineMatch[6]),
           score: singleLineMatch[7],
           pts: parseInt(singleLineMatch[8]),
-          isCurrent: teamName.toLowerCase().includes("junior") || teamName.toLowerCase().includes("ivanka")
+          isCurrent: teamName.toLowerCase().includes("junior")
         });
         continue;
       }
@@ -72,7 +72,7 @@ const SportnetService = {
             l,
             score,
             pts,
-            isCurrent: team.toLowerCase().includes("junior") || team.toLowerCase().includes("ivanka")
+            isCurrent: team.toLowerCase().includes("junior")
           });
           i += 7;
         }
@@ -111,7 +111,7 @@ const SportnetService = {
           homeTeam,
           awayTeam,
           score,
-          isHome: homeTeam.toLowerCase().includes("junior") || homeTeam.toLowerCase().includes("ivanka"),
+          isHome: homeTeam.toLowerCase().includes("junior"),
           venue: homeTeam.toLowerCase().includes("junior") ? "Areál ŠK Junior Ivanka pri Nitre" : `Ihrisko ${homeTeam}`,
           status: score && score.includes(":") && !score.includes("-:-") ? "finished" : "scheduled"
         });
@@ -160,7 +160,7 @@ const SportnetService = {
             l,
             score,
             pts,
-            isCurrent: team.toLowerCase().includes("junior") || team.toLowerCase().includes("ivanka")
+            isCurrent: team.toLowerCase().includes("junior")
           });
         }
       }

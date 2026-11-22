@@ -702,57 +702,99 @@ function deleteArticleFromAdmin(index) {
 }
 
 // --------------------------------------------------------------
-// 6. FOTOGALÉRIA
+// 6. FOTOGALÉRIA & ALBUMY
 // --------------------------------------------------------------
 function renderAdminGalleryList() {
   const container = document.getElementById("admin-gallery-list");
   if (!container) return;
 
   const gallery = currentData.gallery || [];
-  container.innerHTML = gallery.map((item, idx) => `
-    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm relative group">
-      <img src="${item.url}" alt="${item.title}" class="w-full h-36 object-cover" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
-      <div class="p-3">
-        <span class="text-[10px] font-bold text-pink-600 uppercase">${item.category}</span>
-        <h5 class="font-bold text-xs text-slate-800 truncate">${item.title}</h5>
+  container.innerHTML = gallery.map((item, idx) => {
+    const photosList = Array.isArray(item.photos) && item.photos.length > 0
+      ? item.photos
+      : [item.url || item.image || 'SK_Junior_logo.jpg'];
+    const coverSrc = item.image || photosList[0] || 'SK_Junior_logo.jpg';
+    const photoCount = photosList.length;
+
+    return `
+      <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm relative group">
+        <div class="relative h-36 bg-slate-900">
+          <img src="${coverSrc}" alt="${item.title}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
+          <span class="absolute top-2 left-2 bg-[#0F172A]/85 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow flex items-center gap-1">
+            <i class="fa-solid fa-images text-pink-400"></i> ${photoCount} ${photoCount === 1 ? 'fotka' : (photoCount < 5 ? 'fotky' : 'fotiek')}
+          </span>
+        </div>
+        <div class="p-3">
+          <div class="flex items-center justify-between text-[10px] mb-0.5">
+            <span class="font-bold text-pink-600 uppercase">${item.category || 'Klub'}</span>
+            <span class="text-slate-400 font-semibold">${item.date || ''}</span>
+          </div>
+          <h5 class="font-bold text-xs text-slate-800 truncate" title="${item.title}">${item.title}</h5>
+        </div>
+        <button onclick="deletePhotoFromAdmin(${idx})" class="absolute top-2 right-2 bg-black/70 hover:bg-red-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition" title="Zmazať album / fotku">
+          <i class="fa-solid fa-trash-can text-xs"></i>
+        </button>
       </div>
-      <button onclick="deletePhotoFromAdmin(${idx})" class="absolute top-2 right-2 bg-black/70 hover:bg-red-600 text-white w-7 h-7 rounded-full flex items-center justify-center transition" title="Zmazať fotku">
-        <i class="fa-solid fa-trash-can text-xs"></i>
-      </button>
-    </div>
-  `).join("");
+    `;
+  }).join("");
 }
 
 function addPhotoFromAdmin() {
   const title = document.getElementById("gal-title").value.trim();
   const category = document.getElementById("gal-category").value;
-  const url = document.getElementById("gal-url").value.trim();
-  const date = document.getElementById("gal-date").value.trim() || "Aktuálne";
+  const coverUrl = document.getElementById("gal-url").value.trim();
+  const date = document.getElementById("gal-date").value.trim() || new Date().toLocaleDateString('sk-SK');
+  const desc = (document.getElementById("gal-desc") ? document.getElementById("gal-desc").value.trim() : "");
+  const multipleUrlsText = (document.getElementById("gal-photos-urls") ? document.getElementById("gal-photos-urls").value.trim() : "");
 
-  if (!title || !url) {
-    alert("Vyplňte prosím názov a URL adresu fotografie.");
+  if (!title) {
+    alert("Zadajte prosím názov momentu alebo akcie.");
+    return;
+  }
+
+  // Zhromaždíme všetky fotky
+  let photos = [];
+  if (coverUrl) {
+    photos.push(coverUrl);
+  }
+
+  if (multipleUrlsText) {
+    const lines = multipleUrlsText.split("\n").map(l => l.trim()).filter(l => l.length > 0);
+    lines.forEach(l => {
+      if (!photos.includes(l)) photos.push(l);
+    });
+  }
+
+  if (photos.length === 0) {
+    alert("Vyberte prosím aspoň titulnú fotografiu alebo vložte URL adresu fotografie.");
     return;
   }
 
   if (!currentData.gallery) currentData.gallery = [];
   currentData.gallery.unshift({
-    id: "gal-" + Date.now(),
+    id: "alb-" + Date.now(),
     title,
     category,
-    url,
-    date
+    date,
+    description: desc,
+    image: photos[0],
+    url: photos[0],
+    photos: photos
   });
 
   saveClubData(currentData);
   renderAdminGalleryList();
 
   document.getElementById("gal-title").value = "";
+  if (document.getElementById("gal-desc")) document.getElementById("gal-desc").value = "";
+  if (document.getElementById("gal-photos-urls")) document.getElementById("gal-photos-urls").value = "";
   clearGalleryImageInput();
-  alert("Fotografia bola úspešne pridaná do galérie!");
+
+  alert(`Úspech! Album / moment s ${photos.length} fotografiami bol úspešne pridaný!`);
 }
 
 function deletePhotoFromAdmin(index) {
-  if (confirm("Naozaj chcete odstrániť túto fotografiu?")) {
+  if (confirm("Naozaj chcete odstrániť túto položku z fotogalérie?")) {
     currentData.gallery.splice(index, 1);
     saveClubData(currentData);
     renderAdminGalleryList();
