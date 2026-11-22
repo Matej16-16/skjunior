@@ -129,6 +129,16 @@
               </div>
             </div>
           </div>
+
+          <!-- Sociálne siete priamo v hlavnej lište navigácie -->
+          <div class="flex items-center gap-1.5 pl-3 ml-1 border-l border-slate-700/80">
+            <a href="https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800/90 hover:bg-[#FF3388] text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 border border-slate-700/60 shadow-sm" title="Facebook ŠK Junior">
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+            <a href="https://www.instagram.com/skjunior_ivanka/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800/90 hover:bg-[#FF3388] text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 border border-slate-700/60 shadow-sm" title="Instagram ŠK Junior">
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </a>
+          </div>
         </nav>
 
         <!-- Pravý roh: E-SHOP tlačidlo s "UŽ ČOSKORO" hláškou -->
@@ -167,7 +177,18 @@
           <button onclick="navigateToAboutSubSection('kontakty')" class="block py-1 text-slate-300 hover:text-pink-400">Kontakty a údaje</button>
         </div>
       </div>
-      <div class="pt-3">
+      <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+        <span class="text-xs text-slate-400 font-semibold">Sledujte ŠK Junior:</span>
+        <div class="flex items-center gap-2">
+          <a href="https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 text-pink-400 hover:bg-[#FF3388] hover:text-white flex items-center justify-center transition border border-slate-700">
+            <i class="fa-brands fa-facebook-f text-xs"></i>
+          </a>
+          <a href="https://www.instagram.com/skjunior_ivanka/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 text-pink-400 hover:bg-[#FF3388] hover:text-white flex items-center justify-center transition border border-slate-700">
+            <i class="fa-brands fa-instagram text-xs"></i>
+          </a>
+        </div>
+      </div>
+      <div class="pt-2">
         <button class="eshop-trigger w-full btn-fcn-primary py-2.5 text-xs">
           <i class="fa-solid fa-cart-shopping mr-1.5"></i> Klubový Fanshop (Už čoskoro)
         </button>
@@ -243,25 +264,39 @@
         </div>
       </div>
 
-      <!-- ROZPIS ZÁPASOV NA NAJBLIŽŠÍ TÝŽDEŇ PRE VŠETKY KATEGÓRIE -->
+      <!-- ZÁPASY ŠK JUNIOR - VÝSLEDKY & PROGRAM PRE VŠETKY KATEGÓRIE -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div class="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-slate-200">
           
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-pink-600 block mb-1">
-                Kalendár všetkých kategórií
+                Zápasové centrum klubu
               </span>
               <h3 class="text-2xl sm:text-3xl font-heading font-black text-slate-900">
-                Rozpis zápasov na najbližší týždeň
+                Zápasy ŠK Junior
               </h3>
             </div>
 
-            <!-- Filtre -->
-            <div class="flex items-center gap-2">
-              <button data-match-filter="all" class="btn-fcn-primary text-xs px-3.5 py-1.5 font-bold">Všetky</button>
-              <button data-match-filter="a-tim" class="bg-gray-100 hover:bg-gray-200 text-slate-700 text-xs px-3.5 py-1.5 font-bold rounded">A-tím</button>
-              <button data-match-filter="mladez" class="bg-gray-100 hover:bg-gray-200 text-slate-700 text-xs px-3.5 py-1.5 font-bold rounded">Mládež</button>
+            <!-- Filtre: Typ zápasov (Všetky / Výsledky / Program) + Kategórie -->
+            <div class="flex flex-wrap items-center gap-2.5">
+              <!-- Typ zápasov -->
+              <div class="inline-flex rounded-lg bg-slate-100 p-1 text-xs font-bold border border-slate-200">
+                <button data-match-type="all" class="home-type-btn px-3 py-1.5 rounded-md bg-white text-slate-900 shadow-sm transition">Všetky</button>
+                <button data-match-type="finished" class="home-type-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Výsledky
+                </button>
+                <button data-match-type="scheduled" class="home-type-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-[#FF3388]"></span> Program
+                </button>
+              </div>
+
+              <!-- Kategória tímu -->
+              <div class="inline-flex rounded-lg bg-slate-100 p-1 text-xs font-bold border border-slate-200">
+                <button data-match-filter="all" class="home-cat-btn btn-fcn-primary px-3 py-1.5 rounded-md text-white">Všetky tímy</button>
+                <button data-match-filter="a-tim" class="home-cat-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900">A-tím</button>
+                <button data-match-filter="mladez" class="home-cat-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900">Mládež</button>
+              </div>
             </div>
           </div>
 
@@ -640,16 +675,33 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- MODÁL: LIGHTBOX FOTOGALÉRIE                                   -->
+  <!-- MODÁL: LIGHTBOX FOTOGALÉRIE S PODPOROU CELÝCH ALBUMOV (30+ FOTIEK) -->
   <!-- ============================================================== -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-black/95 backdrop-blur-md hidden">
-    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-pink-400 text-2xl z-10">
+  <div id="lightbox-modal" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-black/95 backdrop-blur-md hidden select-none">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-pink-400 text-2xl z-20 w-11 h-11 flex items-center justify-center rounded-full bg-slate-900/80 hover:bg-pink-600 transition shadow-lg" title="Zatvoriť (Esc)">
       <i class="fa-solid fa-xmark"></i>
     </button>
-    <div class="max-w-5xl max-h-[80vh] flex items-center justify-center overflow-hidden">
-      <img id="lightbox-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Zväčšená fotografia" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
+
+    <!-- Navigačná šípka vľavo -->
+    <button id="lightbox-prev" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 text-white hover:text-pink-300 text-2xl z-20 w-12 h-12 flex items-center justify-center rounded-full bg-slate-900/80 hover:bg-[#FF3388] transition shadow-2xl border border-slate-700/60" title="Predchádzajúca fotka (Šípka vľavo)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- Hlavný zväčšený obrázok -->
+    <div class="max-w-5xl max-h-[78vh] flex items-center justify-center overflow-hidden relative">
+      <img id="lightbox-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Zväčšená fotografia" class="max-w-full max-h-[78vh] object-contain rounded-lg shadow-2xl transition-all duration-200">
     </div>
-    <div id="lightbox-caption" class="text-sm text-slate-300 mt-4 text-center"></div>
+
+    <!-- Navigačná šípka vpravo -->
+    <button id="lightbox-next" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 text-white hover:text-pink-300 text-2xl z-20 w-12 h-12 flex items-center justify-center rounded-full bg-slate-900/80 hover:bg-[#FF3388] transition shadow-2xl border border-slate-700/60" title="Nasledujúca fotka (Šípka vpravo)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Popis, kategória a počítadlo fotografií -->
+    <div class="mt-4 text-center z-10 space-y-1 max-w-2xl px-4">
+      <div id="lightbox-caption" class="text-sm font-semibold text-slate-200"></div>
+      <div id="lightbox-counter" class="text-xs text-pink-400 font-mono font-bold tracking-wider"></div>
+    </div>
   </div>
 
   <!-- ============================================================== -->
