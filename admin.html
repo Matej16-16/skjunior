@@ -109,6 +109,10 @@
             <i class="fa-solid fa-arrow-up-right-from-square text-pink-400"></i>
             <span>Zobraziť web</span>
           </a>
+          <button onclick="downloadCustomDataJson()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow transition" title="Stiahnuť konfiguráciu vedenia a sponzorov">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Záloha club_custom_data</span>
+          </button>
           <button onclick="downloadUpdatedDataJs()" class="btn-pink px-4 py-2 rounded-lg font-bold flex items-center gap-1.5 shadow">
             <i class="fa-solid fa-download"></i>
             <span>Stiahnuť data.js</span>
@@ -961,7 +965,23 @@
           <p class="text-xs text-slate-500">Zmeny vykonané v tejto administrácii sa okamžite prejavia na webe. Pre trvalé nasadenie na hosting si stiahnite data.js.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="admin-card p-6 flex flex-col justify-between border-2 border-emerald-500 bg-emerald-50/20 shadow-md">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-3">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="flex items-center gap-2 mb-1">
+                <h3 class="text-lg font-bold text-slate-900">club_custom_data.json</h3>
+                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">Ochrana</span>
+              </div>
+              <p class="text-xs text-slate-500 mb-4">Chráni <strong>Vedenie klubu</strong>, <strong>Sponzorov</strong> a <strong>Články</strong> pred prepísaním týždennou synchronizáciou zápasov. Uložte ho do hlavného priečinka webu.</p>
+            </div>
+            <button onclick="downloadCustomDataJson()" class="bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-download"></i> Stiahnuť club_custom_data.json
+            </button>
+          </div>
+
           <div class="admin-card p-6 flex flex-col justify-between">
             <div>
               <div class="w-12 h-12 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl mb-3">

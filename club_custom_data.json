@@ -1,0 +1,191 @@
+{
+  "clubInfo": {
+    "fullName": "ŠK Junior Ivanka pri Nitre",
+    "name": "ŠK Junior Ivanka pri Nitre",
+    "shortName": "ŠK Junior",
+    "code": "JUN",
+    "founded": 2020,
+    "motto": "Výchova talentov, športový duch a radosť z futbalu",
+    "address": {
+      "street": "Novozámocká (Futbalový areál)",
+      "city": "951 12 Ivanka pri Nitre",
+      "stadium": "Futbalový areál ŠK Junior, Ivanka pri Nitre",
+      "capacity": 500
+    },
+    "contact": {
+      "email": "skjuniorivanka@gmail.com",
+      "phone": "+421 910 907 795"
+    },
+    "contacts": {
+      "email": "skjuniorivanka@gmail.com",
+      "phone": "+421 910 907 795",
+      "facebook": "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
+      "instagram": "https://www.instagram.com/skjunior_ivanka/",
+      "youtube": "https://youtube.com"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
+      "instagram": "https://www.instagram.com/skjunior_ivanka/"
+    },
+    "billing": {
+      "ico": "53316711",
+      "dic": "2121345678",
+      "bank": "Všeobecná úverová banka, a.s.",
+      "iban": "SK31 0200 0000 0043 6564 7155"
+    }
+  },
+  "management": [
+    {
+      "name": "Ing. Marián Varga",
+      "role": "Prezident klubu",
+      "phone": "+421 910 907 795",
+      "email": "prezident@skjuniorivanka.sk",
+      "bio": "Zakladateľ a štatutárny zástupca klubu, zodpovedný za strategický rozvoj, infraštruktúru a partnerstvá."
+    },
+    {
+      "name": "Mgr. Peter Novák",
+      "role": "Športový riaditeľ",
+      "phone": "+421 905 123 456",
+      "email": "sport@skjuniorivanka.sk",
+      "bio": "Zodpovedný za športovú koncepciu, metodiku tréningového procesu a prestupy hráčov."
+    },
+    {
+      "name": "Jozef Kováč",
+      "role": "Koordinátor mládeže",
+      "phone": "+421 903 987 654",
+      "email": "mladez@skjuniorivanka.sk",
+      "bio": "Dohliada na fungovanie mládežníckych kategórií U7 až U15 a komunikáciu s rodičmi."
+    },
+    {
+      "name": "František Tóth",
+      "role": "Hospodár & správca areálu",
+      "phone": "+421 911 234 567",
+      "email": "areal@skjuniorivanka.sk",
+      "bio": "Zabezpečuje technický stav ihrísk, zázemie pre zápasy a materiálne vybavenie tímov."
+    }
+  ],
+  "historyTimeline": [
+    {
+      "year": "2020",
+      "title": "Založenie ŠK Junior Ivanka pri Nitre",
+      "text": "Vznik futbalového klubu so zameraním na systematickú výchovu mladých talentov a vytvorenie moderného športového zázemia."
+    },
+    {
+      "year": "2021",
+      "title": "Otvorenie futbalovej školičky a prípraviek",
+      "text": "Prvý nábor detí a prihlásenie prvých mládežníckych tímov do oficiálnych súťaží ObFZ Nitra."
+    },
+    {
+      "year": "2023",
+      "title": "Postup žiakov do krajskej súťaže ZsFZ",
+      "text": "Kategórie U15 a U13 postúpili do III. ligy ZsFZ a zaradili sa medzi popredné mládežnícke akadémie v regióne."
+    },
+    {
+      "year": "2025",
+      "title": "Vytvorenie seniorského tímu a modernizácia areálu",
+      "text": "Klub zastrešil kompletnú pyramídu tímov od školičky až po dospelých s cieľom dať odchovancom priestor v domácom klube."
+    }
+  ],
+  "sponsors": [
+    {
+      "name": "Obec Ivanka pri Nitre",
+      "logo": "SK_Junior_logo.jpg",
+      "tier": "Generálny partner",
+      "url": "https://ivankaprinitre.sk",
+      "desc": "Podpora športovania detí a rozvoja futbalového areálu"
+    },
+    {
+      "name": "Macron Slovensko",
+      "logo": "SK_Junior_logo.jpg",
+      "tier": "Hlavný športový partner",
+      "url": "https://macron.sk",
+      "desc": "Oficiálny dodávateľ dresov a športového vybavenia"
+    },
+    {
+      "name": "Nitriansky samosprávny kraj",
+      "logo": "SK_Junior_logo.jpg",
+      "tier": "Partner mládeže",
+      "url": "https://unsk.sk",
+      "desc": "Podpora mládežníckych projektov a turnajov"
+    },
+    {
+      "name": "Západoslovenský futbalový zväz",
+      "logo": "SK_Junior_logo.jpg",
+      "tier": "Oficiálny partner",
+      "url": "https://zsfz.sk",
+      "desc": "Zastrešenie krajských majstrovských súťaží"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art-01",
+      "title": "Historická jesenná časť ŠK Junior: Naše tímy bojujú o popredné priečky",
+      "summary": "Hodnotenie prvej polovice sezóny 2026/2027 vo všetkých kategóriách od dospelých až po prípravky. Prehľad úspechov, strelcov a plán zimnej prípravy.",
+      "date": "08.11.2026",
+      "category": "A-tím",
+      "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
+      "content": "Jesenná časť súťažného ročníka 2026/2027 sa nezmazateľne zapíše do kroniky ŠK Junior Ivanka pri Nitre. Seniorský A-tím v VIII. A lige Macron ukázal obrovskú bojovnosť, zatiaľ čo mládežnícke kategórie potvrdili stabilitu v krajských aj oblastných súťažiach.\n\nPrezident klubu Marián Varga zhodnotil uplynulé mesiace: 'Naším hlavným cieľom bolo priniesť do Ivanky radosť z futbalu a dať šancu mladým hráčom. Výsledky ukazujú, že nastavená koncepcia systematickej práce s mládežou prináša ovocie.'"
+    },
+    {
+      "id": "art-02",
+      "title": "Mládežnícka akadémia ŠK Junior opäť potvrdila kvalitu v III. lige",
+      "summary": "Kategórie U15 a U13 zvládli náročné kolá krajskej súťaže a udržiavajú sa v popredí tabuľky.",
+      "date": "02.11.2026",
+      "category": "Mládež",
+      "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
+      "content": "Starší žiaci U15 pod vedením Jozefa Kováča predviedli dominantnú hru založenú na presnej kombinácii a vysokej aktivite bez lopty. Mladší žiaci U13 nadviazali skvelým tímovým výkonom. Akadémia tak pokračuje v napĺňaní svojej vízie rozvoja moderného a dynamického futbalu."
+    },
+    {
+      "id": "art-03",
+      "title": "Nábor do futbalovej školičky U7 a prípravky prebieha celoročne",
+      "summary": "Hľadáme nové talenty! Privítame chlapcov a dievčatá ročníkov 2018 až 2021 so záujmom o šport a pohyb.",
+      "date": "25.10.2026",
+      "category": "Klub",
+      "image": "SK_Junior_logo.jpg",
+      "content": "Futbalový klub ŠK Junior Ivanka pri Nitre srdečne pozýva všetky deti na ukážkové tréningy futbalovej školičky. Naším cieľom nie je len výchova futbalistov, ale predovšetkým budovanie lásky k pohybu, disciplíny a kamarátstiev na celý život. Tréningy prebiehajú pod vedením kvalifikovaných trénerov a pedagógov."
+    }
+  ],
+  "gallery": [
+    {
+      "id": "alb-01",
+      "title": "Jesenný turnaj prípraviek U11 a U9 v Ivanke pri Nitre",
+      "category": "Mládež",
+      "date": "24.10.2026",
+      "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
+      "description": "Kompletný fotoreport z vydareného turnaja našich nádejí.",
+      "photos": [
+        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
+        "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1200",
+        "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200",
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
+      ]
+    },
+    {
+      "id": "alb-02",
+      "title": "Zápas dorastu U19 a ligové momenty",
+      "category": "Zápasy",
+      "date": "15.11.2026",
+      "image": "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800",
+      "description": "Zábery z ligového zápasu a tímových akcií.",
+      "photos": [
+        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
+        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200"
+      ]
+    },
+    {
+      "id": "alb-03",
+      "title": "Tréningový kemp a areál ŠK Junior",
+      "category": "Klub",
+      "date": "15.09.2026",
+      "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
+      "description": "Tréningy všetkých kategórií a život v areáli klubu.",
+      "photos": [
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
+        "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
+      ]
+    }
+  ]
+}

@@ -58,7 +58,8 @@ foreach ($tm in $teamsMeta) {
       foreach ($row in $arrTab) {
         $teamName = $row.name
         $logoSrc = if ($row.logo -and $row.logo.src) { $row.logo.src } else { "SK_Junior_logo.jpg" }
-        $isJunior = $teamName.ToLower().Contains("junior") -or $teamName.ToLower().Contains("ivanka")
+        # Zvýrazňujeme IBA ŠK Junior, NIKDY nie TJ Družstevník Ivanka pri Nitre!
+        $isJunior = $teamName.ToLower().Contains("junior")
         $parsedTable += @{
           pos = $pos++
           team = $teamName
@@ -77,55 +78,80 @@ foreach ($tm in $teamsMeta) {
     Write-Output "Chyba tabuľky pre $k`: $($_.Exception.Message)"
   }
 
-  # 2. Program zápasov
-  $progUrl = "https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/tim/$slug/program/"
+  # 2. Výsledky (odohrané zápasy) a program (plánované zápasy)
   $parsedMatches = @()
-  try {
-    $progHtml = $wc.DownloadString($progUrl)
-    $arrMatches = ExtractArrayJson $progHtml '"matches":['
-    if ($arrMatches) {
-      foreach ($m in $arrMatches) {
-        $rawDate = $m.date -replace '^\$D', ''
-        $dtStr = $rawDate
-        $timeStr = "14:00"
-        try {
-          $dt = [DateTime]::Parse($rawDate)
-          $dtStr = $dt.ToString("dd.MM.yyyy")
-          $timeStr = $dt.ToString("HH:mm")
-        } catch {}
+  $seenMatches = @{}
+  $rawMatchList = @()
 
-        $hName = $m.homeTeam.name
-        $aName = $m.awayTeam.name
-        $hLogo = if ($m.homeTeam.logo -and $m.homeTeam.logo.src) { $m.homeTeam.logo.src } else { "SK_Junior_logo.jpg" }
-        $aLogo = if ($m.awayTeam.logo -and $m.awayTeam.logo.src) { $m.awayTeam.logo.src } else { "SK_Junior_logo.jpg" }
-        $isHome = $hName.ToLower().Contains("junior") -or $hName.ToLower().Contains("ivanka")
-        
-        $scoreStr = ""
-        if ($m.homeTeam.score -and $m.homeTeam.score -ne "-" -and $m.awayTeam.score -and $m.awayTeam.score -ne "-") {
-          $scoreStr = "$($m.homeTeam.score) : $($m.awayTeam.score)"
-        }
+  $matchUrls = @(
+    "https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/tim/$slug/vysledky/",
+    "https://sportnet.sme.sk/futbalnet/k/sk-junior-ivanka-pri-nitre/tim/$slug/program/"
+  )
 
-        $roundName = if ($m.meta -and $m.meta.round -and $m.meta.round.name) { $m.meta.round.name } else { "Ligový zápas" }
-        $venue = if ($isHome) { "Futbalový areál ŠK Junior Ivanka pri Nitre" } else { "Ihrisko $hName" }
+  foreach ($url in $matchUrls) {
+    try {
+      $progHtml = $wc.DownloadString($url)
+      $arrMatches = ExtractArrayJson $progHtml '"matches":['
+      if ($arrMatches) {
+        foreach ($m in $arrMatches) {
+          $mId = "$($m.id)"
+          if ($seenMatches.ContainsKey($mId)) { continue }
+          $seenMatches[$mId] = $true
 
-        $parsedMatches += @{
-          id = "m-$($k)-" + $m.id.Substring([Math]::Max(0, $m.id.Length - 8))
-          round = $roundName
-          date = $dtStr
-          time = $timeStr
-          homeTeam = $hName
-          homeLogo = $hLogo
-          awayTeam = $aName
-          awayLogo = $aLogo
-          score = $scoreStr
-          isHome = $isHome
-          venue = $venue
-          status = if ($scoreStr) { "finished" } else { "scheduled" }
+          $rawDate = $m.date -replace '^\$D', ''
+          $dtStr = $rawDate
+          $timeStr = "14:00"
+          $sortVal = ""
+          try {
+            $dt = [DateTime]::Parse($rawDate)
+            $dtStr = $dt.ToString("dd.MM.yyyy")
+            $timeStr = $dt.ToString("HH:mm")
+            $sortVal = $dt.ToString("yyyyMMddHHmm")
+          } catch {}
+
+          $hName = $m.homeTeam.name
+          $aName = $m.awayTeam.name
+          $hLogo = if ($m.homeTeam.logo -and $m.homeTeam.logo.src) { $m.homeTeam.logo.src } else { "SK_Junior_logo.jpg" }
+          $aLogo = if ($m.awayTeam.logo -and $m.awayTeam.logo.src) { $m.awayTeam.logo.src } else { "SK_Junior_logo.jpg" }
+          # Domáci tím je len ŠK Junior
+          $isHome = $hName.ToLower().Contains("junior")
+          
+          $scoreStr = ""
+          if ($m.homeTeam.score -and $m.homeTeam.score -ne "-" -and $m.awayTeam.score -and $m.awayTeam.score -ne "-") {
+            $scoreStr = "$($m.homeTeam.score) : $($m.awayTeam.score)"
+          }
+
+          $roundName = if ($m.meta -and $m.meta.round -and $m.meta.round.name) { $m.meta.round.name } else { "Ligový zápas" }
+          $venue = if ($isHome) { "Futbalový areál ŠK Junior Ivanka pri Nitre" } else { "Ihrisko $hName" }
+
+          $shortId = if ($mId.Length -gt 8) { $mId.Substring($mId.Length - 8) } else { $mId }
+
+          $rawMatchList += @{
+            id = "m-$($k)-" + $shortId
+            round = $roundName
+            date = $dtStr
+            time = $timeStr
+            sortVal = $sortVal
+            homeTeam = $hName
+            homeLogo = $hLogo
+            awayTeam = $aName
+            awayLogo = $aLogo
+            score = $scoreStr
+            isHome = $isHome
+            venue = $venue
+            status = if ($scoreStr) { "finished" } else { "scheduled" }
+          }
         }
       }
+    } catch {
+      Write-Output "Chyba zápasov pre $k ($url)`: $($_.Exception.Message)"
     }
-  } catch {
-    Write-Output "Chyba programu pre $k`: $($_.Exception.Message)"
+  }
+
+  $sortedMatches = $rawMatchList | Sort-Object { $_.sortVal }
+  foreach ($sm in $sortedMatches) {
+    $sm.Remove('sortVal')
+    $parsedMatches += $sm
   }
   
   $extractedData[$k] = @{
