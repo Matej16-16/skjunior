@@ -1039,36 +1039,100 @@ function generateDataJsContent() {
 
 const CLUB_DATA = ${JSON.stringify(currentData, null, 2)};
 
-// Pomocná funkcia na načítanie dát
+// Pomocné funkcie pre prácu s dátami a localStorage
 function getClubData() {
-  const saved = localStorage.getItem("sk_junior_club_data");
-  if (saved) {
+  const stored = localStorage.getItem("sk_junior_club_data");
+  if (stored) {
     try {
-      const parsed = JSON.parse(saved);
-      if (!parsed.dataVersion || parsed.dataVersion < (CLUB_DATA.dataVersion || 2) || parsed.clubInfo?.city !== CLUB_DATA.clubInfo?.city) {
-        const merged = {
-          ...CLUB_DATA,
-          ...parsed,
-          clubInfo: CLUB_DATA.clubInfo,
-          dataVersion: CLUB_DATA.dataVersion || 2
-        };
-        localStorage.setItem("sk_junior_club_data", JSON.stringify(merged));
+      const parsed = JSON.parse(stored);
+      if (parsed) {
+        const merged = { ...CLUB_DATA, ...parsed };
+        if (CLUB_DATA.teams) {
+          merged.teams = merged.teams || {};
+          for (const key in CLUB_DATA.teams) {
+            if (!merged.teams[key]) {
+              merged.teams[key] = CLUB_DATA.teams[key];
+            } else {
+              merged.teams[key].table = CLUB_DATA.teams[key].table;
+              merged.teams[key].matches = CLUB_DATA.teams[key].matches;
+              merged.teams[key].lastMatch = CLUB_DATA.teams[key].lastMatch;
+              merged.teams[key].nextMatch = CLUB_DATA.teams[key].nextMatch;
+              if (parsed.teams && parsed.teams[key]) {
+                if (parsed.teams[key].roster && parsed.teams[key].roster.length > 0) merged.teams[key].roster = parsed.teams[key].roster;
+                if (parsed.teams[key].staff && parsed.teams[key].staff.length > 0) merged.teams[key].staff = parsed.teams[key].staff;
+              }
+            }
+          }
+        }
+        if (CLUB_DATA.lastMatch) merged.lastMatch = CLUB_DATA.lastMatch;
+        if (CLUB_DATA.nextMatch) merged.nextMatch = CLUB_DATA.nextMatch;
+        if (CLUB_DATA.upcomingMatches) merged.upcomingMatches = CLUB_DATA.upcomingMatches;
+        if (parsed.about?.management?.length > 0) { merged.about = merged.about || {}; merged.about.management = parsed.about.management; }
+        if (parsed.about?.historyTimeline?.length > 0) { merged.about = merged.about || {}; merged.about.historyTimeline = parsed.about.historyTimeline; }
+        if (parsed.about?.partners?.length > 0) { merged.about = merged.about || {}; merged.about.partners = parsed.about.partners; }
+        if (parsed.sponsors?.length > 0) merged.sponsors = parsed.sponsors;
+        if (parsed.articles?.length > 0) merged.articles = parsed.articles;
+        if (parsed.gallery?.length > 0) merged.gallery = parsed.gallery;
         return merged;
       }
-      return parsed;
     } catch (e) {
       console.warn("Chyba:", e);
     }
   }
-  localStorage.setItem("sk_junior_club_data", JSON.stringify(CLUB_DATA));
   return CLUB_DATA;
 }
 
 function saveClubData(data) {
-  data.dataVersion = (data.dataVersion || 2) + 1;
+  data.dataVersion = (data.dataVersion || 80) + 1;
+  data.lastSyncTimestamp = Date.now();
   localStorage.setItem("sk_junior_club_data", JSON.stringify(data));
+  try {
+    const payload = {
+      clubInfo: data.clubInfo,
+      management: data.about?.management || [],
+      historyTimeline: data.about?.historyTimeline || [],
+      partners: data.about?.partners || [],
+      sponsors: data.sponsors || [],
+      articles: data.articles || [],
+      gallery: data.gallery || []
+    };
+    fetch("api/save_club_content.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
+  } catch (e) {}
+}
+
+function forceSyncWithDataJs() {
+  const current = getClubData();
+  localStorage.setItem("sk_junior_club_data", JSON.stringify(current));
+  return current;
 }
 `;
+}
+
+function downloadCustomDataJson() {
+  const exportData = {
+    clubInfo: currentData.clubInfo,
+    management: currentData.about?.management || [],
+    historyTimeline: currentData.about?.historyTimeline || [],
+    partners: currentData.about?.partners || [],
+    sponsors: currentData.sponsors || [],
+    articles: currentData.articles || [],
+    gallery: currentData.gallery || []
+  };
+  const jsonStr = JSON.stringify(exportData, null, 2);
+  const blob = new Blob([jsonStr], { type: "application/json;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "club_custom_data.json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  alert("Súbor club_custom_data.json bol úspešne stiahnutý! Nahraďte ním súbor v hlavnom priečinku projektu. Vďaka tomu týždenná synchronizácia zápasov nikdy neprepíše vaše vedenie klubu ani sponzorov!");
 }
 
 function downloadUpdatedDataJs() {

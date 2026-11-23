@@ -7,61 +7,125 @@
 const CLUB_DATA = {
   // 1. ZÁKLADNÉ ÚDAJE O KLUBE
   clubInfo: {
-    fullName: "ŠK Junior Ivanka pri Nitre",
-    name: "ŠK Junior Ivanka pri Nitre",
-    shortName: "ŠK Junior",
-    code: "JUN",
-    founded: 2020,
-    motto: "Výchova talentov, športový duch a radosť z futbalu",
-    address: {
-      street: "Novozámocká (Futbalový areál)",
-      city: "951 12 Ivanka pri Nitre",
-      stadium: "Futbalový areál ŠK Junior, Ivanka pri Nitre",
-      capacity: 500
-    },
-    contact: {
-      email: "skjuniorivanka@gmail.com",
-      phone: "+421 910 907 795"
-    },
-    contacts: {
-      email: "skjuniorivanka@gmail.com",
-      phone: "+421 910 907 795",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      youtube: "https://youtube.com"
-    },
-    socials: {
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com"
-    },
-    billing: {
-      ico: "53316711",
-      dic: "2121345678",
-      bank: "Všeobecná úverová banka, a.s.",
-      iban: "SK31 0200 0000 0043 6564 7155"
-    }
-  },
+    "fullName":  "ŠK Junior Ivanka pri Nitre",
+    "name":  "ŠK Junior Ivanka pri Nitre",
+    "shortName":  "ŠK Junior",
+    "code":  "JUN",
+    "founded":  2020,
+    "motto":  "Výchova talentov, športový duch a radosť z futbalu",
+    "address":  {
+                    "street":  "Novozámocká (Futbalový areál)",
+                    "city":  "951 12 Ivanka pri Nitre",
+                    "stadium":  "Futbalový areál ŠK Junior, Ivanka pri Nitre",
+                    "capacity":  500
+                },
+    "contact":  {
+                    "email":  "skjuniorivanka@gmail.com",
+                    "phone":  "+421 910 907 795"
+                },
+    "contacts":  {
+                     "email":  "skjuniorivanka@gmail.com",
+                     "phone":  "+421 910 907 795",
+                     "facebook":  "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
+                     "instagram":  "https://www.instagram.com/skjunior_ivanka/",
+                     "youtube":  "https://youtube.com"
+                 },
+    "socials":  {
+                    "facebook":  "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
+                    "instagram":  "https://www.instagram.com/skjunior_ivanka/"
+                },
+    "billing":  {
+                    "ico":  "53316711",
+                    "dic":  "2121345678",
+                    "bank":  "Všeobecná úverová banka, a.s.",
+                    "iban":  "SK31 0200 0000 0043 6564 7155"
+                }
+},
 
   // 2. SEKCOIA O KLUBE (MANAŽMENT, HISTÓRIA, PARTNERI)
   about: {
     management: [
-      { name: "Ing. Marián Varga", role: "Prezident klubu", phone: "+421 910 907 795", email: "prezident@skjuniorivanka.sk", bio: "Zakladateľ a štatutárny zástupca klubu, zodpovedný za strategický rozvoj, infraštruktúru a partnerstvá." },
-      { name: "Mgr. Peter Novák", role: "Športový riaditeľ", phone: "+421 905 123 456", email: "sport@skjuniorivanka.sk", bio: "Zodpovedný za športovú koncepciu, metodiku tréningového procesu a prestupy hráčov." },
-      { name: "Jozef Kováč", role: "Koordinátor mládeže", phone: "+421 903 987 654", email: "mladez@skjuniorivanka.sk", bio: "Dohliada na fungovanie mládežníckych kategórií U7 až U15 a komunikáciu s rodičmi." },
-      { name: "František Tóth", role: "Hospodár & správca areálu", phone: "+421 911 234 567", email: "areal@skjuniorivanka.sk", bio: "Zabezpečuje technický stav ihrísk, zázemie pre zápasy a materiálne vybavenie tímov." }
-    ],
+    {
+        "name":  "Ing. Marián Varga",
+        "role":  "Prezident klubu",
+        "phone":  "+421 910 907 795",
+        "email":  "prezident@skjuniorivanka.sk",
+        "bio":  "Zakladateľ a štatutárny zástupca klubu, zodpovedný za strategický rozvoj, infraštruktúru a partnerstvá."
+    },
+    {
+        "name":  "Mgr. Peter Novák",
+        "role":  "Športový riaditeľ",
+        "phone":  "+421 905 123 456",
+        "email":  "sport@skjuniorivanka.sk",
+        "bio":  "Zodpovedný za športovú koncepciu, metodiku tréningového procesu a prestupy hráčov."
+    },
+    {
+        "name":  "Jozef Kováč",
+        "role":  "Koordinátor mládeže",
+        "phone":  "+421 903 987 654",
+        "email":  "mladez@skjuniorivanka.sk",
+        "bio":  "Dohliada na fungovanie mládežníckych kategórií U7 až U15 a komunikáciu s rodičmi."
+    },
+    {
+        "name":  "František Tóth",
+        "role":  "Hospodár & správca areálu",
+        "phone":  "+421 911 234 567",
+        "email":  "areal@skjuniorivanka.sk",
+        "bio":  "Zabezpečuje technický stav ihrísk, zázemie pre zápasy a materiálne vybavenie tímov."
+    }
+],
     historyTimeline: [
-      { year: "2020", title: "Založenie ŠK Junior Ivanka pri Nitre", text: "Vznik futbalového klubu so zameraním na systematickú výchovu mladých talentov a vytvorenie moderného športového zázemia." },
-      { year: "2021", title: "Otvorenie futbalovej školičky a prípraviek", text: "Prvý nábor detí a prihlásenie prvých mládežníckych tímov do oficiálnych súťaží ObFZ Nitra." },
-      { year: "2023", title: "Postup žiakov do krajskej súťaže ZsFZ", text: "Kategórie U15 a U13 postúpili do III. ligy ZsFZ a zaradili sa medzi popredné mládežnícke akadémie v regióne." },
-      { year: "2025", title: "Vytvorenie seniorského tímu a modernizácia areálu", text: "Klub zastrešil kompletnú pyramídu tímov od školičky až po dospelých s cieľom dať odchovancom priestor v domácom klube." }
-    ],
+    {
+        "year":  "2020",
+        "title":  "Založenie ŠK Junior Ivanka pri Nitre",
+        "text":  "Vznik futbalového klubu so zameraním na systematickú výchovu mladých talentov a vytvorenie moderného športového zázemia."
+    },
+    {
+        "year":  "2021",
+        "title":  "Otvorenie futbalovej školičky a prípraviek",
+        "text":  "Prvý nábor detí a prihlásenie prvých mládežníckych tímov do oficiálnych súťaží ObFZ Nitra."
+    },
+    {
+        "year":  "2023",
+        "title":  "Postup žiakov do krajskej súťaže ZsFZ",
+        "text":  "Kategórie U15 a U13 postúpili do III. ligy ZsFZ a zaradili sa medzi popredné mládežnícke akadémie v regióne."
+    },
+    {
+        "year":  "2025",
+        "title":  "Vytvorenie seniorského tímu a modernizácia areálu",
+        "text":  "Klub zastrešil kompletnú pyramídu tímov od školičky až po dospelých s cieľom dať odchovancom priestor v domácom klube."
+    }
+],
     partners: [
-      { tier: "Generálny partner", name: "Obec Ivanka pri Nitre", logo: "SK_Junior_logo.jpg", desc: "Podpora športovania detí a rozvoja futbalového areálu" },
-      { tier: "Hlavný športový partner", name: "Macron Slovensko", logo: "SK_Junior_logo.jpg", desc: "Oficiálny dodávateľ dresov a športového vybavenia" },
-      { tier: "Partner mládeže", name: "Nitriansky samosprávny kraj", logo: "SK_Junior_logo.jpg", desc: "Podpora mládežníckych projektov a turnajov" },
-      { tier: "Oficiálny partner", name: "Západoslovenský futbalový zväz", logo: "SK_Junior_logo.jpg", desc: "Zastrešenie krajských majstrovských súťaží" }
-    ]
+    {
+        "name":  "Obec Ivanka pri Nitre",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Generálny partner",
+        "url":  "https://ivankaprinitre.sk",
+        "desc":  "Podpora športovania detí a rozvoja futbalového areálu"
+    },
+    {
+        "name":  "Macron Slovensko",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Hlavný športový partner",
+        "url":  "https://macron.sk",
+        "desc":  "Oficiálny dodávateľ dresov a športového vybavenia"
+    },
+    {
+        "name":  "Nitriansky samosprávny kraj",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Partner mládeže",
+        "url":  "https://unsk.sk",
+        "desc":  "Podpora mládežníckych projektov a turnajov"
+    },
+    {
+        "name":  "Západoslovenský futbalový zväz",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Oficiálny partner",
+        "url":  "https://zsfz.sk",
+        "desc":  "Zastrešenie krajských majstrovských súťaží"
+    }
+]
   },
 
   // 3. POSLEDNÝ ODOHRATÝ ZÁPAS
@@ -663,89 +727,113 @@ const CLUB_DATA = {
   // 7. ČLÁNKY A AKTUALITY
   articles: [
     {
-      id: "art-01",
-      title: "Zhodnotenie jesennej časti súťaží: Naše tímy bojovali v každom kole",
-      summary: "A-tím aj mládežnícke kategórie ukončili jesennú časť sezóny 2026/2027. Pozrite si prehľad výsledkov a plán zimnej prípravy.",
-      date: "05.11.2026",
-      category: "A-tím",
-      image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
-      content: "Jesenná časť priniesla množstvo napínavých stretnutí. A-tím dospelých absolvoval náročné ligové derby zápasy vo VIII. A lige ObFZ Nitra. Po jesennej časti sa sústredíme na kvalitnú zimnú prípravu s cieľom zlepšiť herný prejav a bodový zisk v jarnej časti."
+        "id":  "art-01",
+        "title":  "Historická jesenná časť ŠK Junior: Naše tímy bojujú o popredné priečky",
+        "summary":  "Hodnotenie prvej polovice sezóny 2026/2027 vo všetkých kategóriách od dospelých až po prípravky. Prehľad úspechov, strelcov a plán zimnej prípravy.",
+        "date":  "08.11.2026",
+        "category":  "A-tím",
+        "image":  "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
+        "content":  "Jesenná časť súťažného ročníka 2026/2027 sa nezmazateľne zapíše do kroniky ŠK Junior Ivanka pri Nitre. Seniorský A-tím v VIII. A lige Macron ukázal obrovskú bojovnosť, zatiaľ čo mládežnícke kategórie potvrdili stabilitu v krajských aj oblastných súťažiach.\n\nPrezident klubu Marián Varga zhodnotil uplynulé mesiace: \u0027Naším hlavným cieľom bolo priniesť do Ivanky radosť z futbalu a dať šancu mladým hráčom. Výsledky ukazujú, že nastavená koncepcia systematickej práce s mládežou prináša ovocie.\u0027"
     },
     {
-      id: "art-02",
-      title: "Mládežnícka akadémia ŠK Junior opäť potvrdila kvalitu v III. lige",
-      summary: "Kategórie U15 a U13 zvládli náročné kolá krajskej súťaže a udržiavajú sa v popredí tabuľky.",
-      date: "02.11.2026",
-      category: "Mládež",
-      image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
-      content: "Starší žiaci U15 pod vedením Jozefa Kováča predviedli dominantnú hru založenú na presnej kombinácii a vysokej aktivite bez lopty. Mladší žiaci U13 nadviazali skvelým tímovým výkonom. Akadémia tak pokračuje v napĺňaní svojej vízie rozvoja moderného a dynamického futbalu."
+        "id":  "art-02",
+        "title":  "Mládežnícka akadémia ŠK Junior opäť potvrdila kvalitu v III. lige",
+        "summary":  "Kategórie U15 a U13 zvládli náročné kolá krajskej súťaže a udržiavajú sa v popredí tabuľky.",
+        "date":  "02.11.2026",
+        "category":  "Mládež",
+        "image":  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
+        "content":  "Starší žiaci U15 pod vedením Jozefa Kováča predviedli dominantnú hru založenú na presnej kombinácii a vysokej aktivite bez lopty. Mladší žiaci U13 nadviazali skvelým tímovým výkonom. Akadémia tak pokračuje v napĺňaní svojej vízie rozvoja moderného a dynamického futbalu."
     },
     {
-      id: "art-03",
-      title: "Nábor do futbalovej školičky U7 a prípravky prebieha celoročne",
-      summary: "Hľadáme nové talenty! Privítame chlapcov a dievčatá ročníkov 2018 až 2021 so záujmom o šport a pohyb.",
-      date: "25.10.2026",
-      category: "Klub",
-      image: "SK_Junior_logo.jpg",
-      content: "Futbalový klub ŠK Junior Ivanka pri Nitre srdečne pozýva všetky deti na ukážkové tréningy futbalovej školičky. Naším cieľom nie je len výchova futbalistov, ale predovšetkým budovanie lásky k pohybu, disciplíny a kamarátstiev na celý život. Tréningy prebiehajú pod vedením kvalifikovaných trénerov a pedagógov."
+        "id":  "art-03",
+        "title":  "Nábor do futbalovej školičky U7 a prípravky prebieha celoročne",
+        "summary":  "Hľadáme nové talenty! Privítame chlapcov a dievčatá ročníkov 2018 až 2021 so záujmom o šport a pohyb.",
+        "date":  "25.10.2026",
+        "category":  "Klub",
+        "image":  "SK_Junior_logo.jpg",
+        "content":  "Futbalový klub ŠK Junior Ivanka pri Nitre srdečne pozýva všetky deti na ukážkové tréningy futbalovej školičky. Naším cieľom nie je len výchova futbalistov, ale predovšetkým budovanie lásky k pohybu, disciplíny a kamarátstiev na celý život. Tréningy prebiehajú pod vedením kvalifikovaných trénerov a pedagógov."
     }
-  ],
+],
 
   // 8. FOTOGALÉRIA (S PODPOROU CELÝCH ALBUMOV A 30+ FOTOGRAFIÍ)
   gallery: [
     {
-      id: "alb-01",
-      title: "Jesenný turnaj prípraviek U11 a U9 v Ivanke pri Nitre",
-      category: "Mládež",
-      date: "24.10.2026",
-      image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
-      description: "Kompletný fotoreport z vydareného turnaja našich nádejí.",
-      photos: [
-        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
-        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
-        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
-        "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1200",
-        "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200",
-        "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
-      ]
+        "id":  "alb-01",
+        "title":  "Jesenný turnaj prípraviek U11 a U9 v Ivanke pri Nitre",
+        "category":  "Mládež",
+        "date":  "24.10.2026",
+        "image":  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
+        "description":  "Kompletný fotoreport z vydareného turnaja našich nádejí.",
+        "photos":  [
+                       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+                       "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
+                       "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
+                       "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1200",
+                       "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200",
+                       "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
+                   ]
     },
     {
-      id: "alb-02",
-      title: "Zápas dorastu U19 a ligové momenty",
-      category: "Zápasy",
-      date: "15.11.2026",
-      image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800",
-      description: "Zábery z ligového zápasu a tímových akcií.",
-      photos: [
-        "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
-        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
-        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200"
-      ]
+        "id":  "alb-02",
+        "title":  "Zápas dorastu U19 a ligové momenty",
+        "category":  "Zápasy",
+        "date":  "15.11.2026",
+        "image":  "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800",
+        "description":  "Zábery z ligového zápasu a tímových akcií.",
+        "photos":  [
+                       "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
+                       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+                       "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200"
+                   ]
     },
     {
-      id: "alb-03",
-      title: "Tréningový kemp a areál ŠK Junior",
-      category: "Klub",
-      date: "15.09.2026",
-      image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
-      description: "Tréningy všetkých kategórií a život v areáli klubu.",
-      photos: [
-        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
-        "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
-      ]
+        "id":  "alb-03",
+        "title":  "Tréningový kemp a areál ŠK Junior",
+        "category":  "Klub",
+        "date":  "15.09.2026",
+        "image":  "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
+        "description":  "Tréningy všetkých kategórií a život v areáli klubu.",
+        "photos":  [
+                       "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
+                       "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
+                   ]
     }
-  ],
+],
 
   // 9. SPONZORI A PARTNERI
   sponsors: [
-    { name: "Obec Ivanka pri Nitre", logo: "SK_Junior_logo.jpg", tier: "Generálny partner", url: "https://ivankaprinitre.sk" },
-    { name: "Macron Slovensko", logo: "SK_Junior_logo.jpg", tier: "Hlavný športový partner", url: "https://macron.sk" },
-    { name: "Nitriansky samosprávny kraj", logo: "SK_Junior_logo.jpg", tier: "Partner mládeže", url: "https://unsk.sk" },
-    { name: "Západoslovenský futbalový zväz", logo: "SK_Junior_logo.jpg", tier: "Oficiálny partner", url: "https://zsfz.sk" }
-  ],
+    {
+        "name":  "Obec Ivanka pri Nitre",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Generálny partner",
+        "url":  "https://ivankaprinitre.sk",
+        "desc":  "Podpora športovania detí a rozvoja futbalového areálu"
+    },
+    {
+        "name":  "Macron Slovensko",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Hlavný športový partner",
+        "url":  "https://macron.sk",
+        "desc":  "Oficiálny dodávateľ dresov a športového vybavenia"
+    },
+    {
+        "name":  "Nitriansky samosprávny kraj",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Partner mládeže",
+        "url":  "https://unsk.sk",
+        "desc":  "Podpora mládežníckych projektov a turnajov"
+    },
+    {
+        "name":  "Západoslovenský futbalový zväz",
+        "logo":  "SK_Junior_logo.jpg",
+        "tier":  "Oficiálny partner",
+        "url":  "https://zsfz.sk",
+        "desc":  "Zastrešenie krajských majstrovských súťaží"
+    }
+],
 
   // 10. METADÁTA PRE AUTOMATICKÚ SYNCHRONIZÁCIU
-  dataVersion: 70,
+  dataVersion: 80,
   lastSyncTimestamp: Date.now()
 };
 
@@ -760,9 +848,64 @@ function getClubData() {
         return CLUB_DATA;
       }
       const parsed = JSON.parse(stored);
-      if (parsed && (parsed.dataVersion || 0) >= CLUB_DATA.dataVersion) {
-        if (!parsed.about) parsed.about = CLUB_DATA.about;
-        return parsed;
+      if (parsed) {
+        // SMART MERGE: Športové dáta zo Sportnetu berieme vždy z najnovšieho CLUB_DATA,
+        // zatiaľ čo klubové úpravy (vedenie, sponzori, články, galéria, súpisky) zachovávame z lokálnych úprav.
+        const merged = { ...CLUB_DATA, ...parsed };
+
+        // 1. Zaručíme najnovšie športové dáta (tabuľky, zápasy) pre všetky tímy zo Sportnetu
+        if (CLUB_DATA.teams) {
+          merged.teams = merged.teams || {};
+          for (const key in CLUB_DATA.teams) {
+            if (!merged.teams[key]) {
+              merged.teams[key] = CLUB_DATA.teams[key];
+            } else {
+              merged.teams[key].table = CLUB_DATA.teams[key].table;
+              merged.teams[key].matches = CLUB_DATA.teams[key].matches;
+              merged.teams[key].lastMatch = CLUB_DATA.teams[key].lastMatch;
+              merged.teams[key].nextMatch = CLUB_DATA.teams[key].nextMatch;
+              if (parsed.teams && parsed.teams[key]) {
+                if (parsed.teams[key].roster && parsed.teams[key].roster.length > 0) {
+                  merged.teams[key].roster = parsed.teams[key].roster;
+                }
+                if (parsed.teams[key].staff && parsed.teams[key].staff.length > 0) {
+                  merged.teams[key].staff = parsed.teams[key].staff;
+                }
+              }
+            }
+          }
+        }
+
+        // 2. Widgety zápasov na úvodnej stránke
+        if (CLUB_DATA.lastMatch) merged.lastMatch = CLUB_DATA.lastMatch;
+        if (CLUB_DATA.nextMatch) merged.nextMatch = CLUB_DATA.nextMatch;
+        if (CLUB_DATA.upcomingMatches) merged.upcomingMatches = CLUB_DATA.upcomingMatches;
+
+        // 3. Vedenie klubu, história, partneri a sponzori:
+        // Ak má používateľ vlastné úpravy, zachováme ich, inak použijeme CLUB_DATA
+        if (parsed.about && parsed.about.management && parsed.about.management.length > 0) {
+          merged.about = merged.about || {};
+          merged.about.management = parsed.about.management;
+        }
+        if (parsed.about && parsed.about.historyTimeline && parsed.about.historyTimeline.length > 0) {
+          merged.about = merged.about || {};
+          merged.about.historyTimeline = parsed.about.historyTimeline;
+        }
+        if (parsed.about && parsed.about.partners && parsed.about.partners.length > 0) {
+          merged.about = merged.about || {};
+          merged.about.partners = parsed.about.partners;
+        }
+        if (parsed.sponsors && parsed.sponsors.length > 0) {
+          merged.sponsors = parsed.sponsors;
+        }
+        if (parsed.articles && parsed.articles.length > 0) {
+          merged.articles = parsed.articles;
+        }
+        if (parsed.gallery && parsed.gallery.length > 0) {
+          merged.gallery = parsed.gallery;
+        }
+
+        return merged;
       }
     } catch (e) {
       console.warn("Chyba načítania údajov z localStorage, použijú sa východzie:", e);
@@ -772,12 +915,31 @@ function getClubData() {
 }
 
 function saveClubData(data) {
-  data.dataVersion = (data.dataVersion || 35) + 1;
+  data.dataVersion = (data.dataVersion || 80) + 1;
   data.lastSyncTimestamp = Date.now();
   localStorage.setItem("sk_junior_club_data", JSON.stringify(data));
+
+  // Ak bežíme na webhostingu s PHP, odošleme zmeny na trvalé uloženie do club_custom_data.json na serveri
+  try {
+    const payload = {
+      clubInfo: data.clubInfo,
+      management: data.about?.management || [],
+      historyTimeline: data.about?.historyTimeline || [],
+      partners: data.about?.partners || [],
+      sponsors: data.sponsors || [],
+      articles: data.articles || [],
+      gallery: data.gallery || []
+    };
+    fetch("api/save_club_content.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
+  } catch (e) {}
 }
 
 function forceSyncWithDataJs() {
-  localStorage.setItem("sk_junior_club_data", JSON.stringify(CLUB_DATA));
-  return CLUB_DATA;
+  const current = getClubData();
+  localStorage.setItem("sk_junior_club_data", JSON.stringify(current));
+  return current;
 }
