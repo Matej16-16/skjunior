@@ -27,7 +27,7 @@
 <body class="min-h-screen flex flex-col bg-[#0B0F19]">
 
   <!-- ============================================================== -->
-  <!-- 0. PRIHLASOVACIA OBRAZOVKA (MENO: admin, HESLO: admin123)     -->
+  <!-- 0. PRIHLASOVACIA OBRAZOVKA                                     -->
   <!-- ============================================================== -->
   <div id="admin-login-screen" class="min-h-screen flex items-center justify-center p-4">
     <div class="bg-[#111827] border border-slate-800 rounded-2xl p-8 max-w-md w-full shadow-2xl relative overflow-hidden">
@@ -53,7 +53,7 @@
             <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
               <i class="fa-solid fa-user text-xs"></i>
             </span>
-            <input type="text" id="login-username" required placeholder="admin" autocomplete="username" class="w-full bg-[#1F2937] border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
+            <input type="text" id="login-username" required placeholder="Zadajte prihlasovacie meno" autocomplete="username" class="w-full bg-[#1F2937] border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
           </div>
         </div>
 
@@ -63,7 +63,7 @@
             <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
               <i class="fa-solid fa-lock text-xs"></i>
             </span>
-            <input type="password" id="login-password" required placeholder="admin123" autocomplete="current-password" class="w-full bg-[#1F2937] border border-slate-700 rounded-xl pl-10 pr-10 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
+            <input type="password" id="login-password" required placeholder="••••••••" autocomplete="current-password" class="w-full bg-[#1F2937] border border-slate-700 rounded-xl pl-10 pr-10 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
             <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-500 hover:text-slate-300">
               <i id="password-toggle-icon" class="fa-solid fa-eye text-xs"></i>
             </button>
@@ -851,7 +851,15 @@
         </div>
 
         <div class="admin-card p-6 space-y-4">
-          <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">Aktuálni partneri</h3>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Aktuálni partneri a sponzori</h3>
+              <span class="text-xs text-slate-500">Údaje partnerov zobrazené na webe a v sekcii O klube</span>
+            </div>
+            <button onclick="saveAllPartnersChanges()" class="btn-pink px-5 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2 shadow-sm self-start sm:self-auto cursor-pointer">
+              <i class="fa-solid fa-floppy-disk"></i> Uložiť partnerov a sponzorov
+            </button>
+          </div>
           <div id="admin-partners-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- JS -->
           </div>
@@ -901,9 +909,14 @@
 
         <!-- Zoznam členov vedenia -->
         <div class="admin-card p-6 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-            <h3 class="text-lg font-bold text-slate-900">Aktuálne vedenie klubu</h3>
-            <span class="text-xs text-slate-400">Údaje môžete priamo upravovať alebo mazať</span>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Aktuálne vedenie klubu</h3>
+              <span class="text-xs text-slate-500">Údaje môžete priamo prepisovať v poliach nižšie a uložiť tlačidlom vpravo</span>
+            </div>
+            <button onclick="saveAllManagementChanges()" class="btn-pink px-5 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2 shadow-sm self-start sm:self-auto cursor-pointer">
+              <i class="fa-solid fa-floppy-disk"></i> Uložiť všetky zmeny vedenia
+            </button>
           </div>
           <div id="admin-management-list" class="space-y-4">
             <!-- JS -->
