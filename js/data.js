@@ -842,11 +842,6 @@ function getClubData() {
   const stored = localStorage.getItem("sk_junior_club_data");
   if (stored) {
     try {
-      if (stored.includes("Ĺ ") || stored.includes("ÄŤ") || stored.includes("Ă­") || stored.includes("ÄŚ")) {
-        console.warn("Zistené staré poškodené kódovanie v localStorage, načítavam čisté dáta...");
-        localStorage.setItem("sk_junior_club_data", JSON.stringify(CLUB_DATA));
-        return CLUB_DATA;
-      }
       const parsed = JSON.parse(stored);
       if (parsed) {
         // SMART MERGE: Športové dáta zo Sportnetu berieme vždy z najnovšieho CLUB_DATA,
@@ -882,27 +877,32 @@ function getClubData() {
         if (CLUB_DATA.upcomingMatches) merged.upcomingMatches = CLUB_DATA.upcomingMatches;
 
         // 3. Vedenie klubu, história, partneri a sponzori:
-        // Ak má používateľ vlastné úpravy, zachováme ich, inak použijeme CLUB_DATA
-        if (parsed.about && parsed.about.management && parsed.about.management.length > 0) {
+        // VŽDY zachováme to, čo je uložené v pamäti prehliadača (localStorage)
+        if (parsed.about) {
           merged.about = merged.about || {};
-          merged.about.management = parsed.about.management;
+          if (Array.isArray(parsed.about.management)) {
+            merged.about.management = parsed.about.management;
+          }
+          if (Array.isArray(parsed.about.historyTimeline)) {
+            merged.about.historyTimeline = parsed.about.historyTimeline;
+          }
+          if (Array.isArray(parsed.about.partners)) {
+            merged.about.partners = parsed.about.partners;
+          }
         }
-        if (parsed.about && parsed.about.historyTimeline && parsed.about.historyTimeline.length > 0) {
-          merged.about = merged.about || {};
-          merged.about.historyTimeline = parsed.about.historyTimeline;
-        }
-        if (parsed.about && parsed.about.partners && parsed.about.partners.length > 0) {
-          merged.about = merged.about || {};
-          merged.about.partners = parsed.about.partners;
-        }
-        if (parsed.sponsors && parsed.sponsors.length > 0) {
+        if (Array.isArray(parsed.sponsors)) {
           merged.sponsors = parsed.sponsors;
+        } else if (parsed.about && Array.isArray(parsed.about.partners)) {
+          merged.sponsors = parsed.about.partners;
         }
-        if (parsed.articles && parsed.articles.length > 0) {
+        if (Array.isArray(parsed.articles)) {
           merged.articles = parsed.articles;
         }
-        if (parsed.gallery && parsed.gallery.length > 0) {
+        if (Array.isArray(parsed.gallery)) {
           merged.gallery = parsed.gallery;
+        }
+        if (parsed.clubInfo) {
+          merged.clubInfo = { ...CLUB_DATA.clubInfo, ...parsed.clubInfo };
         }
 
         return merged;
@@ -917,6 +917,15 @@ function getClubData() {
 function saveClubData(data) {
   data.dataVersion = (data.dataVersion || 80) + 1;
   data.lastSyncTimestamp = Date.now();
+  if (data.about && Array.isArray(data.about.partners)) {
+    data.sponsors = data.about.partners.map(p => ({
+      name: p.name,
+      logo: p.logo || "SK_Junior_logo.jpg",
+      tier: p.tier || "Partner",
+      url: p.url || "",
+      desc: p.desc || ""
+    }));
+  }
   localStorage.setItem("sk_junior_club_data", JSON.stringify(data));
 
   // Ak bežíme na webhostingu s PHP, odošleme zmeny na trvalé uloženie do club_custom_data.json na serveri
@@ -926,6 +935,13 @@ function saveClubData(data) {
       management: data.about?.management || [],
       historyTimeline: data.about?.historyTimeline || [],
       partners: data.about?.partners || [],
+      sponsors: data.sponsors || [],
+      articles: data.articles || [],
+      gallery: data.gallery || []
+    };
+    fetch("api/save_club_content.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       sponsors: data.sponsors || [],
       articles: data.articles || [],
       gallery: data.gallery || []

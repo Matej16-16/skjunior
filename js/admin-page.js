@@ -809,20 +809,49 @@ function renderAdminPartnersList() {
   if (!container) return;
 
   const partners = currentData.about?.partners || [];
+  if (partners.length === 0) {
+    container.innerHTML = `<div class="col-span-full text-center py-6 text-slate-400">Zatiaľ nie sú pridaní žiadni partneri. Pridajte partnera cez formulár vyššie.</div>`;
+    return;
+  }
+
   container.innerHTML = partners.map((p, idx) => `
-    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="${p.logo}" alt="${p.name}" class="w-16 h-10 object-contain bg-slate-50 p-1 rounded" onerror="this.onerror=null; this.src='SK_Junior_logo.jpg'">
+    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <span class="text-xs font-bold text-pink-600 uppercase flex items-center gap-1.5">
+          <i class="fa-solid fa-handshake"></i> Partner #${idx + 1}
+        </span>
+        <button onclick="deletePartnerFromAdmin(${idx})" class="text-slate-400 hover:text-red-600 p-1 transition text-xs font-semibold" title="Odstrániť partnera">
+          <i class="fa-solid fa-trash-can mr-1"></i> Zmazať
+        </button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <div>
-          <span class="text-[10px] font-bold text-pink-600 uppercase">${p.tier}</span>
-          <h5 class="font-bold text-xs text-slate-800">${p.name}</h5>
+          <label class="block text-[10px] font-bold text-slate-500 mb-0.5">Názov partnera</label>
+          <input type="text" value="${p.name || ''}" oninput="updatePartnerItem(${idx}, 'name', this.value)" class="w-full bg-slate-50 border border-slate-300 rounded p-1.5 text-xs font-bold">
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold text-slate-500 mb-0.5">Kategória / Tier</label>
+          <input type="text" value="${p.tier || 'Partner'}" oninput="updatePartnerItem(${idx}, 'tier', this.value)" class="w-full bg-slate-50 border border-slate-300 rounded p-1.5 text-xs">
         </div>
       </div>
-      <button onclick="deletePartnerFromAdmin(${idx})" class="text-slate-400 hover:text-red-600 p-2" title="Odstrániť partnera">
-        <i class="fa-solid fa-trash-can text-sm"></i>
-      </button>
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 mb-0.5">Popis / Web URL</label>
+        <input type="text" value="${p.desc || p.url || ''}" oninput="updatePartnerItem(${idx}, 'desc', this.value)" class="w-full bg-slate-50 border border-slate-300 rounded p-1.5 text-xs" placeholder="Popis partnerstva alebo web...">
+      </div>
     </div>
   `).join("");
+}
+
+function updatePartnerItem(index, field, value) {
+  if (currentData.about?.partners?.[index]) {
+    currentData.about.partners[index][field] = value.trim();
+    saveClubData(currentData);
+  }
+}
+
+function saveAllPartnersChanges() {
+  saveClubData(currentData);
+  alert("Zmeny partnerov a sponzorov boli úspešne uložené!\n\nTip: Ak chcete, aby sa zmeny trvalo zobrazili všetkým návštevníkom na GitHube, stiahnite aktualizovaný súbor data.js v hornej lište administrácie a nahrajte ho na GitHub.");
 }
 
 function addPartnerFromAdmin() {
@@ -883,27 +912,39 @@ function renderAdminManagementList() {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
         <div>
           <label class="block text-[10px] font-bold text-slate-500 mb-1">Meno a priezvisko</label>
-          <input type="text" value="${m.name || ''}" onchange="updateMgmtMember(${idx}, 'name', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs font-bold">
+          <input type="text" value="${m.name || ''}" oninput="updateMgmtMember(${idx}, 'name', this.value)" onchange="updateMgmtMember(${idx}, 'name', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs font-bold">
         </div>
         <div>
           <label class="block text-[10px] font-bold text-slate-500 mb-1">Rola / Funkcia</label>
-          <input type="text" value="${m.role || ''}" onchange="updateMgmtMember(${idx}, 'role', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs font-semibold">
+          <input type="text" value="${m.role || ''}" oninput="updateMgmtMember(${idx}, 'role', this.value)" onchange="updateMgmtMember(${idx}, 'role', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs font-semibold">
         </div>
         <div>
           <label class="block text-[10px] font-bold text-slate-500 mb-1">Telefón</label>
-          <input type="text" value="${m.phone || ''}" onchange="updateMgmtMember(${idx}, 'phone', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
+          <input type="text" value="${m.phone || ''}" oninput="updateMgmtMember(${idx}, 'phone', this.value)" onchange="updateMgmtMember(${idx}, 'phone', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
         </div>
         <div>
           <label class="block text-[10px] font-bold text-slate-500 mb-1">Email</label>
-          <input type="email" value="${m.email || ''}" onchange="updateMgmtMember(${idx}, 'email', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
+          <input type="email" value="${m.email || ''}" oninput="updateMgmtMember(${idx}, 'email', this.value)" onchange="updateMgmtMember(${idx}, 'email', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs">
         </div>
       </div>
       <div>
         <label class="block text-[10px] font-bold text-slate-500 mb-1">Pôsobnosť / Bio</label>
-        <input type="text" value="${m.bio || ''}" onchange="updateMgmtMember(${idx}, 'bio', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs" placeholder="Popis pôsobnosti...">
+        <input type="text" value="${m.bio || ''}" oninput="updateMgmtMember(${idx}, 'bio', this.value)" onchange="updateMgmtMember(${idx}, 'bio', this.value)" class="w-full bg-white border border-slate-300 rounded p-1.5 text-xs" placeholder="Popis pôsobnosti...">
       </div>
     </div>
   `).join("");
+}
+
+function updateMgmtMember(index, field, value) {
+  if (currentData.about?.management?.[index]) {
+    currentData.about.management[index][field] = value.trim();
+    saveClubData(currentData);
+  }
+}
+
+function saveAllManagementChanges() {
+  saveClubData(currentData);
+  alert("Všetky zmeny vo vedení klubu boli úspešne uložené!\n\nTip: Ak chcete, aby sa zmeny trvalo zobrazili všetkým návštevníkom na GitHube, stiahnite aktualizovaný súbor data.js v hornej lište administrácie a nahrajte ho na GitHub.");
 }
 
 function addMgmtMemberFromAdmin() {
@@ -940,13 +981,6 @@ function deleteMgmtMemberFromAdmin(index) {
     currentData.about.management.splice(index, 1);
     saveClubData(currentData);
     renderAdminManagementList();
-  }
-}
-
-function updateMgmtMember(index, field, value) {
-  if (currentData.about?.management?.[index]) {
-    currentData.about.management[index][field] = value.trim();
-    saveClubData(currentData);
   }
 }
 

@@ -1577,6 +1577,7 @@ function initAbout() {
   renderAboutTimeline();
   renderAboutManagement();
   renderAboutPartners();
+  renderHomeSponsorStrip();
 }
 
 function renderAboutTimeline() {
@@ -1661,6 +1662,19 @@ function renderAboutPartners() {
         <h4 class="text-sm font-bold text-slate-800">${p.name}</h4>
       </div>
       <p class="text-[11px] text-slate-500 mt-2">${p.desc || ''}</p>
+    </div>
+  `).join("");
+}
+
+function renderHomeSponsorStrip() {
+  const container = document.getElementById("home-sponsors-strip-grid");
+  if (!container) return;
+  const list = currentData?.about?.partners || currentData?.sponsors || [];
+  if (list.length === 0) return;
+  container.innerHTML = list.map(s => `
+    <div class="text-center font-bold text-slate-800 text-sm tracking-wider flex items-center justify-center gap-2">
+      ${s.logo && s.logo !== 'SK_Junior_logo.jpg' ? `<img src="${s.logo}" alt="${s.name}" class="h-7 max-w-[100px] object-contain" onerror="this.style.display='none'">` : ''}
+      <span>${s.name.toUpperCase()}</span>
     </div>
   `).join("");
 }
