@@ -1,840 +1,3426 @@
-﻿// ==============================================================
-// ŠK JUNIOR IVANKA PRI NITRE - CENTRÁLNE DÁTOVÉ CENTRUM
-// Oficiálne klubové dáta, kontakty, aktuality a kategórie tímov.
-// Dizajn podľa moderného vzoru FC Nitra.
+// ==============================================================
+// ŠK JUNIOR IVANKA PRI NITRE - DÁTOVÁ ŠTRUKTÚRA KLUBU
+// Tento súbor bol automaticky vygenerovaný z Administrácie.
 // ==============================================================
 
 const CLUB_DATA = {
-  // 1. ZÁKLADNÉ ÚDAJE O KLUBE
-  clubInfo: {
-    "fullName":  "ŠK Junior Ivanka pri Nitre",
-    "name":  "ŠK Junior Ivanka pri Nitre",
-    "shortName":  "ŠK Junior",
-    "code":  "JUN",
-    "founded":  2020,
-    "motto":  "Výchova talentov, športový duch a radosť z futbalu",
-    "address":  {
-                    "street":  "Novozámocká (Futbalový areál)",
-                    "city":  "951 12 Ivanka pri Nitre",
-                    "stadium":  "Futbalový areál ŠK Junior, Ivanka pri Nitre",
-                    "capacity":  500
-                },
-    "contact":  {
-                    "email":  "skjuniorivanka@gmail.com",
-                    "phone":  "+421 910 907 795"
-                },
-    "contacts":  {
-                     "email":  "skjuniorivanka@gmail.com",
-                     "phone":  "+421 910 907 795",
-                     "facebook":  "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
-                     "instagram":  "https://www.instagram.com/skjunior_ivanka/",
-                     "youtube":  "https://youtube.com"
-                 },
-    "socials":  {
-                    "facebook":  "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
-                    "instagram":  "https://www.instagram.com/skjunior_ivanka/"
-                },
-    "billing":  {
-                    "ico":  "53316711",
-                    "dic":  "2121345678",
-                    "bank":  "Všeobecná úverová banka, a.s.",
-                    "iban":  "SK31 0200 0000 0043 6564 7155"
-                }
-},
-
-  // 2. SEKCOIA O KLUBE (MANAŽMENT, HISTÓRIA, PARTNERI)
-  about: {
-    management: [
-    {
-        "name":  "Ing. Marián Varga",
-        "role":  "Prezident klubu",
-        "phone":  "+421 910 907 795",
-        "email":  "prezident@skjuniorivanka.sk",
-        "bio":  "Zakladateľ a štatutárny zástupca klubu, zodpovedný za strategický rozvoj, infraštruktúru a partnerstvá."
+  "clubInfo": {
+    "fullName": "ŠK Junior Ivanka pri Nitre",
+    "name": "ŠK Junior Ivanka pri Nitre",
+    "shortName": "ŠK Junior",
+    "code": "JUN",
+    "founded": 2020,
+    "motto": "Výchova talentov, športový duch a radosť z futbalu",
+    "address": {
+      "street": "Novozámocká (Futbalový areál)",
+      "city": "951 12 Ivanka pri Nitre",
+      "stadium": "Futbalový areál ŠK Junior, Ivanka pri Nitre",
+      "capacity": 500
     },
-    {
-        "name":  "Mgr. Peter Novák",
-        "role":  "Športový riaditeľ",
-        "phone":  "+421 905 123 456",
-        "email":  "sport@skjuniorivanka.sk",
-        "bio":  "Zodpovedný za športovú koncepciu, metodiku tréningového procesu a prestupy hráčov."
+    "contact": {
+      "email": "skjuniorivanka@gmail.com",
+      "phone": "+421 910 907 795"
     },
-    {
-        "name":  "Jozef Kováč",
-        "role":  "Koordinátor mládeže",
-        "phone":  "+421 903 987 654",
-        "email":  "mladez@skjuniorivanka.sk",
-        "bio":  "Dohliada na fungovanie mládežníckych kategórií U7 až U15 a komunikáciu s rodičmi."
+    "contacts": {
+      "email": "skjuniorivanka@gmail.com",
+      "phone": "+421 910 907 795",
+      "facebook": "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
+      "instagram": "https://www.instagram.com/skjunior_ivanka/",
+      "youtube": "https://youtube.com"
     },
-    {
-        "name":  "František Tóth",
-        "role":  "Hospodár & správca areálu",
-        "phone":  "+421 911 234 567",
-        "email":  "areal@skjuniorivanka.sk",
-        "bio":  "Zabezpečuje technický stav ihrísk, zázemie pre zápasy a materiálne vybavenie tímov."
+    "socials": {
+      "facebook": "https://www.facebook.com/people/%C5%A0K-Junior-Ivanka-pri-Nitre/100063708424617/#",
+      "instagram": "https://www.instagram.com/skjunior_ivanka/"
+    },
+    "billing": {
+      "ico": "53316711",
+      "dic": "2121345678",
+      "bank": "Všeobecná úverová banka, a.s.",
+      "iban": "SK31 0200 0000 0043 6564 7155"
     }
-],
-    historyTimeline: [
-    {
-        "year":  "2020",
-        "title":  "Založenie ŠK Junior Ivanka pri Nitre",
-        "text":  "Vznik futbalového klubu so zameraním na systematickú výchovu mladých talentov a vytvorenie moderného športového zázemia."
-    },
-    {
-        "year":  "2021",
-        "title":  "Otvorenie futbalovej školičky a prípraviek",
-        "text":  "Prvý nábor detí a prihlásenie prvých mládežníckych tímov do oficiálnych súťaží ObFZ Nitra."
-    },
-    {
-        "year":  "2023",
-        "title":  "Postup žiakov do krajskej súťaže ZsFZ",
-        "text":  "Kategórie U15 a U13 postúpili do III. ligy ZsFZ a zaradili sa medzi popredné mládežnícke akadémie v regióne."
-    },
-    {
-        "year":  "2025",
-        "title":  "Vytvorenie seniorského tímu a modernizácia areálu",
-        "text":  "Klub zastrešil kompletnú pyramídu tímov od školičky až po dospelých s cieľom dať odchovancom priestor v domácom klube."
-    }
-],
-    partners: [
-    {
-        "name":  "Obec Ivanka pri Nitre",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Generálny partner",
-        "url":  "https://ivankaprinitre.sk",
-        "desc":  "Podpora športovania detí a rozvoja futbalového areálu"
-    },
-    {
-        "name":  "Macron Slovensko",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Hlavný športový partner",
-        "url":  "https://macron.sk",
-        "desc":  "Oficiálny dodávateľ dresov a športového vybavenia"
-    },
-    {
-        "name":  "Nitriansky samosprávny kraj",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Partner mládeže",
-        "url":  "https://unsk.sk",
-        "desc":  "Podpora mládežníckych projektov a turnajov"
-    },
-    {
-        "name":  "Západoslovenský futbalový zväz",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Oficiálny partner",
-        "url":  "https://zsfz.sk",
-        "desc":  "Zastrešenie krajských majstrovských súťaží"
-    }
-]
   },
-
-  // 3. POSLEDNÝ ODOHRATÝ ZÁPAS
-  lastMatch: {
-    competition: "VIII. A liga Macron ObFZ Nitra",
-    round: "13. kolo",
-    homeTeam: "FC Cabaj-Čápor",
-    homeLogo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
-    homeScore: 4,
-    awayTeam: "ŠK Junior Ivanka pri Nitre",
-    awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-    awayScore: 1,
-    dateFormatted: "01.11.2026",
-    attendance: "120 divákov",
-    scorers: "35' Tkáčik, 43' Lenický, 50' Laca, 66' Kompas - 54' Baník"
+  "about": {
+    "management": [
+      {
+        "name": "Peter Konig",
+        "role": "Prezident klubu",
+        "phone": "+421 907 772 001",
+        "email": "peter.konig88@gmail.com",
+        "bio": "Štatutárny zástupca klubu"
+      },
+      {
+        "name": "Matej Blaži",
+        "role": "Funkcionár",
+        "phone": "+421 910 907 795",
+        "email": "matejblazi@gmail.com",
+        "bio": ""
+      },
+      {
+        "name": "Jakub Blaži",
+        "role": "Funkcionár",
+        "phone": "+421 903 064 907",
+        "email": "jakubblazi8@gmail.com",
+        "bio": ""
+      }
+    ],
+    "historyTimeline": [
+      {
+        "year": "2020",
+        "title": "Založenie ŠK Junior Ivanka pri Nitre",
+        "text": "Vznik futbalového klubu so zameraním na systematickú výchovu mladých talentov a vytvorenie moderného športového zázemia."
+      },
+      {
+        "year": "2021",
+        "title": "Otvorenie futbalovej školičky a prípraviek",
+        "text": "Prvý nábor detí a prihlásenie prvých mládežníckych tímov do oficiálnych súťaží ObFZ Nitra."
+      },
+      {
+        "year": "2023",
+        "title": "Postup žiakov do krajskej súťaže ZsFZ",
+        "text": "Kategórie U15 a U13 postúpili do III. ligy ZsFZ a zaradili sa medzi popredné mládežnícke akadémie v regióne."
+      },
+      {
+        "year": "2025",
+        "title": "Vytvorenie seniorského tímu a modernizácia areálu",
+        "text": "Klub zastrešil kompletnú pyramídu tímov od školičky až po dospelých s cieľom dať odchovancom priestor v domácom klube."
+      }
+    ],
+    "partners": [
+      {
+        "tier": "Generálny partner",
+        "name": "Obec Ivanka pri Nitre",
+        "logo": "data:image/png;base64,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",
+        "desc": ""
+      },
+      {
+        "tier": "Partner mládeže",
+        "name": "Smash Bros",
+        "logo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/7QCEUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAGgcAigAYkZCTUQwYTAwMGE0ZjAyMDAwMDI5MWYwMDAwMzMzNzAwMDA3NjQ2MDAwMGExNGMwMDAwZTQ2NzAwMDAyNjhmMDAwMGYwYWMwMDAwZjBiMzAwMDA0Y2I2MDAwMGUxZDUwMDAwAP/bAIQABQYGCwgLCwsLCw0LCwsNDg4NDQ4ODw0ODg4NDxAQEBEREBAQEA8TEhMPEBETFBQTERMWFhYTFhUVFhkWGRYWEgEFBQUKBwoICQkICwgKCAsKCgkJCgoMCQoJCgkMDQsKCwsKCw0MCwsICwsMDAwNDQwMDQoLCg0MDQ0MExQTExOc/8IAEQgEnASbAwEiAAIRAQMRAf/EARoAAQACAwEBAQAAAAAAAAAAAAAGBwQFCAMBAgEBAAIDAQEAAAAAAAAAAAAAAAEEAgMFBgcQAAEEAQIFBAEEAgIDAAAAAAMAAQIEBRETBhASFBUgMDM0MiEiIzEWQCRQYHDQEQABAgMCBgsPAwMDBQAAAAACAQMABBIFEQYTISIyQhQgMUFSYnKSotHhEBYjMFFTVHGBgpGhscHwFTNhQEOyNLDSUGDC8fISAAIBAgMGBQMDAwUAAAAAAAECAAMRBBIhExQiMVFSIDJBQmIQMGFAUHIjM3GCkZKisBMAAQICBAsHAgUEAQUBAAAAAQACESEDEjFBECAiMjNRYXGBkaETMEJyscHRUuEjYoKSslBzovDxBDRAcNBj/9oADAMBAAIRAxIAAAGKjzn2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A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/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A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",
+        "desc": ""
+      }
+    ]
   },
-
-  // 4. NAJBLIŽŠÍ ZÁPAS
-  nextMatch: {
-    competition: "VIII. A liga Macron ObFZ Nitra",
-    homeTeam: "MFK Pohranice",
-    homeLogo: "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
-    awayTeam: "ŠK Junior Ivanka pri Nitre",
-    awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-    dateFormatted: "21.03.2027",
-    time: "15:00",
-    venue: "Ihrisko MFK Pohranice"
+  "lastMatch": {
+    "competition": "VIII. A liga Macron ObFZ Nitra",
+    "round": "13. kolo",
+    "homeTeam": "FC Cabaj-Čápor",
+    "homeLogo": "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
+    "homeScore": 4,
+    "awayTeam": "ŠK Junior Ivanka pri Nitre",
+    "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+    "awayScore": 1,
+    "dateFormatted": "01.11.2026",
+    "attendance": "120 divákov",
+    "scorers": "35' Tkáčik, 43' Lenický, 50' Laca, 66' Kompas - 54' Baník"
   },
-
-  // 5. NAJBLIŽŠIE A POSLEDNÉ ZÁPASY VŠETKÝCH KATEGÓRIÍ
-  upcomingMatches: [
+  "nextMatch": {
+    "competition": "VIII. A liga Macron ObFZ Nitra",
+    "homeTeam": "MFK Pohranice",
+    "homeLogo": "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
+    "awayTeam": "ŠK Junior Ivanka pri Nitre",
+    "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+    "dateFormatted": "21.03.2027",
+    "time": "15:00",
+    "venue": "Ihrisko MFK Pohranice"
+  },
+  "upcomingMatches": [
     {
-      id: "m-u15-01",
-      teamKey: "u15",
-      teamCategory: "Starší žiaci U15",
-      teamName: "Starší žiaci U15",
-      competition: "III. liga U15 Macron ZsFZ",
-      round: "15. kolo",
-      homeTeam: "FK Veča",
-      homeLogo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
-      awayTeam: "ŠK Junior Ivanka pri Nitre",
-      awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      score: "2 : 1",
-      date: "15.11.2026",
-      time: "09:00",
-      venue: "Ihrisko FK Veča",
-      isHome: false,
-      status: "finished"
+      "id": "m-u15-01",
+      "teamKey": "u15",
+      "teamCategory": "Starší žiaci U15",
+      "teamName": "Starší žiaci U15",
+      "competition": "III. liga U15 Macron ZsFZ",
+      "round": "15. kolo",
+      "homeTeam": "FK Veča",
+      "homeLogo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+      "awayTeam": "ŠK Junior Ivanka pri Nitre",
+      "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "score": "2 : 1",
+      "date": "15.11.2026",
+      "time": "09:00",
+      "venue": "Ihrisko FK Veča",
+      "isHome": false,
+      "status": "finished"
     },
     {
-      id: "m-u13-01",
-      teamKey: "u13",
-      teamCategory: "Mladší žiaci U13",
-      teamName: "Mladší žiaci U13",
-      competition: "III. liga U13 Macron ZsFZ",
-      round: "15. kolo",
-      homeTeam: "FK Veča",
-      homeLogo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
-      awayTeam: "ŠK Junior Ivanka pri Nitre",
-      awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      score: "11 : 0",
-      date: "15.11.2026",
-      time: "10:30",
-      venue: "Ihrisko FK Veča",
-      isHome: false,
-      status: "finished"
+      "id": "m-u13-01",
+      "teamKey": "u13",
+      "teamCategory": "Mladší žiaci U13",
+      "teamName": "Mladší žiaci U13",
+      "competition": "III. liga U13 Macron ZsFZ",
+      "round": "15. kolo",
+      "homeTeam": "FK Veča",
+      "homeLogo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+      "awayTeam": "ŠK Junior Ivanka pri Nitre",
+      "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "score": "11 : 0",
+      "date": "15.11.2026",
+      "time": "10:30",
+      "venue": "Ihrisko FK Veča",
+      "isHome": false,
+      "status": "finished"
     },
     {
-      id: "m-u19-1511",
-      teamKey: "u19",
-      teamCategory: "Starší dorast U19",
-      teamName: "Starší dorast U19",
-      competition: "IV. liga U19 ZsFZ",
-      round: "15. kolo",
-      homeTeam: "ŠK Junior Ivanka pri Nitre",
-      homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      awayTeam: "FC Jelenec",
-      awayLogo: "https://api.sportnet.online/data/ppo/fc-jelenec.futbalnet.sk/logo",
-      score: "0 : 11",
-      date: "15.11.2026",
-      time: "10:00",
-      venue: "Futbalový areál ŠK Junior Ivanka pri Nitre",
-      isHome: true,
-      status: "finished"
+      "id": "m-u19-1511",
+      "teamKey": "u19",
+      "teamCategory": "Starší dorast U19",
+      "teamName": "Starší dorast U19",
+      "competition": "IV. liga U19 ZsFZ",
+      "round": "15. kolo",
+      "homeTeam": "ŠK Junior Ivanka pri Nitre",
+      "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "awayTeam": "FC Jelenec",
+      "awayLogo": "https://api.sportnet.online/data/ppo/fc-jelenec.futbalnet.sk/logo",
+      "score": "0 : 11",
+      "date": "15.11.2026",
+      "time": "10:00",
+      "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+      "isHome": true,
+      "status": "finished"
     },
     {
-      id: "m-atim-01",
-      teamKey: "a-tim",
-      teamCategory: "A-tím (Muži)",
-      teamName: "A-tím (Muži)",
-      competition: "VIII. A liga Macron ObFZ Nitra",
-      round: "16. kolo",
-      homeTeam: "MFK Pohranice",
-      homeLogo: "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
-      awayTeam: "ŠK Junior Ivanka pri Nitre",
-      awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      score: "",
-      date: "21.03.2027",
-      time: "15:00",
-      venue: "Ihrisko MFK Pohranice",
-      isHome: false,
-      status: "scheduled"
+      "id": "m-atim-01",
+      "teamKey": "a-tim",
+      "teamCategory": "A-tím (Muži)",
+      "teamName": "A-tím (Muži)",
+      "competition": "VIII. A liga Macron ObFZ Nitra",
+      "round": "16. kolo",
+      "homeTeam": "MFK Pohranice",
+      "homeLogo": "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
+      "awayTeam": "ŠK Junior Ivanka pri Nitre",
+      "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "score": "",
+      "date": "21.03.2027",
+      "time": "15:00",
+      "venue": "Ihrisko MFK Pohranice",
+      "isHome": false,
+      "status": "scheduled"
     },
     {
-      id: "m-u19-01",
-      teamKey: "u19",
-      teamCategory: "Starší dorast U19",
-      teamName: "Starší dorast U19",
-      competition: "IV. liga U19 ZsFZ",
-      round: "10. kolo",
-      homeTeam: "TJ Slovan Čeľadice",
-      homeLogo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
-      awayTeam: "ŠK Junior Ivanka pri Nitre",
-      awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      score: "",
-      date: "27.03.2027",
-      time: "14:30",
-      venue: "Ihrisko Čeľadice",
-      isHome: false,
-      status: "scheduled"
+      "id": "m-u19-01",
+      "teamKey": "u19",
+      "teamCategory": "Starší dorast U19",
+      "teamName": "Starší dorast U19",
+      "competition": "IV. liga U19 ZsFZ",
+      "round": "10. kolo",
+      "homeTeam": "TJ Slovan Čeľadice",
+      "homeLogo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+      "awayTeam": "ŠK Junior Ivanka pri Nitre",
+      "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "score": "",
+      "date": "27.03.2027",
+      "time": "14:30",
+      "venue": "Ihrisko Čeľadice",
+      "isHome": false,
+      "status": "scheduled"
     },
     {
-      id: "m-u11-01",
-      teamKey: "u11",
-      teamCategory: "Prípravka U11",
-      teamName: "Prípravka U11",
-      competition: "Liga prípraviek U11 ObFZ Nitra",
-      round: "11. kolo",
-      homeTeam: "OFK Golianovo",
-      homeLogo: "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo",
-      awayTeam: "ŠK Junior Ivanka pri Nitre",
-      awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      score: "",
-      date: "28.03.2027",
-      time: "10:00",
-      venue: "Ihrisko Golianovo",
-      isHome: false,
-      status: "scheduled"
+      "id": "m-u11-01",
+      "teamKey": "u11",
+      "teamCategory": "Prípravka U11",
+      "teamName": "Prípravka U11",
+      "competition": "Liga prípraviek U11 ObFZ Nitra",
+      "round": "11. kolo",
+      "homeTeam": "OFK Golianovo",
+      "homeLogo": "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo",
+      "awayTeam": "ŠK Junior Ivanka pri Nitre",
+      "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "score": "",
+      "date": "28.03.2027",
+      "time": "10:00",
+      "venue": "Ihrisko Golianovo",
+      "isHome": false,
+      "status": "scheduled"
     },
     {
-      id: "m-u9-01",
-      teamKey: "u9",
-      teamCategory: "Predprípravka U9",
-      teamName: "Predprípravka U9",
-      competition: "Liga prípraviek U09 ObFZ Nitra",
-      round: "10. kolo",
-      homeTeam: "FK Mojmírovce",
-      homeLogo: "https://api.sportnet.online/data/ppo/fk-mojmirovce.futbalnet.sk/logo",
-      awayTeam: "ŠK Junior Ivanka pri Nitre",
-      awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
-      score: "",
-      date: "04.04.2027",
-      time: "10:30",
-      venue: "Ihrisko Mojmírovce",
-      isHome: false,
-      status: "scheduled"
+      "id": "m-u9-01",
+      "teamKey": "u9",
+      "teamCategory": "Predprípravka U9",
+      "teamName": "Predprípravka U9",
+      "competition": "Liga prípraviek U09 ObFZ Nitra",
+      "round": "10. kolo",
+      "homeTeam": "FK Mojmírovce",
+      "homeLogo": "https://api.sportnet.online/data/ppo/fk-mojmirovce.futbalnet.sk/logo",
+      "awayTeam": "ŠK Junior Ivanka pri Nitre",
+      "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+      "score": "",
+      "date": "04.04.2027",
+      "time": "10:30",
+      "venue": "Ihrisko Mojmírovce",
+      "isHome": false,
+      "status": "scheduled"
     }
   ],
-
-  // 6. TÍMY KLUBU
-  teams: {
+  "teams": {
     "a-tim": {
-      key: "a-tim",
-      name: "A-tím (Muži)",
-      badge: "Seniori • VIII. liga",
-      code: "A-TÍM",
-      category: "Dospelí",
-      league: "VIII. A liga Macron ObFZ Nitra",
-      coach: "Marián Varga",
-      description: "Hlavný reprezentant klubu ŠK Junior v kategórii dospelých pod hlavičkou ObFZ Nitra.",
-      trainings: "Utorok a Štvrtok o 18:00 (Futbalový areál ŠK Junior Ivanka pri Nitre)",
-      color: "#FF3388",
-      sportnetSlug: "dospeli-m-a",
-      table: [
-        { pos: 1, team: "ŠK Rumanová", logo: "https://api.sportnet.online/data/ppo/sk-rumanova.futbalnet.sk/logo", p: 12, w: 9, d: 1, l: 2, score: "55:21", pts: 28, isCurrent: false },
-        { pos: 2, team: "OFK 1948 Veľký Lapáš", logo: "https://api.sportnet.online/data/ppo/ofk-1948-velky-lapas.futbalnet.sk/logo", p: 12, w: 9, d: 1, l: 2, score: "33:13", pts: 28, isCurrent: false },
-        { pos: 3, team: "FK Veča", logo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", p: 12, w: 9, d: 0, l: 3, score: "46:21", pts: 27, isCurrent: false },
-        { pos: 4, team: "Futbalový klub FC 31 Jarok", logo: "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo", p: 12, w: 8, d: 1, l: 3, score: "37:20", pts: 25, isCurrent: false },
-        { pos: 5, team: "OFK Golianovo", logo: "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo", p: 12, w: 7, d: 1, l: 4, score: "39:23", pts: 22, isCurrent: false },
-        { pos: 6, team: "TJ Družstevník Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", p: 12, w: 6, d: 3, l: 3, score: "26:22", pts: 21, isCurrent: false },
-        { pos: 7, team: "FC Cabaj-Čápor", logo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo", p: 12, w: 5, d: 0, l: 7, score: "27:35", pts: 15, isCurrent: false },
-        { pos: 8, team: "OFK Branč", logo: "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo", p: 12, w: 4, d: 2, l: 6, score: "29:29", pts: 14, isCurrent: false },
-        { pos: 9, team: "TJ Nové Sady", logo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", p: 12, w: 4, d: 2, l: 6, score: "27:39", pts: 14, isCurrent: false },
-        { pos: 10, team: "OFK Lužianky", logo: "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo", p: 12, w: 4, d: 0, l: 8, score: "23:56", pts: 12, isCurrent: false },
-        { pos: 11, team: "FK DYNAMO Trnovec nad Váhom", logo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", p: 12, w: 3, d: 1, l: 8, score: "19:25", pts: 10, isCurrent: false },
-        { pos: 12, team: "ŠK Junior Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", p: 12, w: 1, d: 5, l: 6, score: "23:35", pts: 8, isCurrent: true },
-        { pos: 13, team: "MFK Pohranice", logo: "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo", p: 12, w: 0, d: 1, l: 11, score: "7:52", pts: 1, isCurrent: false },
-        { pos: 14, team: "FK Nitra", logo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", p: 0, w: 0, d: 0, l: 0, score: "0:0", pts: 0, isCurrent: false }
+      "key": "a-tim",
+      "name": "A-tím (Muži)",
+      "badge": "Seniori • VIII. liga",
+      "code": "A-TÍM",
+      "category": "Dospelí",
+      "league": "VIII. A liga Macron ObFZ Nitra",
+      "coach": "Marián Varga",
+      "description": "Hlavný reprezentant klubu ŠK Junior v kategórii dospelých pod hlavičkou ObFZ Nitra.",
+      "trainings": "Utorok a Štvrtok o 18:00 (Futbalový areál ŠK Junior Ivanka pri Nitre)",
+      "color": "#FF3388",
+      "sportnetSlug": "dospeli-m-a",
+      "table": [
+        {
+          "pos": 1,
+          "team": "ŠK Rumanová",
+          "logo": "https://api.sportnet.online/data/ppo/sk-rumanova.futbalnet.sk/logo",
+          "p": 12,
+          "w": 9,
+          "d": 1,
+          "l": 2,
+          "score": "55:21",
+          "pts": 28,
+          "isCurrent": false
+        },
+        {
+          "pos": 2,
+          "team": "OFK 1948 Veľký Lapáš",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-1948-velky-lapas.futbalnet.sk/logo",
+          "p": 12,
+          "w": 9,
+          "d": 1,
+          "l": 2,
+          "score": "33:13",
+          "pts": 28,
+          "isCurrent": false
+        },
+        {
+          "pos": 3,
+          "team": "FK Veča",
+          "logo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+          "p": 12,
+          "w": 9,
+          "d": 0,
+          "l": 3,
+          "score": "46:21",
+          "pts": 27,
+          "isCurrent": false
+        },
+        {
+          "pos": 4,
+          "team": "Futbalový klub FC 31 Jarok",
+          "logo": "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo",
+          "p": 12,
+          "w": 8,
+          "d": 1,
+          "l": 3,
+          "score": "37:20",
+          "pts": 25,
+          "isCurrent": false
+        },
+        {
+          "pos": 5,
+          "team": "OFK Golianovo",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo",
+          "p": 12,
+          "w": 7,
+          "d": 1,
+          "l": 4,
+          "score": "39:23",
+          "pts": 22,
+          "isCurrent": false
+        },
+        {
+          "pos": 6,
+          "team": "TJ Družstevník Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo",
+          "p": 12,
+          "w": 6,
+          "d": 3,
+          "l": 3,
+          "score": "26:22",
+          "pts": 21,
+          "isCurrent": false
+        },
+        {
+          "pos": 7,
+          "team": "FC Cabaj-Čápor",
+          "logo": "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
+          "p": 12,
+          "w": 5,
+          "d": 0,
+          "l": 7,
+          "score": "27:35",
+          "pts": 15,
+          "isCurrent": false
+        },
+        {
+          "pos": 8,
+          "team": "OFK Branč",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo",
+          "p": 12,
+          "w": 4,
+          "d": 2,
+          "l": 6,
+          "score": "29:29",
+          "pts": 14,
+          "isCurrent": false
+        },
+        {
+          "pos": 9,
+          "team": "TJ Nové Sady",
+          "logo": "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo",
+          "p": 12,
+          "w": 4,
+          "d": 2,
+          "l": 6,
+          "score": "27:39",
+          "pts": 14,
+          "isCurrent": false
+        },
+        {
+          "pos": 10,
+          "team": "OFK Lužianky",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo",
+          "p": 12,
+          "w": 4,
+          "d": 0,
+          "l": 8,
+          "score": "23:56",
+          "pts": 12,
+          "isCurrent": false
+        },
+        {
+          "pos": 11,
+          "team": "FK DYNAMO Trnovec nad Váhom",
+          "logo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "p": 12,
+          "w": 3,
+          "d": 1,
+          "l": 8,
+          "score": "19:25",
+          "pts": 10,
+          "isCurrent": false
+        },
+        {
+          "pos": 12,
+          "team": "ŠK Junior Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "p": 12,
+          "w": 1,
+          "d": 5,
+          "l": 6,
+          "score": "23:35",
+          "pts": 8,
+          "isCurrent": true
+        },
+        {
+          "pos": 13,
+          "team": "MFK Pohranice",
+          "logo": "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
+          "p": 12,
+          "w": 0,
+          "d": 1,
+          "l": 11,
+          "score": "7:52",
+          "pts": 1,
+          "isCurrent": false
+        },
+        {
+          "pos": 14,
+          "team": "FK Nitra",
+          "logo": "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo",
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "score": "0:0",
+          "pts": 0,
+          "isCurrent": false
+        }
       ],
-      matches: [
-        { id: "m-a-tim-49ff86ca", round: "6. kolo", date: "13.09.2026", time: "16:00", homeTeam: "OFK Lužianky", homeLogo: "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "4 : 3", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff861b", round: "7. kolo", date: "19.09.2026", time: "15:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "TJ Družstevník Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", score: "2 : 5", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff8717", round: "8. kolo", date: "26.09.2026", time: "15:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "TJ Nové Sady", awayLogo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", score: "3 : 3", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff889d", round: "9. kolo", date: "03.10.2026", time: "14:30", homeTeam: "FK Veča", homeLogo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "3 : 2", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff8914", round: "10. kolo", date: "10.10.2026", time: "14:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Golianovo", awayLogo: "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo", score: "1 : 2", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff8c45", round: "11. kolo", date: "17.10.2026", time: "14:00", homeTeam: "FK Nitra", homeLogo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff8a73", round: "12. kolo", date: "24.10.2026", time: "14:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Branč", awayLogo: "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo", score: "1 : 1", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff8bd9", round: "13. kolo", date: "01.11.2026", time: "14:00", homeTeam: "FC Cabaj-Čápor", homeLogo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "4 : 1", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-a-tim-49ff8af9", round: "14. kolo", date: "21.03.2027", time: "15:00", homeTeam: "MFK Pohranice", homeLogo: "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff8c4a", round: "15. kolo", date: "28.03.2027", time: "15:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "Futbalový klub FC 31 Jarok", awayLogo: "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff8e24", round: "16. kolo", date: "04.04.2027", time: "15:30", homeTeam: "OFK 1948 Veľký Lapáš", homeLogo: "https://api.sportnet.online/data/ppo/ofk-1948-velky-lapas.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff8eb5", round: "17. kolo", date: "11.04.2027", time: "15:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK DYNAMO Trnovec nad Váhom", awayLogo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff9214", round: "18. kolo", date: "18.04.2027", time: "16:00", homeTeam: "ŠK Rumanová", homeLogo: "https://api.sportnet.online/data/ppo/sk-rumanova.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff9271", round: "19. kolo", date: "25.04.2027", time: "16:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Lužianky", awayLogo: "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff9122", round: "20. kolo", date: "02.05.2027", time: "16:30", homeTeam: "TJ Družstevník Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-a-tim-49ff9462", round: "21. kolo", date: "09.05.2027", time: "16:30", homeTeam: "TJ Nové Sady", homeLogo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "matches": [
+        {
+          "id": "m-a-tim-49ff86ca",
+          "round": "6. kolo",
+          "date": "13.09.2026",
+          "time": "16:00",
+          "homeTeam": "OFK Lužianky",
+          "homeLogo": "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "4 : 3",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff861b",
+          "round": "7. kolo",
+          "date": "19.09.2026",
+          "time": "15:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "TJ Družstevník Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo",
+          "score": "2 : 5",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff8717",
+          "round": "8. kolo",
+          "date": "26.09.2026",
+          "time": "15:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "TJ Nové Sady",
+          "awayLogo": "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo",
+          "score": "3 : 3",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff889d",
+          "round": "9. kolo",
+          "date": "03.10.2026",
+          "time": "14:30",
+          "homeTeam": "FK Veča",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "3 : 2",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff8914",
+          "round": "10. kolo",
+          "date": "10.10.2026",
+          "time": "14:30",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Golianovo",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo",
+          "score": "1 : 2",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff8c45",
+          "round": "11. kolo",
+          "date": "17.10.2026",
+          "time": "14:00",
+          "homeTeam": "FK Nitra",
+          "homeLogo": "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff8a73",
+          "round": "12. kolo",
+          "date": "24.10.2026",
+          "time": "14:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Branč",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo",
+          "score": "1 : 1",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff8bd9",
+          "round": "13. kolo",
+          "date": "01.11.2026",
+          "time": "14:00",
+          "homeTeam": "FC Cabaj-Čápor",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "4 : 1",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-a-tim-49ff8af9",
+          "round": "14. kolo",
+          "date": "21.03.2027",
+          "time": "15:00",
+          "homeTeam": "MFK Pohranice",
+          "homeLogo": "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff8c4a",
+          "round": "15. kolo",
+          "date": "28.03.2027",
+          "time": "15:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "Futbalový klub FC 31 Jarok",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff8e24",
+          "round": "16. kolo",
+          "date": "04.04.2027",
+          "time": "15:30",
+          "homeTeam": "OFK 1948 Veľký Lapáš",
+          "homeLogo": "https://api.sportnet.online/data/ppo/ofk-1948-velky-lapas.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff8eb5",
+          "round": "17. kolo",
+          "date": "11.04.2027",
+          "time": "15:30",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK DYNAMO Trnovec nad Váhom",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff9214",
+          "round": "18. kolo",
+          "date": "18.04.2027",
+          "time": "16:00",
+          "homeTeam": "ŠK Rumanová",
+          "homeLogo": "https://api.sportnet.online/data/ppo/sk-rumanova.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff9271",
+          "round": "19. kolo",
+          "date": "25.04.2027",
+          "time": "16:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Lužianky",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff9122",
+          "round": "20. kolo",
+          "date": "02.05.2027",
+          "time": "16:30",
+          "homeTeam": "TJ Družstevník Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-a-tim-49ff9462",
+          "round": "21. kolo",
+          "date": "09.05.2027",
+          "time": "16:30",
+          "homeTeam": "TJ Nové Sady",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Patrik Holka", pos: "Brankár", year: 1996 },
-        { number: 4, name: "Lukáš Varga", pos: "Obranca", year: 1998 },
-        { number: 5, name: "Michal Kováč", pos: "Obranca", year: 1995 },
-        { number: 3, name: "Tomáš Chňapek", pos: "Obranca", year: 2000 },
-        { number: 13, name: "Adrián Balla", pos: "Obranca", year: 2001 },
-        { number: 6, name: "Dávid Tóth", pos: "Záložník", year: 1999 },
-        { number: 8, name: "Samuel Horváth", pos: "Záložník", year: 2002 },
-        { number: 10, name: "Matej Franko", pos: "Záložník", year: 1997 },
-        { number: 14, name: "Dominik Szabó", pos: "Záložník", year: 2003 },
-        { number: 7, name: "Filip Štefanka", pos: "Útočník", year: 1999 },
-        { number: 9, name: "Marek Jančo", pos: "Útočník", year: 1998 },
-        { number: 11, name: "Adam Kertész", pos: "Útočník", year: 2004 }
+      "roster": [
+        {
+          "number": null,
+          "name": "Tomáš Bujný",
+          "pos": "Brankár",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Michal Macúch",
+          "pos": "Brankár",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Vladimír Slíž",
+          "pos": "Brankár",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Pavel Imrišek",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Mário Šmitala",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Tomáš Solčan",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Richard Vnučko",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Tomáš Repa",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Richard Kordiak",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Miroslav Janiček",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Dušan Koszorú",
+          "pos": "Obranca",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Jakub Blaži",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Marko Minarčiny",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Pavol Demény",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Boris Luka",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Samuel Hozlár",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Matúš Čičo",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Matúš Varga",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Michal Škvarenina",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Roman Guzmický",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Miroslav Svajčík",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Filip Minárčiny",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Jakub Bernát",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Matej Sloboda",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Marián Kisler",
+          "pos": "Stredopoliar",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Michal Baník",
+          "pos": "Útočník",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Norbert Haluška",
+          "pos": "Útočník",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Štefan Zelovič",
+          "pos": "Útočník",
+          "year": null
+        },
+        {
+          "number": null,
+          "name": "Michal Bibeň",
+          "pos": "Útočník",
+          "year": null
+        }
       ],
-      staff: [
-        { role: "Hlavný tréner", name: "Marián Varga", license: "UEFA B licencia", phone: "+421 910 907 795", email: "marian.varga@skjuniorivanka.sk" },
-        { role: "Asistent trénera", name: "Peter Novák", license: "UEFA Grassroots C", phone: "+421 905 123 456", email: "peter.novak@skjuniorivanka.sk" },
-        { role: "Vedúci mužstva", name: "František Tóth", license: "Funkcionárska licencia SFZ", phone: "+421 911 234 567", email: "spravca@skjuniorivanka.sk" },
-        { role: "Klubový lekár / Masér", name: "MUDr. Ján Blaško", license: "Zdravotná spôsobilosť", phone: "+421 903 555 777", email: "zdravotnik@skjuniorivanka.sk" }
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Marián Varga",
+          "license": "UEFA B licencia",
+          "phone": "+421 910 907 795",
+          "email": "marian.varga@skjuniorivanka.sk"
+        },
+        {
+          "role": "Asistent trénera",
+          "name": "Peter Novák",
+          "license": "UEFA Grassroots C",
+          "phone": "+421 905 123 456",
+          "email": "peter.novak@skjuniorivanka.sk"
+        },
+        {
+          "role": "Vedúci mužstva",
+          "name": "František Tóth",
+          "license": "Funkcionárska licencia SFZ",
+          "phone": "+421 911 234 567",
+          "email": "spravca@skjuniorivanka.sk"
+        },
+        {
+          "role": "Klubový lekár / Masér",
+          "name": "MUDr. Ján Blaško",
+          "license": "Zdravotná spôsobilosť",
+          "phone": "+421 903 555 777",
+          "email": "zdravotnik@skjuniorivanka.sk"
+        }
       ]
     },
-
     "u19": {
-      key: "u19",
-      name: "Starší dorast U19",
-      badge: "Dorast • IV. liga",
-      code: "U19",
-      category: "Dorast U19",
-      league: "IV. liga U19 ZsFZ",
-      coach: "Peter Novák",
-      description: "Generálka pred vstupom do seniorského futbalu. Dôraz na taktickú vyspelosť a fyzickú kondíciu.",
-      trainings: "Pondelok, Streda a Piatok o 17:30",
-      color: "#FF3388",
-      sportnetSlug: "u19-m-a",
-      table: [
-        { pos: 1, team: "FC Jelenec", logo: "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo", p: 12, w: 11, d: 1, l: 0, score: "113:10", pts: 34, isCurrent: false },
-        { pos: 2, team: "TJ Slovan Čeľadice", logo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", p: 12, w: 10, d: 2, l: 0, score: "55:12", pts: 32, isCurrent: false },
-        { pos: 3, team: "OFK Hosťovce", logo: "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo", p: 12, w: 7, d: 1, l: 4, score: "38:29", pts: 22, isCurrent: false },
-        { pos: 4, team: "ŠK Nevidzany", logo: "https://api.sportnet.online/data/ppo/sk-nevidzany.futbalnet.sk/logo", p: 12, w: 7, d: 1, l: 4, score: "58:31", pts: 22, isCurrent: false },
-        { pos: 5, team: "FK Janíkovce", logo: "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo", p: 12, w: 4, d: 1, l: 7, score: "22:38", pts: 13, isCurrent: false },
-        { pos: 6, team: "ŠK Junior Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", p: 11, w: 2, d: 0, l: 9, score: "13:55", pts: 6, isCurrent: true },
-        { pos: 7, team: "OFK Sľažany", logo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", p: 11, w: 2, d: 0, l: 9, score: "10:53", pts: 6, isCurrent: false },
-        { pos: 8, team: "Obecný športový klub Lehota", logo: "https://api.sportnet.online/data/ppo/osk-lehota.futbalnet.sk/logo", p: 12, w: 1, d: 0, l: 11, score: "19:100", pts: 3, isCurrent: false },
-        { pos: 9, team: "ŠK Nitra-Dolné Krškany B", logo: "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo", p: 0, w: 0, d: 0, l: 0, score: "0:0", pts: 0, isCurrent: false }
+      "key": "u19",
+      "name": "Starší dorast U19",
+      "badge": "Dorast • IV. liga",
+      "code": "U19",
+      "category": "Dorast U19",
+      "league": "IV. liga U19 ZsFZ",
+      "coach": "Peter Novák",
+      "description": "Generálka pred vstupom do seniorského futbalu. Dôraz na taktickú vyspelosť a fyzickú kondíciu.",
+      "trainings": "Pondelok, Streda a Piatok o 17:30",
+      "color": "#FF3388",
+      "sportnetSlug": "u19-m-a",
+      "table": [
+        {
+          "pos": 1,
+          "team": "FC Jelenec",
+          "logo": "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo",
+          "p": 12,
+          "w": 11,
+          "d": 1,
+          "l": 0,
+          "score": "113:10",
+          "pts": 34,
+          "isCurrent": false
+        },
+        {
+          "pos": 2,
+          "team": "TJ Slovan Čeľadice",
+          "logo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "p": 12,
+          "w": 10,
+          "d": 2,
+          "l": 0,
+          "score": "55:12",
+          "pts": 32,
+          "isCurrent": false
+        },
+        {
+          "pos": 3,
+          "team": "OFK Hosťovce",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo",
+          "p": 12,
+          "w": 7,
+          "d": 1,
+          "l": 4,
+          "score": "38:29",
+          "pts": 22,
+          "isCurrent": false
+        },
+        {
+          "pos": 4,
+          "team": "ŠK Nevidzany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-nevidzany.futbalnet.sk/logo",
+          "p": 12,
+          "w": 7,
+          "d": 1,
+          "l": 4,
+          "score": "58:31",
+          "pts": 22,
+          "isCurrent": false
+        },
+        {
+          "pos": 5,
+          "team": "FK Janíkovce",
+          "logo": "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo",
+          "p": 12,
+          "w": 4,
+          "d": 1,
+          "l": 7,
+          "score": "22:38",
+          "pts": 13,
+          "isCurrent": false
+        },
+        {
+          "pos": 6,
+          "team": "ŠK Junior Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "p": 11,
+          "w": 2,
+          "d": 0,
+          "l": 9,
+          "score": "13:55",
+          "pts": 6,
+          "isCurrent": true
+        },
+        {
+          "pos": 7,
+          "team": "OFK Sľažany",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "p": 11,
+          "w": 2,
+          "d": 0,
+          "l": 9,
+          "score": "10:53",
+          "pts": 6,
+          "isCurrent": false
+        },
+        {
+          "pos": 8,
+          "team": "Obecný športový klub Lehota",
+          "logo": "https://api.sportnet.online/data/ppo/osk-lehota.futbalnet.sk/logo",
+          "p": 12,
+          "w": 1,
+          "d": 0,
+          "l": 11,
+          "score": "19:100",
+          "pts": 3,
+          "isCurrent": false
+        },
+        {
+          "pos": 9,
+          "team": "ŠK Nitra-Dolné Krškany B",
+          "logo": "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo",
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "score": "0:0",
+          "pts": 0,
+          "isCurrent": false
+        }
       ],
-      matches: [
-        { id: "m-u19-03bd27a0", round: "7. kolo", date: "20.09.2026", time: "10:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK Janíkovce", awayLogo: "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo", score: "0 : 3", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd2803", round: "9. kolo", date: "04.10.2026", time: "10:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Sľažany", awayLogo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", score: "3 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd27cd", round: "8. kolo", date: "06.10.2026", time: "16:00", homeTeam: "OFK Hosťovce", homeLogo: "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "3 : 2", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd2932", round: "11. kolo", date: "17.10.2026", time: "10:30", homeTeam: "ŠK Nevidzany", homeLogo: "https://api.sportnet.online/data/ppo/sk-nevidzany.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "4 : 0", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd2a0a", round: "12. kolo", date: "25.10.2026", time: "10:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "Obecný športový klub Lehota", awayLogo: "https://api.sportnet.online/data/ppo/osk-lehota.futbalnet.sk/logo", score: "2 : 3", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd2916", round: "13. kolo", date: "01.11.2026", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "TJ Slovan Čeľadice", awayLogo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", score: "1 : 6", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd2bfc", round: "14. kolo", date: "08.11.2026", time: "10:00", homeTeam: "ŠK Nitra-Dolné Krškany B", homeLogo: "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u19-03bd2acc", round: "15. kolo", date: "15.11.2026", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FC Jelenec", awayLogo: "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo", score: "0 : 11", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u19-03bd2b66", round: "16. kolo", date: "20.03.2027", time: "11:30", homeTeam: "FK Janíkovce", homeLogo: "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u19-03bd2c40", round: "17. kolo", date: "28.03.2027", time: "10:30", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Hosťovce", awayLogo: "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u19-03bd2cbc", round: "18. kolo", date: "03.04.2027", time: "12:00", homeTeam: "OFK Sľažany", homeLogo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "matches": [
+        {
+          "id": "m-u19-03bd27a0",
+          "round": "7. kolo",
+          "date": "20.09.2026",
+          "time": "10:30",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK Janíkovce",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo",
+          "score": "0 : 3",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd2803",
+          "round": "9. kolo",
+          "date": "04.10.2026",
+          "time": "10:30",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Sľažany",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "score": "3 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd27cd",
+          "round": "8. kolo",
+          "date": "06.10.2026",
+          "time": "16:00",
+          "homeTeam": "OFK Hosťovce",
+          "homeLogo": "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "3 : 2",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd2932",
+          "round": "11. kolo",
+          "date": "17.10.2026",
+          "time": "10:30",
+          "homeTeam": "ŠK Nevidzany",
+          "homeLogo": "https://api.sportnet.online/data/ppo/sk-nevidzany.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "4 : 0",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd2a0a",
+          "round": "12. kolo",
+          "date": "25.10.2026",
+          "time": "10:30",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "Obecný športový klub Lehota",
+          "awayLogo": "https://api.sportnet.online/data/ppo/osk-lehota.futbalnet.sk/logo",
+          "score": "2 : 3",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd2916",
+          "round": "13. kolo",
+          "date": "01.11.2026",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "TJ Slovan Čeľadice",
+          "awayLogo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "score": "1 : 6",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd2bfc",
+          "round": "14. kolo",
+          "date": "08.11.2026",
+          "time": "10:00",
+          "homeTeam": "ŠK Nitra-Dolné Krškany B",
+          "homeLogo": "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u19-03bd2acc",
+          "round": "15. kolo",
+          "date": "15.11.2026",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FC Jelenec",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo",
+          "score": "0 : 11",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u19-03bd2b66",
+          "round": "16. kolo",
+          "date": "20.03.2027",
+          "time": "11:30",
+          "homeTeam": "FK Janíkovce",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u19-03bd2c40",
+          "round": "17. kolo",
+          "date": "28.03.2027",
+          "time": "10:30",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Hosťovce",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u19-03bd2cbc",
+          "round": "18. kolo",
+          "date": "03.04.2027",
+          "time": "12:00",
+          "homeTeam": "OFK Sľažany",
+          "homeLogo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Kristián Bakoš", pos: "Brankár", year: 2008 },
-        { number: 2, name: "Denis Varga", pos: "Obranca", year: 2007 },
-        { number: 4, name: "Jakub Moravčík", pos: "Obranca", year: 2008 },
-        { number: 5, name: "Richard Farkaš", pos: "Obranca", year: 2007 },
-        { number: 6, name: "Alex Kováč", pos: "Záložník", year: 2008 },
-        { number: 8, name: "Martin Szabó", pos: "Záložník", year: 2007 },
-        { number: 10, name: "Filip Molnár", pos: "Záložník", year: 2008 },
-        { number: 9, name: "Sebastián Tóth", pos: "Útočník", year: 2007 },
-        { number: 11, name: "Oliver Chrenko", pos: "Útočník", year: 2008 }
-      ],
-      staff: [
-        { role: "Hlavný tréner", name: "Peter Novák", license: "UEFA B licencia", phone: "+421 905 123 456", email: "peter.novak@skjuniorivanka.sk" },
-        { role: "Asistent trénera", name: "Marek Jančo", license: "UEFA Grassroots C", phone: "+421 911 333 444", email: "marek.janco@skjuniorivanka.sk" },
-        { role: "Vedúci mužstva", name: "Ladislav Moravčík", license: "Funkcionárska licencia SFZ", phone: "+421 902 444 666", email: "u19@skjuniorivanka.sk" }
+      "roster": [],
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Peter Novák",
+          "license": "UEFA B licencia",
+          "phone": "+421 905 123 456",
+          "email": "peter.novak@skjuniorivanka.sk"
+        },
+        {
+          "role": "Asistent trénera",
+          "name": "Marek Jančo",
+          "license": "UEFA Grassroots C",
+          "phone": "+421 911 333 444",
+          "email": "marek.janco@skjuniorivanka.sk"
+        },
+        {
+          "role": "Vedúci mužstva",
+          "name": "Ladislav Moravčík",
+          "license": "Funkcionárska licencia SFZ",
+          "phone": "+421 902 444 666",
+          "email": "u19@skjuniorivanka.sk"
+        }
       ]
     },
-
     "u15": {
-      key: "u15",
-      name: "Starší žiaci U15",
-      badge: "Žiaci • III. liga",
-      code: "U15",
-      category: "Starší žiaci U15",
-      league: "III. liga U15 Macron ZsFZ",
-      coach: "Jozef Kováč",
-      description: "Prechod na veľké ihrisko s plným počtom hráčov, komplexný herný rozvoj v krajskej súťaži.",
-      trainings: "Utorok, Streda a Piatok o 16:30",
-      color: "#FF3388",
-      sportnetSlug: "u15-m-a",
-      table: [
-        { pos: 1, team: "FC Slovan Hlohovec", logo: "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo", p: 14, w: 11, d: 0, l: 3, score: "51:15", pts: 33, isCurrent: false },
-        { pos: 2, team: "Futbalový klub Holice", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo", p: 14, w: 9, d: 3, l: 2, score: "40:14", pts: 30, isCurrent: false },
-        { pos: 3, team: "ŠK Junior Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", p: 14, w: 9, d: 2, l: 3, score: "31:17", pts: 29, isCurrent: true },
-        { pos: 4, team: "SSC FÉNIX Nové Zámky", logo: "https://api.sportnet.online/data/ppo/issf_club_9093/logo", p: 14, w: 8, d: 1, l: 5, score: "51:19", pts: 25, isCurrent: false },
-        { pos: 5, team: "FK Slovan Duslo Šaľa", logo: "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo", p: 14, w: 7, d: 2, l: 5, score: "39:25", pts: 23, isCurrent: false },
-        { pos: 6, team: "ŠK Šurany", logo: "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo", p: 14, w: 7, d: 2, l: 5, score: "35:32", pts: 23, isCurrent: false },
-        { pos: 7, team: "MŠO Štúrovo", logo: "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo", p: 14, w: 6, d: 4, l: 4, score: "30:26", pts: 22, isCurrent: false },
-        { pos: 8, team: "FC Slovan Galanta", logo: "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo", p: 14, w: 6, d: 3, l: 5, score: "31:30", pts: 21, isCurrent: false },
-        { pos: 9, team: "TJ Dynamo Nová Stráž", logo: "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo", p: 14, w: 6, d: 2, l: 6, score: "44:54", pts: 20, isCurrent: false },
-        { pos: 10, team: "FK Kolárovo", logo: "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo", p: 14, w: 6, d: 1, l: 7, score: "52:45", pts: 19, isCurrent: false },
-        { pos: 11, team: "FK Veča", logo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", p: 14, w: 5, d: 3, l: 6, score: "34:46", pts: 18, isCurrent: false },
-        { pos: 12, team: "Malodvornícky FK Malé Dvorníky", logo: "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo", p: 14, w: 3, d: 3, l: 8, score: "18:36", pts: 12, isCurrent: false },
-        { pos: 13, team: "Futbalový klub Slovan Šahy", logo: "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo", p: 14, w: 3, d: 0, l: 11, score: "18:51", pts: 9, isCurrent: false },
-        { pos: 14, team: "C&P Stars Academy - ZM", logo: "https://api.sportnet.online/data/ppo/issf_club_11675/logo", p: 14, w: 2, d: 3, l: 9, score: "11:35", pts: 9, isCurrent: false },
-        { pos: 15, team: "MŠK Želiezovce", logo: "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo", p: 14, w: 2, d: 1, l: 11, score: "14:54", pts: 7, isCurrent: false }
+      "key": "u15",
+      "name": "Starší žiaci U15",
+      "badge": "Žiaci • III. liga",
+      "code": "U15",
+      "category": "Starší žiaci U15",
+      "league": "III. liga U15 Macron ZsFZ",
+      "coach": "Jozef Kováč",
+      "description": "Prechod na veľké ihrisko s plným počtom hráčov, komplexný herný rozvoj v krajskej súťaži.",
+      "trainings": "Utorok, Streda a Piatok o 16:30",
+      "color": "#FF3388",
+      "sportnetSlug": "u15-m-a",
+      "table": [
+        {
+          "pos": 1,
+          "team": "FC Slovan Hlohovec",
+          "logo": "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo",
+          "p": 14,
+          "w": 11,
+          "d": 0,
+          "l": 3,
+          "score": "51:15",
+          "pts": 33,
+          "isCurrent": false
+        },
+        {
+          "pos": 2,
+          "team": "Futbalový klub Holice",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo",
+          "p": 14,
+          "w": 9,
+          "d": 3,
+          "l": 2,
+          "score": "40:14",
+          "pts": 30,
+          "isCurrent": false
+        },
+        {
+          "pos": 3,
+          "team": "ŠK Junior Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "p": 14,
+          "w": 9,
+          "d": 2,
+          "l": 3,
+          "score": "31:17",
+          "pts": 29,
+          "isCurrent": true
+        },
+        {
+          "pos": 4,
+          "team": "SSC FÉNIX Nové Zámky",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_9093/logo",
+          "p": 14,
+          "w": 8,
+          "d": 1,
+          "l": 5,
+          "score": "51:19",
+          "pts": 25,
+          "isCurrent": false
+        },
+        {
+          "pos": 5,
+          "team": "FK Slovan Duslo Šaľa",
+          "logo": "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo",
+          "p": 14,
+          "w": 7,
+          "d": 2,
+          "l": 5,
+          "score": "39:25",
+          "pts": 23,
+          "isCurrent": false
+        },
+        {
+          "pos": 6,
+          "team": "ŠK Šurany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo",
+          "p": 14,
+          "w": 7,
+          "d": 2,
+          "l": 5,
+          "score": "35:32",
+          "pts": 23,
+          "isCurrent": false
+        },
+        {
+          "pos": 7,
+          "team": "MŠO Štúrovo",
+          "logo": "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo",
+          "p": 14,
+          "w": 6,
+          "d": 4,
+          "l": 4,
+          "score": "30:26",
+          "pts": 22,
+          "isCurrent": false
+        },
+        {
+          "pos": 8,
+          "team": "FC Slovan Galanta",
+          "logo": "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo",
+          "p": 14,
+          "w": 6,
+          "d": 3,
+          "l": 5,
+          "score": "31:30",
+          "pts": 21,
+          "isCurrent": false
+        },
+        {
+          "pos": 9,
+          "team": "TJ Dynamo Nová Stráž",
+          "logo": "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo",
+          "p": 14,
+          "w": 6,
+          "d": 2,
+          "l": 6,
+          "score": "44:54",
+          "pts": 20,
+          "isCurrent": false
+        },
+        {
+          "pos": 10,
+          "team": "FK Kolárovo",
+          "logo": "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo",
+          "p": 14,
+          "w": 6,
+          "d": 1,
+          "l": 7,
+          "score": "52:45",
+          "pts": 19,
+          "isCurrent": false
+        },
+        {
+          "pos": 11,
+          "team": "FK Veča",
+          "logo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+          "p": 14,
+          "w": 5,
+          "d": 3,
+          "l": 6,
+          "score": "34:46",
+          "pts": 18,
+          "isCurrent": false
+        },
+        {
+          "pos": 12,
+          "team": "Malodvornícky FK Malé Dvorníky",
+          "logo": "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo",
+          "p": 14,
+          "w": 3,
+          "d": 3,
+          "l": 8,
+          "score": "18:36",
+          "pts": 12,
+          "isCurrent": false
+        },
+        {
+          "pos": 13,
+          "team": "Futbalový klub Slovan Šahy",
+          "logo": "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo",
+          "p": 14,
+          "w": 3,
+          "d": 0,
+          "l": 11,
+          "score": "18:51",
+          "pts": 9,
+          "isCurrent": false
+        },
+        {
+          "pos": 14,
+          "team": "C&P Stars Academy - ZM",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11675/logo",
+          "p": 14,
+          "w": 2,
+          "d": 3,
+          "l": 9,
+          "score": "11:35",
+          "pts": 9,
+          "isCurrent": false
+        },
+        {
+          "pos": 15,
+          "team": "MŠK Želiezovce",
+          "logo": "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo",
+          "p": 14,
+          "w": 2,
+          "d": 1,
+          "l": 11,
+          "score": "14:54",
+          "pts": 7,
+          "isCurrent": false
+        }
       ],
-      matches: [
-        { id: "m-u15-f481a638", round: "8. kolo", date: "26.09.2026", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "C&P Stars Academy - ZM", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11675/logo", score: "3 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481a604", round: "9. kolo", date: "04.10.2026", time: "10:00", homeTeam: "MŠK Želiezovce", homeLogo: "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "0 : 2", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481a889", round: "10. kolo", date: "10.10.2026", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FC Slovan Galanta", awayLogo: "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo", score: "2 : 3", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481a3a6", round: "11. kolo", date: "17.10.2026", time: "09:00", homeTeam: "Futbalový klub Holice", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "1 : 1", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481aa9d", round: "12. kolo", date: "24.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "ŠK Šurany", awayLogo: "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo", score: "2 : 2", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481aae3", round: "13. kolo", date: "31.10.2026", time: "09:00", homeTeam: "Futbalový klub Slovan Šahy", homeLogo: "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "0 : 2", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481acb3", round: "14. kolo", date: "07.11.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK Kolárovo", awayLogo: "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo", score: "3 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481b0c8", round: "15. kolo", date: "15.11.2026", time: "09:00", homeTeam: "FK Veča", homeLogo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "2 : 1", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u15-f481aeaa", round: "16. kolo", date: "06.03.2027", time: "10:00", homeTeam: "TJ Dynamo Nová Stráž", homeLogo: "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481b3fa", round: "17. kolo", date: "13.03.2027", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "Malodvornícky FK Malé Dvorníky", awayLogo: "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481b0e5", round: "18. kolo", date: "20.03.2027", time: "10:00", homeTeam: "FC Slovan Hlohovec", homeLogo: "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481b8c9", round: "19. kolo", date: "27.03.2027", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK Slovan Duslo Šaľa", awayLogo: "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481b293", round: "20. kolo", date: "03.04.2027", time: "10:00", homeTeam: "", homeLogo: "/futbalnet/img/club.svg", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481b49c", round: "21. kolo", date: "10.04.2027", time: "10:00", homeTeam: "SSC FÉNIX Nové Zámky", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_9093/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481bb31", round: "22. kolo", date: "17.04.2027", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "MŠO Štúrovo", awayLogo: "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u15-f481b72e", round: "23. kolo", date: "24.04.2027", time: "10:00", homeTeam: "C&P Stars Academy - ZM", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11675/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "matches": [
+        {
+          "id": "m-u15-f481a638",
+          "round": "8. kolo",
+          "date": "26.09.2026",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "C&P Stars Academy - ZM",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11675/logo",
+          "score": "3 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481a604",
+          "round": "9. kolo",
+          "date": "04.10.2026",
+          "time": "10:00",
+          "homeTeam": "MŠK Želiezovce",
+          "homeLogo": "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "0 : 2",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481a889",
+          "round": "10. kolo",
+          "date": "10.10.2026",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FC Slovan Galanta",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo",
+          "score": "2 : 3",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481a3a6",
+          "round": "11. kolo",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "Futbalový klub Holice",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "1 : 1",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481aa9d",
+          "round": "12. kolo",
+          "date": "24.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "ŠK Šurany",
+          "awayLogo": "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo",
+          "score": "2 : 2",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481aae3",
+          "round": "13. kolo",
+          "date": "31.10.2026",
+          "time": "09:00",
+          "homeTeam": "Futbalový klub Slovan Šahy",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "0 : 2",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481acb3",
+          "round": "14. kolo",
+          "date": "07.11.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK Kolárovo",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo",
+          "score": "3 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481b0c8",
+          "round": "15. kolo",
+          "date": "15.11.2026",
+          "time": "09:00",
+          "homeTeam": "FK Veča",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "2 : 1",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u15-f481aeaa",
+          "round": "16. kolo",
+          "date": "06.03.2027",
+          "time": "10:00",
+          "homeTeam": "TJ Dynamo Nová Stráž",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481b3fa",
+          "round": "17. kolo",
+          "date": "13.03.2027",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "Malodvornícky FK Malé Dvorníky",
+          "awayLogo": "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481b0e5",
+          "round": "18. kolo",
+          "date": "20.03.2027",
+          "time": "10:00",
+          "homeTeam": "FC Slovan Hlohovec",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481b8c9",
+          "round": "19. kolo",
+          "date": "27.03.2027",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK Slovan Duslo Šaľa",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481b293",
+          "round": "20. kolo",
+          "date": "03.04.2027",
+          "time": "10:00",
+          "homeTeam": "",
+          "homeLogo": "/futbalnet/img/club.svg",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481b49c",
+          "round": "21. kolo",
+          "date": "10.04.2027",
+          "time": "10:00",
+          "homeTeam": "SSC FÉNIX Nové Zámky",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_9093/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481bb31",
+          "round": "22. kolo",
+          "date": "17.04.2027",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "MŠO Štúrovo",
+          "awayLogo": "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u15-f481b72e",
+          "round": "23. kolo",
+          "date": "24.04.2027",
+          "time": "10:00",
+          "homeTeam": "C&P Stars Academy - ZM",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11675/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Adam Švec", pos: "Brankár", year: 2011 },
-        { number: 3, name: "Matúš Balla", pos: "Obranca", year: 2011 },
-        { number: 4, name: "Lukáš Halás", pos: "Obranca", year: 2012 },
-        { number: 5, name: "Tobias Kováč", pos: "Obranca", year: 2011 },
-        { number: 6, name: "Martin Tóth", pos: "Záložník", year: 2011 },
-        { number: 8, name: "Šimon Horváth", pos: "Záložník", year: 2012 },
-        { number: 10, name: "Dávid Chňapek", pos: "Záložník", year: 2011 },
-        { number: 7, name: "Timotej Jančo", pos: "Útočník", year: 2011 },
-        { number: 9, name: "Maximilian Varga", pos: "Útočník", year: 2012 },
-        { number: 11, name: "Samuel Szabó", pos: "Útočník", year: 2011 }
-      ],
-      staff: [
-        { role: "Hlavný tréner", name: "Jozef Kováč", license: "UEFA B licencia", phone: "+421 903 987 654", email: "jozef.kovac@skjuniorivanka.sk" },
-        { role: "Asistent trénera", name: "Michal Tóth", license: "UEFA Grassroots C", phone: "+421 915 222 333", email: "michal.toth@skjuniorivanka.sk" },
-        { role: "Vedúci mužstva", name: "Ivan Halás", license: "Funkcionárska licencia SFZ", phone: "+421 908 111 222", email: "u15@skjuniorivanka.sk" }
+      "roster": [],
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Jozef Kováč",
+          "license": "UEFA B licencia",
+          "phone": "+421 903 987 654",
+          "email": "jozef.kovac@skjuniorivanka.sk"
+        },
+        {
+          "role": "Asistent trénera",
+          "name": "Michal Tóth",
+          "license": "UEFA Grassroots C",
+          "phone": "+421 915 222 333",
+          "email": "michal.toth@skjuniorivanka.sk"
+        },
+        {
+          "role": "Vedúci mužstva",
+          "name": "Ivan Halás",
+          "license": "Funkcionárska licencia SFZ",
+          "phone": "+421 908 111 222",
+          "email": "u15@skjuniorivanka.sk"
+        }
       ]
     },
-
     "u13": {
-      key: "u13",
-      name: "Mladší žiaci U13",
-      badge: "Žiaci • III. liga",
-      code: "U13",
-      category: "Mladší žiaci U13",
-      league: "III. liga U13 Macron ZsFZ",
-      coach: "Michal Tóth",
-      description: "Dynamický rozvoj herného sebavedomia, techniky v rýchlosti a tímovej spolupráce.",
-      trainings: "Utorok, Štvrtok a Piatok o 16:30",
-      color: "#FF3388",
-      sportnetSlug: "u13-m-a",
-      table: [
-        { pos: 1, team: "FK Slovan Duslo Šaľa", logo: "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo", p: 14, w: 14, d: 0, l: 0, score: "59:9", pts: 42, isCurrent: false },
-        { pos: 2, team: "Malodvornícky FK Malé Dvorníky", logo: "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo", p: 14, w: 12, d: 1, l: 1, score: "78:11", pts: 37, isCurrent: false },
-        { pos: 3, team: "FC Slovan Hlohovec", logo: "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo", p: 14, w: 11, d: 0, l: 3, score: "72:15", pts: 33, isCurrent: false },
-        { pos: 4, team: "MŠK Želiezovce", logo: "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo", p: 14, w: 10, d: 2, l: 2, score: "74:23", pts: 32, isCurrent: false },
-        { pos: 5, team: "MŠO Štúrovo", logo: "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo", p: 14, w: 9, d: 1, l: 4, score: "59:21", pts: 28, isCurrent: false },
-        { pos: 6, team: "FK Veča", logo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", p: 14, w: 9, d: 0, l: 5, score: "47:23", pts: 27, isCurrent: false },
-        { pos: 7, team: "Futbalový klub Holice", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo", p: 14, w: 7, d: 1, l: 6, score: "37:40", pts: 22, isCurrent: false },
-        { pos: 8, team: "FC Slovan Galanta", logo: "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo", p: 14, w: 6, d: 2, l: 6, score: "43:34", pts: 20, isCurrent: false },
-        { pos: 9, team: "FK Kolárovo", logo: "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo", p: 14, w: 5, d: 2, l: 7, score: "31:36", pts: 17, isCurrent: false },
-        { pos: 10, team: "TJ Dynamo Nová Stráž", logo: "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo", p: 14, w: 5, d: 0, l: 9, score: "26:44", pts: 15, isCurrent: false },
-        { pos: 11, team: "ŠK Šurany", logo: "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo", p: 14, w: 5, d: 0, l: 9, score: "45:60", pts: 15, isCurrent: false },
-        { pos: 12, team: "Futbalový klub Slovan Šahy", logo: "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo", p: 14, w: 4, d: 1, l: 9, score: "39:52", pts: 13, isCurrent: false },
-        { pos: 13, team: "ŠK Junior Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", p: 14, w: 2, d: 0, l: 12, score: "17:89", pts: 6, isCurrent: true },
-        { pos: 14, team: "C&P Stars Academy - ZM", logo: "https://api.sportnet.online/data/ppo/issf_club_11675/logo", p: 14, w: 1, d: 0, l: 13, score: "17:88", pts: 3, isCurrent: false },
-        { pos: 15, team: "SSC FÉNIX Nové Zámky", logo: "https://api.sportnet.online/data/ppo/issf_club_9093/logo", p: 14, w: 0, d: 0, l: 14, score: "3:102", pts: 0, isCurrent: false }
+      "key": "u13",
+      "name": "Mladší žiaci U13",
+      "badge": "Žiaci • III. liga",
+      "code": "U13",
+      "category": "Mladší žiaci U13",
+      "league": "III. liga U13 Macron ZsFZ",
+      "coach": "Michal Tóth",
+      "description": "Dynamický rozvoj herného sebavedomia, techniky v rýchlosti a tímovej spolupráce.",
+      "trainings": "Utorok, Štvrtok a Piatok o 16:30",
+      "color": "#FF3388",
+      "sportnetSlug": "u13-m-a",
+      "table": [
+        {
+          "pos": 1,
+          "team": "FK Slovan Duslo Šaľa",
+          "logo": "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo",
+          "p": 14,
+          "w": 14,
+          "d": 0,
+          "l": 0,
+          "score": "59:9",
+          "pts": 42,
+          "isCurrent": false
+        },
+        {
+          "pos": 2,
+          "team": "Malodvornícky FK Malé Dvorníky",
+          "logo": "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo",
+          "p": 14,
+          "w": 12,
+          "d": 1,
+          "l": 1,
+          "score": "78:11",
+          "pts": 37,
+          "isCurrent": false
+        },
+        {
+          "pos": 3,
+          "team": "FC Slovan Hlohovec",
+          "logo": "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo",
+          "p": 14,
+          "w": 11,
+          "d": 0,
+          "l": 3,
+          "score": "72:15",
+          "pts": 33,
+          "isCurrent": false
+        },
+        {
+          "pos": 4,
+          "team": "MŠK Želiezovce",
+          "logo": "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo",
+          "p": 14,
+          "w": 10,
+          "d": 2,
+          "l": 2,
+          "score": "74:23",
+          "pts": 32,
+          "isCurrent": false
+        },
+        {
+          "pos": 5,
+          "team": "MŠO Štúrovo",
+          "logo": "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo",
+          "p": 14,
+          "w": 9,
+          "d": 1,
+          "l": 4,
+          "score": "59:21",
+          "pts": 28,
+          "isCurrent": false
+        },
+        {
+          "pos": 6,
+          "team": "FK Veča",
+          "logo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+          "p": 14,
+          "w": 9,
+          "d": 0,
+          "l": 5,
+          "score": "47:23",
+          "pts": 27,
+          "isCurrent": false
+        },
+        {
+          "pos": 7,
+          "team": "Futbalový klub Holice",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo",
+          "p": 14,
+          "w": 7,
+          "d": 1,
+          "l": 6,
+          "score": "37:40",
+          "pts": 22,
+          "isCurrent": false
+        },
+        {
+          "pos": 8,
+          "team": "FC Slovan Galanta",
+          "logo": "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo",
+          "p": 14,
+          "w": 6,
+          "d": 2,
+          "l": 6,
+          "score": "43:34",
+          "pts": 20,
+          "isCurrent": false
+        },
+        {
+          "pos": 9,
+          "team": "FK Kolárovo",
+          "logo": "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo",
+          "p": 14,
+          "w": 5,
+          "d": 2,
+          "l": 7,
+          "score": "31:36",
+          "pts": 17,
+          "isCurrent": false
+        },
+        {
+          "pos": 10,
+          "team": "TJ Dynamo Nová Stráž",
+          "logo": "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo",
+          "p": 14,
+          "w": 5,
+          "d": 0,
+          "l": 9,
+          "score": "26:44",
+          "pts": 15,
+          "isCurrent": false
+        },
+        {
+          "pos": 11,
+          "team": "ŠK Šurany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo",
+          "p": 14,
+          "w": 5,
+          "d": 0,
+          "l": 9,
+          "score": "45:60",
+          "pts": 15,
+          "isCurrent": false
+        },
+        {
+          "pos": 12,
+          "team": "Futbalový klub Slovan Šahy",
+          "logo": "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo",
+          "p": 14,
+          "w": 4,
+          "d": 1,
+          "l": 9,
+          "score": "39:52",
+          "pts": 13,
+          "isCurrent": false
+        },
+        {
+          "pos": 13,
+          "team": "ŠK Junior Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "p": 14,
+          "w": 2,
+          "d": 0,
+          "l": 12,
+          "score": "17:89",
+          "pts": 6,
+          "isCurrent": true
+        },
+        {
+          "pos": 14,
+          "team": "C&P Stars Academy - ZM",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11675/logo",
+          "p": 14,
+          "w": 1,
+          "d": 0,
+          "l": 13,
+          "score": "17:88",
+          "pts": 3,
+          "isCurrent": false
+        },
+        {
+          "pos": 15,
+          "team": "SSC FÉNIX Nové Zámky",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_9093/logo",
+          "p": 14,
+          "w": 0,
+          "d": 0,
+          "l": 14,
+          "score": "3:102",
+          "pts": 0,
+          "isCurrent": false
+        }
       ],
-      matches: [
-        { id: "m-u13-f4824d6d", round: "8. kolo", date: "26.09.2026", time: "11:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "C&P Stars Academy - ZM", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11675/logo", score: "5 : 3", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f482522d", round: "9. kolo", date: "04.10.2026", time: "11:45", homeTeam: "MŠK Želiezovce", homeLogo: "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "4 : 1", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f482605f", round: "10. kolo", date: "10.10.2026", time: "11:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FC Slovan Galanta", awayLogo: "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo", score: "1 : 7", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f48267f7", round: "11. kolo", date: "17.10.2026", time: "10:45", homeTeam: "Futbalový klub Holice", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "5 : 0", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f48273d4", round: "12. kolo", date: "24.10.2026", time: "10:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "ŠK Šurany", awayLogo: "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo", score: "0 : 7", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f481f83f", round: "13. kolo", date: "31.10.2026", time: "10:45", homeTeam: "Futbalový klub Slovan Šahy", homeLogo: "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "5 : 0", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f4820156", round: "14. kolo", date: "07.11.2026", time: "10:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK Kolárovo", awayLogo: "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo", score: "2 : 5", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f4820ec3", round: "15. kolo", date: "15.11.2026", time: "10:45", homeTeam: "FK Veča", homeLogo: "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "11 : 0", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u13-f48215f8", round: "16. kolo", date: "06.03.2027", time: "11:45", homeTeam: "TJ Dynamo Nová Stráž", homeLogo: "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f48223dc", round: "17. kolo", date: "13.03.2027", time: "11:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "Malodvornícky FK Malé Dvorníky", awayLogo: "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f4822891", round: "18. kolo", date: "20.03.2027", time: "11:45", homeTeam: "FC Slovan Hlohovec", homeLogo: "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f4824064", round: "19. kolo", date: "27.03.2027", time: "11:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK Slovan Duslo Šaľa", awayLogo: "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f48241a3", round: "20. kolo", date: "03.04.2027", time: "11:45", homeTeam: "", homeLogo: "/futbalnet/img/club.svg", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f48254f6", round: "21. kolo", date: "10.04.2027", time: "11:45", homeTeam: "SSC FÉNIX Nové Zámky", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_9093/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f4825783", round: "22. kolo", date: "17.04.2027", time: "11:45", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "MŠO Štúrovo", awayLogo: "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u13-f48268f8", round: "23. kolo", date: "24.04.2027", time: "11:45", homeTeam: "C&P Stars Academy - ZM", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11675/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "matches": [
+        {
+          "id": "m-u13-f4824d6d",
+          "round": "8. kolo",
+          "date": "26.09.2026",
+          "time": "11:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "C&P Stars Academy - ZM",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11675/logo",
+          "score": "5 : 3",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f482522d",
+          "round": "9. kolo",
+          "date": "04.10.2026",
+          "time": "11:45",
+          "homeTeam": "MŠK Želiezovce",
+          "homeLogo": "https://api.sportnet.online/data/ppo/msk-zeliezovce.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "4 : 1",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f482605f",
+          "round": "10. kolo",
+          "date": "10.10.2026",
+          "time": "11:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FC Slovan Galanta",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fc-slovan-galanta.futbalnet.sk/logo",
+          "score": "1 : 7",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f48267f7",
+          "round": "11. kolo",
+          "date": "17.10.2026",
+          "time": "10:45",
+          "homeTeam": "Futbalový klub Holice",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-holice-na-ostrove.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "5 : 0",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f48273d4",
+          "round": "12. kolo",
+          "date": "24.10.2026",
+          "time": "10:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "ŠK Šurany",
+          "awayLogo": "https://api.sportnet.online/data/ppo/sk-surany.futbalnet.sk/logo",
+          "score": "0 : 7",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f481f83f",
+          "round": "13. kolo",
+          "date": "31.10.2026",
+          "time": "10:45",
+          "homeTeam": "Futbalový klub Slovan Šahy",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-slovan-sahy.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "5 : 0",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f4820156",
+          "round": "14. kolo",
+          "date": "07.11.2026",
+          "time": "10:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK Kolárovo",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-kolarovo.futbalnet.sk/logo",
+          "score": "2 : 5",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f4820ec3",
+          "round": "15. kolo",
+          "date": "15.11.2026",
+          "time": "10:45",
+          "homeTeam": "FK Veča",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-veca.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "11 : 0",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u13-f48215f8",
+          "round": "16. kolo",
+          "date": "06.03.2027",
+          "time": "11:45",
+          "homeTeam": "TJ Dynamo Nová Stráž",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-dynamo-nova-straz.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f48223dc",
+          "round": "17. kolo",
+          "date": "13.03.2027",
+          "time": "11:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "Malodvornícky FK Malé Dvorníky",
+          "awayLogo": "https://api.sportnet.online/data/ppo/malodvornicky-fk-male-dvorniky.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f4822891",
+          "round": "18. kolo",
+          "date": "20.03.2027",
+          "time": "11:45",
+          "homeTeam": "FC Slovan Hlohovec",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fc-slovan-hlohovec.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f4824064",
+          "round": "19. kolo",
+          "date": "27.03.2027",
+          "time": "11:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK Slovan Duslo Šaľa",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f48241a3",
+          "round": "20. kolo",
+          "date": "03.04.2027",
+          "time": "11:45",
+          "homeTeam": "",
+          "homeLogo": "/futbalnet/img/club.svg",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f48254f6",
+          "round": "21. kolo",
+          "date": "10.04.2027",
+          "time": "11:45",
+          "homeTeam": "SSC FÉNIX Nové Zámky",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_9093/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f4825783",
+          "round": "22. kolo",
+          "date": "17.04.2027",
+          "time": "11:45",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "MŠO Štúrovo",
+          "awayLogo": "https://api.sportnet.online/data/ppo/mso-sturovo.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u13-f48268f8",
+          "round": "23. kolo",
+          "date": "24.04.2027",
+          "time": "11:45",
+          "homeTeam": "C&P Stars Academy - ZM",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11675/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Tomáš Bielik", pos: "Brankár", year: 2013 },
-        { number: 2, name: "Alex Kertész", pos: "Obranca", year: 2013 },
-        { number: 4, name: "Filip Moravčík", pos: "Obranca", year: 2014 },
-        { number: 7, name: "Jakub Varga", pos: "Záložník", year: 2013 },
-        { number: 8, name: "Nikolas Tóth", pos: "Záložník", year: 2013 },
-        { number: 10, name: "Richard Farkaš", pos: "Záložník", year: 2014 },
-        { number: 9, name: "Samuel Balla", pos: "Útočník", year: 2013 },
-        { number: 11, name: "Dávid Halás", pos: "Útočník", year: 2014 }
-      ],
-      staff: [
-        { role: "Hlavný tréner", name: "Michal Tóth", license: "UEFA B licencia", phone: "+421 915 222 333", email: "michal.toth@skjuniorivanka.sk" },
-        { role: "Asistent trénera", name: "Tomáš Horváth", license: "UEFA Grassroots C", phone: "+421 904 444 555", email: "tomas.horvath@skjuniorivanka.sk" }
+      "roster": [],
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Michal Tóth",
+          "license": "UEFA B licencia",
+          "phone": "+421 915 222 333",
+          "email": "michal.toth@skjuniorivanka.sk"
+        },
+        {
+          "role": "Asistent trénera",
+          "name": "Tomáš Horváth",
+          "license": "UEFA Grassroots C",
+          "phone": "+421 904 444 555",
+          "email": "tomas.horvath@skjuniorivanka.sk"
+        }
       ]
     },
-
     "u11": {
-      key: "u11",
-      name: "Prípravka U11",
-      badge: "Prípravka • ObFZ Nitra",
-      code: "U11",
-      category: "Prípravka U11",
-      league: "Liga prípraviek U11 ObFZ Nitra",
-      coach: "Tomáš Horváth",
-      description: "Hra na menšom ihrisku, vysoká frekvencia kontaktov s loptou, radosť z hry a rozvoj obratnosti.",
-      trainings: "Pondelok a Streda o 16:00",
-      color: "#FF3388",
-      sportnetSlug: "u11-m-a",
-      table: [
-        { pos: 1, team: "TJ Nové Sady", logo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", p: 20, w: 20, d: 0, l: 0, score: "136:7", pts: 60, isCurrent: false },
-        { pos: 2, team: "ŠK Veľké Zálužie", logo: "https://api.sportnet.online/data/ppo/sk-velke-zaluzie.futbalnet.sk/logo", p: 20, w: 19, d: 1, l: 0, score: "118:9", pts: 58, isCurrent: false },
-        { pos: 3, team: "FK Nitra B", logo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", p: 19, w: 17, d: 1, l: 1, score: "112:9", pts: 52, isCurrent: false },
-        { pos: 4, team: "FK Vlčany", logo: "https://api.sportnet.online/data/ppo/fk-vlcany.futbalnet.sk/logo", p: 16, w: 15, d: 1, l: 0, score: "136:10", pts: 46, isCurrent: false },
-        { pos: 5, team: "FK Janíkovce", logo: "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo", p: 20, w: 14, d: 4, l: 2, score: "83:17", pts: 46, isCurrent: false },
-        { pos: 6, team: "TJ Slovan Čeľadice", logo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", p: 16, w: 15, d: 0, l: 1, score: "101:8", pts: 45, isCurrent: false },
-        { pos: 7, team: "OFK Golianovo", logo: "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo", p: 20, w: 14, d: 3, l: 3, score: "59:21", pts: 45, isCurrent: false },
-        { pos: 8, team: "ŠK Tesárske Mlyňany", logo: "https://api.sportnet.online/data/ppo/sk-tesarske-mlynany.futbalnet.sk/logo", p: 15, w: 14, d: 0, l: 1, score: "57:14", pts: 42, isCurrent: false },
-        { pos: 9, team: "FK Močenok", logo: "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo", p: 15, w: 12, d: 2, l: 1, score: "67:19", pts: 38, isCurrent: false },
-        { pos: 10, team: "FC Neded", logo: "https://api.sportnet.online/data/ppo/fc-neded.futbalnet.sk/logo", p: 16, w: 11, d: 1, l: 4, score: "57:39", pts: 34, isCurrent: false },
-        { pos: 11, team: "OFK Branč", logo: "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo", p: 16, w: 10, d: 1, l: 5, score: "53:22", pts: 31, isCurrent: false },
-        { pos: 12, team: "OBECNÝ ŠPORTOVÝ KLUB KOLÍŇANY", logo: "https://api.sportnet.online/data/ppo/issf_club_10128/logo", p: 19, w: 10, d: 1, l: 8, score: "52:53", pts: 31, isCurrent: false },
-        { pos: 13, team: "ŠK Junior Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", p: 16, w: 10, d: 0, l: 6, score: "54:26", pts: 30, isCurrent: true },
-        { pos: 14, team: "OFK Čakajovce", logo: "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo", p: 12, w: 9, d: 2, l: 1, score: "51:10", pts: 29, isCurrent: false },
-        { pos: 15, team: "FK Mojmírovce", logo: "https://api.sportnet.online/data/ppo/fk-mojmirovce.futbalnet.sk/logo", p: 16, w: 9, d: 2, l: 5, score: "57:50", pts: 29, isCurrent: false },
-        { pos: 16, team: "TJ AC NOVAN Nová Ves nad Žitavou", logo: "https://api.sportnet.online/data/ppo/tj-ac-novan-nova-ves-nad-zitavou.futbalnet.sk/logo", p: 19, w: 9, d: 2, l: 8, score: "45:32", pts: 29, isCurrent: false },
-        { pos: 17, team: "FK Svätoplukovo", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-svatoplukovo.futbalnet.sk/logo", p: 16, w: 9, d: 2, l: 5, score: "58:43", pts: 29, isCurrent: false },
-        { pos: 18, team: "TJ Štart Nitrianske Hrnčiarovce", logo: "https://api.sportnet.online/data/ppo/tj-start-nitrianske-hrnciarovce.futbalnet.sk/logo", p: 16, w: 8, d: 2, l: 6, score: "47:39", pts: 26, isCurrent: false },
-        { pos: 19, team: "ŠK Hájske", logo: "https://api.sportnet.online/data/ppo/sk-hajske.futbalnet.sk/logo", p: 16, w: 7, d: 4, l: 5, score: "35:28", pts: 25, isCurrent: false },
-        { pos: 20, team: "FK Veľký Cetín", logo: "https://api.sportnet.online/data/ppo/fk-velky-cetin.futbalnet.sk/logo", p: 16, w: 8, d: 1, l: 7, score: "39:40", pts: 25, isCurrent: false },
-        { pos: 21, team: "FC ViOn Zlaté Moravce - Vráble D", logo: "https://api.sportnet.online/data/ppo/fc-vion-zlate-moravce.futbalnet.sk/logo", p: 15, w: 8, d: 0, l: 7, score: "62:30", pts: 24, isCurrent: false },
-        { pos: 22, team: "'Združenie FC Výčapy - Opatovce'", logo: "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo", p: 15, w: 8, d: 0, l: 7, score: "42:49", pts: 24, isCurrent: false },
-        { pos: 23, team: "ŠK Báb", logo: "https://api.sportnet.online/data/ppo/sk-bab.futbalnet.sk/logo", p: 15, w: 7, d: 0, l: 8, score: "30:59", pts: 21, isCurrent: false },
-        { pos: 24, team: "Futbalový klub FC 31 Jarok", logo: "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo", p: 18, w: 6, d: 2, l: 10, score: "27:68", pts: 20, isCurrent: false },
-        { pos: 25, team: "Futbalový klub KFC HORNÁ KRÁĽOVÁ", logo: "https://api.sportnet.online/data/ppo/fk-kfc-tibi-horna-kralova.futbalnet.sk/logo", p: 16, w: 6, d: 1, l: 9, score: "45:57", pts: 19, isCurrent: false },
-        { pos: 26, team: "FC Jelenec", logo: "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo", p: 16, w: 6, d: 0, l: 10, score: "39:63", pts: 18, isCurrent: false },
-        { pos: 27, team: "FK DYNAMO Trnovec nad Váhom", logo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", p: 20, w: 5, d: 2, l: 13, score: "34:67", pts: 17, isCurrent: false },
-        { pos: 28, team: "FC Čechynce", logo: "https://api.sportnet.online/data/ppo/fc-cechynce.futbalnet.sk/logo", p: 16, w: 5, d: 2, l: 9, score: "27:47", pts: 17, isCurrent: false },
-        { pos: 29, team: "TJ Družstevník Rišňovce", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-risnovce.futbalnet.sk/logo", p: 20, w: 5, d: 2, l: 13, score: "38:69", pts: 17, isCurrent: false },
-        { pos: 30, team: "FC Cabaj-Čápor", logo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo", p: 15, w: 4, d: 3, l: 8, score: "24:33", pts: 15, isCurrent: false },
-        { pos: 31, team: "OŠK Beladice", logo: "https://api.sportnet.online/data/ppo/osk-beladice.futbalnet.sk/logo", p: 19, w: 4, d: 0, l: 15, score: "37:92", pts: 12, isCurrent: false },
-        { pos: 32, team: "ŠK Nevidzany", logo: "https://api.sportnet.online/data/ppo/sk-nevidzany.futbalnet.sk/logo", p: 12, w: 3, d: 0, l: 9, score: "14:38", pts: 9, isCurrent: false },
-        { pos: 33, team: "LATUS B", logo: "https://api.sportnet.online/data/ppo/issf_club_11373/logo", p: 18, w: 3, d: 0, l: 15, score: "25:85", pts: 9, isCurrent: false },
-        { pos: 34, team: "TJ Slovan Čeľadice B", logo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", p: 16, w: 3, d: 0, l: 13, score: "28:92", pts: 9, isCurrent: false },
-        { pos: 35, team: "MFK Pohranice", logo: "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo", p: 19, w: 2, d: 0, l: 17, score: "25:86", pts: 6, isCurrent: false },
-        { pos: 36, team: "'Združenie FC Výčapy - Opatovce' B", logo: "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo", p: 16, w: 2, d: 0, l: 14, score: "13:80", pts: 6, isCurrent: false },
-        { pos: 37, team: "OFK Hosťovce", logo: "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo", p: 16, w: 1, d: 2, l: 13, score: "15:88", pts: 5, isCurrent: false },
-        { pos: 38, team: "ŠK Nitra-Dolné Krškany", logo: "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo", p: 20, w: 1, d: 1, l: 18, score: "19:105", pts: 4, isCurrent: false },
-        { pos: 39, team: "OFK Sľažany", logo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", p: 20, w: 1, d: 1, l: 18, score: "11:103", pts: 4, isCurrent: false },
-        { pos: 40, team: "TJ Družstevník Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", p: 16, w: 1, d: 0, l: 15, score: "9:75", pts: 3, isCurrent: false },
-        { pos: 41, team: "OFK Lužianky", logo: "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo", p: 0, w: 0, d: 0, l: 0, score: "0:0", pts: 0, isCurrent: false },
-        { pos: 42, team: "OFK Čifáre", logo: "https://api.sportnet.online/data/ppo/ofk-cifare.futbalnet.sk/logo", p: 11, w: 0, d: 0, l: 11, score: "7:106", pts: 0, isCurrent: false }
+      "key": "u11",
+      "name": "Prípravka U11",
+      "badge": "Prípravka • ObFZ Nitra",
+      "code": "U11",
+      "category": "Prípravka U11",
+      "league": "Liga prípraviek U11 ObFZ Nitra",
+      "coach": "Tomáš Horváth",
+      "description": "Hra na menšom ihrisku, vysoká frekvencia kontaktov s loptou, radosť z hry a rozvoj obratnosti.",
+      "trainings": "Pondelok a Streda o 16:00",
+      "color": "#FF3388",
+      "sportnetSlug": "u11-m-a",
+      "table": [
+        {
+          "pos": 1,
+          "team": "TJ Nové Sady",
+          "logo": "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo",
+          "p": 20,
+          "w": 20,
+          "d": 0,
+          "l": 0,
+          "score": "136:7",
+          "pts": 60,
+          "isCurrent": false
+        },
+        {
+          "pos": 2,
+          "team": "ŠK Veľké Zálužie",
+          "logo": "https://api.sportnet.online/data/ppo/sk-velke-zaluzie.futbalnet.sk/logo",
+          "p": 20,
+          "w": 19,
+          "d": 1,
+          "l": 0,
+          "score": "118:9",
+          "pts": 58,
+          "isCurrent": false
+        },
+        {
+          "pos": 3,
+          "team": "FK Nitra B",
+          "logo": "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo",
+          "p": 19,
+          "w": 17,
+          "d": 1,
+          "l": 1,
+          "score": "112:9",
+          "pts": 52,
+          "isCurrent": false
+        },
+        {
+          "pos": 4,
+          "team": "FK Vlčany",
+          "logo": "https://api.sportnet.online/data/ppo/fk-vlcany.futbalnet.sk/logo",
+          "p": 16,
+          "w": 15,
+          "d": 1,
+          "l": 0,
+          "score": "136:10",
+          "pts": 46,
+          "isCurrent": false
+        },
+        {
+          "pos": 5,
+          "team": "FK Janíkovce",
+          "logo": "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo",
+          "p": 20,
+          "w": 14,
+          "d": 4,
+          "l": 2,
+          "score": "83:17",
+          "pts": 46,
+          "isCurrent": false
+        },
+        {
+          "pos": 6,
+          "team": "TJ Slovan Čeľadice",
+          "logo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "p": 16,
+          "w": 15,
+          "d": 0,
+          "l": 1,
+          "score": "101:8",
+          "pts": 45,
+          "isCurrent": false
+        },
+        {
+          "pos": 7,
+          "team": "OFK Golianovo",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo",
+          "p": 20,
+          "w": 14,
+          "d": 3,
+          "l": 3,
+          "score": "59:21",
+          "pts": 45,
+          "isCurrent": false
+        },
+        {
+          "pos": 8,
+          "team": "ŠK Tesárske Mlyňany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-tesarske-mlynany.futbalnet.sk/logo",
+          "p": 15,
+          "w": 14,
+          "d": 0,
+          "l": 1,
+          "score": "57:14",
+          "pts": 42,
+          "isCurrent": false
+        },
+        {
+          "pos": 9,
+          "team": "FK Močenok",
+          "logo": "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo",
+          "p": 15,
+          "w": 12,
+          "d": 2,
+          "l": 1,
+          "score": "67:19",
+          "pts": 38,
+          "isCurrent": false
+        },
+        {
+          "pos": 10,
+          "team": "FC Neded",
+          "logo": "https://api.sportnet.online/data/ppo/fc-neded.futbalnet.sk/logo",
+          "p": 16,
+          "w": 11,
+          "d": 1,
+          "l": 4,
+          "score": "57:39",
+          "pts": 34,
+          "isCurrent": false
+        },
+        {
+          "pos": 11,
+          "team": "OFK Branč",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-branc.futbalnet.sk/logo",
+          "p": 16,
+          "w": 10,
+          "d": 1,
+          "l": 5,
+          "score": "53:22",
+          "pts": 31,
+          "isCurrent": false
+        },
+        {
+          "pos": 12,
+          "team": "OBECNÝ ŠPORTOVÝ KLUB KOLÍŇANY",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_10128/logo",
+          "p": 19,
+          "w": 10,
+          "d": 1,
+          "l": 8,
+          "score": "52:53",
+          "pts": 31,
+          "isCurrent": false
+        },
+        {
+          "pos": 13,
+          "team": "ŠK Junior Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "p": 16,
+          "w": 10,
+          "d": 0,
+          "l": 6,
+          "score": "54:26",
+          "pts": 30,
+          "isCurrent": true
+        },
+        {
+          "pos": 14,
+          "team": "OFK Čakajovce",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo",
+          "p": 12,
+          "w": 9,
+          "d": 2,
+          "l": 1,
+          "score": "51:10",
+          "pts": 29,
+          "isCurrent": false
+        },
+        {
+          "pos": 15,
+          "team": "FK Mojmírovce",
+          "logo": "https://api.sportnet.online/data/ppo/fk-mojmirovce.futbalnet.sk/logo",
+          "p": 16,
+          "w": 9,
+          "d": 2,
+          "l": 5,
+          "score": "57:50",
+          "pts": 29,
+          "isCurrent": false
+        },
+        {
+          "pos": 16,
+          "team": "TJ AC NOVAN Nová Ves nad Žitavou",
+          "logo": "https://api.sportnet.online/data/ppo/tj-ac-novan-nova-ves-nad-zitavou.futbalnet.sk/logo",
+          "p": 19,
+          "w": 9,
+          "d": 2,
+          "l": 8,
+          "score": "45:32",
+          "pts": 29,
+          "isCurrent": false
+        },
+        {
+          "pos": 17,
+          "team": "FK Svätoplukovo",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-svatoplukovo.futbalnet.sk/logo",
+          "p": 16,
+          "w": 9,
+          "d": 2,
+          "l": 5,
+          "score": "58:43",
+          "pts": 29,
+          "isCurrent": false
+        },
+        {
+          "pos": 18,
+          "team": "TJ Štart Nitrianske Hrnčiarovce",
+          "logo": "https://api.sportnet.online/data/ppo/tj-start-nitrianske-hrnciarovce.futbalnet.sk/logo",
+          "p": 16,
+          "w": 8,
+          "d": 2,
+          "l": 6,
+          "score": "47:39",
+          "pts": 26,
+          "isCurrent": false
+        },
+        {
+          "pos": 19,
+          "team": "ŠK Hájske",
+          "logo": "https://api.sportnet.online/data/ppo/sk-hajske.futbalnet.sk/logo",
+          "p": 16,
+          "w": 7,
+          "d": 4,
+          "l": 5,
+          "score": "35:28",
+          "pts": 25,
+          "isCurrent": false
+        },
+        {
+          "pos": 20,
+          "team": "FK Veľký Cetín",
+          "logo": "https://api.sportnet.online/data/ppo/fk-velky-cetin.futbalnet.sk/logo",
+          "p": 16,
+          "w": 8,
+          "d": 1,
+          "l": 7,
+          "score": "39:40",
+          "pts": 25,
+          "isCurrent": false
+        },
+        {
+          "pos": 21,
+          "team": "FC ViOn Zlaté Moravce - Vráble D",
+          "logo": "https://api.sportnet.online/data/ppo/fc-vion-zlate-moravce.futbalnet.sk/logo",
+          "p": 15,
+          "w": 8,
+          "d": 0,
+          "l": 7,
+          "score": "62:30",
+          "pts": 24,
+          "isCurrent": false
+        },
+        {
+          "pos": 22,
+          "team": "'Združenie FC Výčapy - Opatovce'",
+          "logo": "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo",
+          "p": 15,
+          "w": 8,
+          "d": 0,
+          "l": 7,
+          "score": "42:49",
+          "pts": 24,
+          "isCurrent": false
+        },
+        {
+          "pos": 23,
+          "team": "ŠK Báb",
+          "logo": "https://api.sportnet.online/data/ppo/sk-bab.futbalnet.sk/logo",
+          "p": 15,
+          "w": 7,
+          "d": 0,
+          "l": 8,
+          "score": "30:59",
+          "pts": 21,
+          "isCurrent": false
+        },
+        {
+          "pos": 24,
+          "team": "Futbalový klub FC 31 Jarok",
+          "logo": "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo",
+          "p": 18,
+          "w": 6,
+          "d": 2,
+          "l": 10,
+          "score": "27:68",
+          "pts": 20,
+          "isCurrent": false
+        },
+        {
+          "pos": 25,
+          "team": "Futbalový klub KFC HORNÁ KRÁĽOVÁ",
+          "logo": "https://api.sportnet.online/data/ppo/fk-kfc-tibi-horna-kralova.futbalnet.sk/logo",
+          "p": 16,
+          "w": 6,
+          "d": 1,
+          "l": 9,
+          "score": "45:57",
+          "pts": 19,
+          "isCurrent": false
+        },
+        {
+          "pos": 26,
+          "team": "FC Jelenec",
+          "logo": "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo",
+          "p": 16,
+          "w": 6,
+          "d": 0,
+          "l": 10,
+          "score": "39:63",
+          "pts": 18,
+          "isCurrent": false
+        },
+        {
+          "pos": 27,
+          "team": "FK DYNAMO Trnovec nad Váhom",
+          "logo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "p": 20,
+          "w": 5,
+          "d": 2,
+          "l": 13,
+          "score": "34:67",
+          "pts": 17,
+          "isCurrent": false
+        },
+        {
+          "pos": 28,
+          "team": "FC Čechynce",
+          "logo": "https://api.sportnet.online/data/ppo/fc-cechynce.futbalnet.sk/logo",
+          "p": 16,
+          "w": 5,
+          "d": 2,
+          "l": 9,
+          "score": "27:47",
+          "pts": 17,
+          "isCurrent": false
+        },
+        {
+          "pos": 29,
+          "team": "TJ Družstevník Rišňovce",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-risnovce.futbalnet.sk/logo",
+          "p": 20,
+          "w": 5,
+          "d": 2,
+          "l": 13,
+          "score": "38:69",
+          "pts": 17,
+          "isCurrent": false
+        },
+        {
+          "pos": 30,
+          "team": "FC Cabaj-Čápor",
+          "logo": "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
+          "p": 15,
+          "w": 4,
+          "d": 3,
+          "l": 8,
+          "score": "24:33",
+          "pts": 15,
+          "isCurrent": false
+        },
+        {
+          "pos": 31,
+          "team": "OŠK Beladice",
+          "logo": "https://api.sportnet.online/data/ppo/osk-beladice.futbalnet.sk/logo",
+          "p": 19,
+          "w": 4,
+          "d": 0,
+          "l": 15,
+          "score": "37:92",
+          "pts": 12,
+          "isCurrent": false
+        },
+        {
+          "pos": 32,
+          "team": "ŠK Nevidzany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-nevidzany.futbalnet.sk/logo",
+          "p": 12,
+          "w": 3,
+          "d": 0,
+          "l": 9,
+          "score": "14:38",
+          "pts": 9,
+          "isCurrent": false
+        },
+        {
+          "pos": 33,
+          "team": "LATUS B",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11373/logo",
+          "p": 18,
+          "w": 3,
+          "d": 0,
+          "l": 15,
+          "score": "25:85",
+          "pts": 9,
+          "isCurrent": false
+        },
+        {
+          "pos": 34,
+          "team": "TJ Slovan Čeľadice B",
+          "logo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "p": 16,
+          "w": 3,
+          "d": 0,
+          "l": 13,
+          "score": "28:92",
+          "pts": 9,
+          "isCurrent": false
+        },
+        {
+          "pos": 35,
+          "team": "MFK Pohranice",
+          "logo": "https://api.sportnet.online/data/ppo/mfk-pohranice.futbalnet.sk/logo",
+          "p": 19,
+          "w": 2,
+          "d": 0,
+          "l": 17,
+          "score": "25:86",
+          "pts": 6,
+          "isCurrent": false
+        },
+        {
+          "pos": 36,
+          "team": "'Združenie FC Výčapy - Opatovce' B",
+          "logo": "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo",
+          "p": 16,
+          "w": 2,
+          "d": 0,
+          "l": 14,
+          "score": "13:80",
+          "pts": 6,
+          "isCurrent": false
+        },
+        {
+          "pos": 37,
+          "team": "OFK Hosťovce",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo",
+          "p": 16,
+          "w": 1,
+          "d": 2,
+          "l": 13,
+          "score": "15:88",
+          "pts": 5,
+          "isCurrent": false
+        },
+        {
+          "pos": 38,
+          "team": "ŠK Nitra-Dolné Krškany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo",
+          "p": 20,
+          "w": 1,
+          "d": 1,
+          "l": 18,
+          "score": "19:105",
+          "pts": 4,
+          "isCurrent": false
+        },
+        {
+          "pos": 39,
+          "team": "OFK Sľažany",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "p": 20,
+          "w": 1,
+          "d": 1,
+          "l": 18,
+          "score": "11:103",
+          "pts": 4,
+          "isCurrent": false
+        },
+        {
+          "pos": 40,
+          "team": "TJ Družstevník Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo",
+          "p": 16,
+          "w": 1,
+          "d": 0,
+          "l": 15,
+          "score": "9:75",
+          "pts": 3,
+          "isCurrent": false
+        },
+        {
+          "pos": 41,
+          "team": "OFK Lužianky",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-luzianky.futbalnet.sk/logo",
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "score": "0:0",
+          "pts": 0,
+          "isCurrent": false
+        },
+        {
+          "pos": 42,
+          "team": "OFK Čifáre",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-cifare.futbalnet.sk/logo",
+          "p": 11,
+          "w": 0,
+          "d": 0,
+          "l": 11,
+          "score": "7:106",
+          "pts": 0,
+          "isCurrent": false
+        }
       ],
-      matches: [
-        { id: "m-u11-f02d30d3", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "TJ Družstevník Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "1 : 7", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-f02fd784", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "FK Nitra B", homeLogo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "3 : 0", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-f02e3d4c", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "FK DYNAMO Trnovec nad Váhom", homeLogo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "0 : 4", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-f02ae4eb", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Čakajovce", awayLogo: "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo", score: "1 : 5", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-a75569ba", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK DYNAMO Trnovec nad Váhom", awayLogo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", score: "6 : 1", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-a7556296", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Sľažany", awayLogo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", score: "3 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-a755578b", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "'Združenie FC Výčapy - Opatovce' B", awayLogo: "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo", score: "5 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-a7538a1e", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "TJ Slovan Čeľadice", awayLogo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", score: "1 : 2", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u11-85f62ecc", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "FK Veľký Cetín", homeLogo: "https://api.sportnet.online/data/ppo/fk-velky-cetin.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u11-85f65478", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "FK Močenok", homeLogo: "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u11-85f62868", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "TJ Slovan Čeľadice B", awayLogo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u11-85f62be3", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "OFK Hosťovce", homeLogo: "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "matches": [
+        {
+          "id": "m-u11-f02d30d3",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "TJ Družstevník Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-ivanka-pri-nitre.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "1 : 7",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-f02fd784",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "FK Nitra B",
+          "homeLogo": "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "3 : 0",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-f02e3d4c",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "FK DYNAMO Trnovec nad Váhom",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "0 : 4",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-f02ae4eb",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Čakajovce",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo",
+          "score": "1 : 5",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-a75569ba",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK DYNAMO Trnovec nad Váhom",
+          "awayLogo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "score": "6 : 1",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-a7556296",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Sľažany",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "score": "3 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-a755578b",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "'Združenie FC Výčapy - Opatovce' B",
+          "awayLogo": "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo",
+          "score": "5 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-a7538a1e",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "TJ Slovan Čeľadice",
+          "awayLogo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "score": "1 : 2",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u11-85f62ecc",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "FK Veľký Cetín",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-velky-cetin.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u11-85f65478",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "FK Močenok",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u11-85f62868",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "TJ Slovan Čeľadice B",
+          "awayLogo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u11-85f62be3",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "OFK Hosťovce",
+          "homeLogo": "https://api.sportnet.online/data/ppo/ofk-hostovce.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Matej Kováč", pos: "Brankár", year: 2015 },
-        { number: 3, name: "Šimon Szabó", pos: "Hráč v poli", year: 2015 },
-        { number: 5, name: "Lucas Tóth", pos: "Hráč v poli", year: 2016 },
-        { number: 7, name: "Matúš Varga", pos: "Hráč v poli", year: 2015 },
-        { number: 9, name: "Adam Chrenko", pos: "Hráč v poli", year: 2015 },
-        { number: 10, name: "Leo Bakoš", pos: "Hráč v poli", year: 2016 }
-      ],
-      staff: [
-        { role: "Hlavný tréner", name: "Tomáš Horváth", license: "UEFA B licencia", phone: "+421 904 444 555", email: "tomas.horvath@skjuniorivanka.sk" },
-        { role: "Asistent trénera", name: "Jozef Kováč", license: "UEFA B licencia", phone: "+421 903 987 654", email: "jozef.kovac@skjuniorivanka.sk" }
+      "roster": [],
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Tomáš Horváth",
+          "license": "UEFA B licencia",
+          "phone": "+421 904 444 555",
+          "email": "tomas.horvath@skjuniorivanka.sk"
+        },
+        {
+          "role": "Asistent trénera",
+          "name": "Jozef Kováč",
+          "license": "UEFA B licencia",
+          "phone": "+421 903 987 654",
+          "email": "jozef.kovac@skjuniorivanka.sk"
+        }
       ]
     },
-
     "u9": {
-      key: "u9",
-      name: "Predprípravka U9",
-      badge: "Predprípravka • ObFZ Nitra",
-      code: "U9",
-      category: "Predprípravka U9",
-      league: "Liga prípraviek U09 ObFZ Nitra",
-      coach: "Andrej Szabó",
-      description: "Základy techniky, vedenie lopty a obchádzanie protihráča formou hravých cvičení.",
-      trainings: "Utorok a Štvrtok o 16:00",
-      color: "#FF3388",
-      sportnetSlug: "u09-m-a",
-      table: [
-        { pos: 1, team: "OFK Golianovo", logo: "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo", p: 18, w: 15, d: 0, l: 3, score: "75:14", pts: 45, isCurrent: false },
-        { pos: 2, team: "FC Veľký Kýr", logo: "https://api.sportnet.online/data/ppo/fc-velky-kyr.futbalnet.sk/logo", p: 15, w: 14, d: 0, l: 1, score: "87:14", pts: 42, isCurrent: false },
-        { pos: 3, team: "FK Mojmírovce", logo: "https://api.sportnet.online/data/ppo/fk-mojmirovce.futbalnet.sk/logo", p: 14, w: 13, d: 1, l: 0, score: "115:5", pts: 40, isCurrent: false },
-        { pos: 4, team: "ŠK Veľké Zálužie", logo: "https://api.sportnet.online/data/ppo/sk-velke-zaluzie.futbalnet.sk/logo", p: 19, w: 12, d: 3, l: 4, score: "87:20", pts: 39, isCurrent: false },
-        { pos: 5, team: "TJ Slovan Čeľadice", logo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", p: 14, w: 13, d: 0, l: 1, score: "67:15", pts: 39, isCurrent: false },
-        { pos: 6, team: "ŠK Hájske", logo: "https://api.sportnet.online/data/ppo/sk-hajske.futbalnet.sk/logo", p: 14, w: 12, d: 1, l: 1, score: "67:12", pts: 37, isCurrent: false },
-        { pos: 7, team: "FK Svätoplukovo", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-svatoplukovo.futbalnet.sk/logo", p: 19, w: 12, d: 0, l: 7, score: "62:40", pts: 36, isCurrent: false },
-        { pos: 8, team: "TJ Štart Nitrianske Hrnčiarovce", logo: "https://api.sportnet.online/data/ppo/tj-start-nitrianske-hrnciarovce.futbalnet.sk/logo", p: 14, w: 11, d: 2, l: 1, score: "59:14", pts: 35, isCurrent: false },
-        { pos: 9, team: "FC Jelenec", logo: "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo", p: 14, w: 11, d: 2, l: 1, score: "57:19", pts: 35, isCurrent: false },
-        { pos: 10, team: "ŠK Nitra-Dolné Krškany", logo: "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo", p: 17, w: 11, d: 1, l: 5, score: "84:41", pts: 34, isCurrent: false },
-        { pos: 11, team: "ŠK Junior Ivanka pri Nitre", logo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", p: 13, w: 10, d: 1, l: 2, score: "64:21", pts: 31, isCurrent: true },
-        { pos: 12, team: "Futbalový klub FC 31 Jarok", logo: "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo", p: 16, w: 10, d: 0, l: 6, score: "38:52", pts: 30, isCurrent: false },
-        { pos: 13, team: "FK Janíkovce", logo: "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo", p: 18, w: 10, d: 0, l: 8, score: "55:32", pts: 30, isCurrent: false },
-        { pos: 14, team: "OFK Čakajovce", logo: "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo", p: 15, w: 10, d: 0, l: 5, score: "43:29", pts: 30, isCurrent: false },
-        { pos: 15, team: "FC ViOn Zlaté Moravce - Vráble D", logo: "https://api.sportnet.online/data/ppo/fc-vion-zlate-moravce.futbalnet.sk/logo", p: 19, w: 9, d: 1, l: 9, score: "60:52", pts: 28, isCurrent: false },
-        { pos: 16, team: "TJ Nové Sady", logo: "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo", p: 18, w: 8, d: 2, l: 8, score: "37:40", pts: 26, isCurrent: false },
-        { pos: 17, team: "FC Čechynce", logo: "https://api.sportnet.online/data/ppo/fc-cechynce.futbalnet.sk/logo", p: 11, w: 8, d: 1, l: 2, score: "40:10", pts: 25, isCurrent: false },
-        { pos: 18, team: "FC Cabaj-Čápor", logo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo", p: 13, w: 7, d: 3, l: 3, score: "33:16", pts: 24, isCurrent: false },
-        { pos: 19, team: "FK Močenok", logo: "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo", p: 14, w: 7, d: 1, l: 6, score: "29:33", pts: 22, isCurrent: false },
-        { pos: 20, team: "FK Nitra B", logo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", p: 18, w: 7, d: 0, l: 11, score: "44:61", pts: 21, isCurrent: false },
-        { pos: 21, team: "Futbalový klub KFC HORNÁ KRÁĽOVÁ", logo: "https://api.sportnet.online/data/ppo/fk-kfc-tibi-horna-kralova.futbalnet.sk/logo", p: 19, w: 6, d: 3, l: 10, score: "29:49", pts: 21, isCurrent: false },
-        { pos: 22, team: "TJ Družstevník Rišňovce", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-risnovce.futbalnet.sk/logo", p: 18, w: 6, d: 0, l: 12, score: "41:38", pts: 18, isCurrent: false },
-        { pos: 23, team: "OFK Sľažany", logo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", p: 17, w: 5, d: 0, l: 12, score: "28:50", pts: 15, isCurrent: false },
-        { pos: 24, team: "BFC - OÚ Dolné Obdokovce", logo: "https://api.sportnet.online/data/ppo/bfc-ou-dolne-obdokovce.futbalnet.sk/logo", p: 14, w: 4, d: 0, l: 10, score: "18:39", pts: 12, isCurrent: false },
-        { pos: 25, team: "FK Vlčany", logo: "https://api.sportnet.online/data/ppo/fk-vlcany.futbalnet.sk/logo", p: 14, w: 3, d: 2, l: 9, score: "21:37", pts: 11, isCurrent: false },
-        { pos: 26, team: "TJ Družstevník Vráble - Horný Ohaj", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-vrable-horny-ohaj.futbalnet.sk/logo", p: 13, w: 3, d: 1, l: 9, score: "11:42", pts: 10, isCurrent: false },
-        { pos: 27, team: "FK Slovan Duslo Šaľa B", logo: "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo", p: 14, w: 3, d: 1, l: 10, score: "26:77", pts: 10, isCurrent: false },
-        { pos: 28, team: "'Združenie FC Výčapy - Opatovce'", logo: "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo", p: 14, w: 1, d: 2, l: 11, score: "5:76", pts: 5, isCurrent: false },
-        { pos: 29, team: "TJ Slovan Zbehy", logo: "https://api.sportnet.online/data/ppo/tj-slovan-zbehy.futbalnet.sk/logo", p: 11, w: 1, d: 1, l: 9, score: "14:58", pts: 4, isCurrent: false },
-        { pos: 30, team: "OFK Hosťová", logo: "https://api.sportnet.online/data/ppo/ofk-hostova.futbalnet.sk/logo", p: 14, w: 1, d: 1, l: 12, score: "9:55", pts: 4, isCurrent: false },
-        { pos: 31, team: "FK DYNAMO Trnovec nad Váhom", logo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", p: 11, w: 1, d: 0, l: 10, score: "5:87", pts: 3, isCurrent: false },
-        { pos: 32, team: "ŠK Magnus (futbal)", logo: "https://api.sportnet.online/data/ppo/sk-magnus-futbal.futbalnet.sk/logo", p: 11, w: 0, d: 1, l: 10, score: "6:65", pts: 1, isCurrent: false },
-        { pos: 33, team: "TJ Družstevník Šurianky", logo: "https://api.sportnet.online/data/ppo/tj-druzstevnik-surianky.futbalnet.sk/logo", p: 15, w: 0, d: 1, l: 14, score: "13:109", pts: 1, isCurrent: false },
-        { pos: 34, team: "Futbalový klub FK Babindol", logo: "https://api.sportnet.online/data/ppo/issf_club_14227/logo", p: 8, w: 0, d: 0, l: 8, score: "0:24", pts: 0, isCurrent: false },
-        { pos: 35, team: "FC Neded", logo: "https://api.sportnet.online/data/ppo/fc-neded.futbalnet.sk/logo", p: 14, w: 0, d: 0, l: 14, score: "3:86", pts: 0, isCurrent: false }
+      "key": "u9",
+      "name": "Predprípravka U9",
+      "badge": "Predprípravka • ObFZ Nitra",
+      "code": "U9",
+      "category": "Predprípravka U9",
+      "league": "Liga prípraviek U09 ObFZ Nitra",
+      "coach": "Andrej Szabó",
+      "description": "Základy techniky, vedenie lopty a obchádzanie protihráča formou hravých cvičení.",
+      "trainings": "Utorok a Štvrtok o 16:00",
+      "color": "#FF3388",
+      "sportnetSlug": "u09-m-a",
+      "table": [
+        {
+          "pos": 1,
+          "team": "OFK Golianovo",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-golianovo.futbalnet.sk/logo",
+          "p": 18,
+          "w": 15,
+          "d": 0,
+          "l": 3,
+          "score": "75:14",
+          "pts": 45,
+          "isCurrent": false
+        },
+        {
+          "pos": 2,
+          "team": "FC Veľký Kýr",
+          "logo": "https://api.sportnet.online/data/ppo/fc-velky-kyr.futbalnet.sk/logo",
+          "p": 15,
+          "w": 14,
+          "d": 0,
+          "l": 1,
+          "score": "87:14",
+          "pts": 42,
+          "isCurrent": false
+        },
+        {
+          "pos": 3,
+          "team": "FK Mojmírovce",
+          "logo": "https://api.sportnet.online/data/ppo/fk-mojmirovce.futbalnet.sk/logo",
+          "p": 14,
+          "w": 13,
+          "d": 1,
+          "l": 0,
+          "score": "115:5",
+          "pts": 40,
+          "isCurrent": false
+        },
+        {
+          "pos": 4,
+          "team": "ŠK Veľké Zálužie",
+          "logo": "https://api.sportnet.online/data/ppo/sk-velke-zaluzie.futbalnet.sk/logo",
+          "p": 19,
+          "w": 12,
+          "d": 3,
+          "l": 4,
+          "score": "87:20",
+          "pts": 39,
+          "isCurrent": false
+        },
+        {
+          "pos": 5,
+          "team": "TJ Slovan Čeľadice",
+          "logo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "p": 14,
+          "w": 13,
+          "d": 0,
+          "l": 1,
+          "score": "67:15",
+          "pts": 39,
+          "isCurrent": false
+        },
+        {
+          "pos": 6,
+          "team": "ŠK Hájske",
+          "logo": "https://api.sportnet.online/data/ppo/sk-hajske.futbalnet.sk/logo",
+          "p": 14,
+          "w": 12,
+          "d": 1,
+          "l": 1,
+          "score": "67:12",
+          "pts": 37,
+          "isCurrent": false
+        },
+        {
+          "pos": 7,
+          "team": "FK Svätoplukovo",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-svatoplukovo.futbalnet.sk/logo",
+          "p": 19,
+          "w": 12,
+          "d": 0,
+          "l": 7,
+          "score": "62:40",
+          "pts": 36,
+          "isCurrent": false
+        },
+        {
+          "pos": 8,
+          "team": "TJ Štart Nitrianske Hrnčiarovce",
+          "logo": "https://api.sportnet.online/data/ppo/tj-start-nitrianske-hrnciarovce.futbalnet.sk/logo",
+          "p": 14,
+          "w": 11,
+          "d": 2,
+          "l": 1,
+          "score": "59:14",
+          "pts": 35,
+          "isCurrent": false
+        },
+        {
+          "pos": 9,
+          "team": "FC Jelenec",
+          "logo": "https://api.sportnet.online/data/ppo/fk-fc-jelenec.futbalnet.sk/logo",
+          "p": 14,
+          "w": 11,
+          "d": 2,
+          "l": 1,
+          "score": "57:19",
+          "pts": 35,
+          "isCurrent": false
+        },
+        {
+          "pos": 10,
+          "team": "ŠK Nitra-Dolné Krškany",
+          "logo": "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo",
+          "p": 17,
+          "w": 11,
+          "d": 1,
+          "l": 5,
+          "score": "84:41",
+          "pts": 34,
+          "isCurrent": false
+        },
+        {
+          "pos": 11,
+          "team": "ŠK Junior Ivanka pri Nitre",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "p": 13,
+          "w": 10,
+          "d": 1,
+          "l": 2,
+          "score": "64:21",
+          "pts": 31,
+          "isCurrent": true
+        },
+        {
+          "pos": 12,
+          "team": "Futbalový klub FC 31 Jarok",
+          "logo": "https://api.sportnet.online/data/ppo/fk-fc-31-jarok.futbalnet.sk/logo",
+          "p": 16,
+          "w": 10,
+          "d": 0,
+          "l": 6,
+          "score": "38:52",
+          "pts": 30,
+          "isCurrent": false
+        },
+        {
+          "pos": 13,
+          "team": "FK Janíkovce",
+          "logo": "https://api.sportnet.online/data/ppo/fk-janikovce.futbalnet.sk/logo",
+          "p": 18,
+          "w": 10,
+          "d": 0,
+          "l": 8,
+          "score": "55:32",
+          "pts": 30,
+          "isCurrent": false
+        },
+        {
+          "pos": 14,
+          "team": "OFK Čakajovce",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo",
+          "p": 15,
+          "w": 10,
+          "d": 0,
+          "l": 5,
+          "score": "43:29",
+          "pts": 30,
+          "isCurrent": false
+        },
+        {
+          "pos": 15,
+          "team": "FC ViOn Zlaté Moravce - Vráble D",
+          "logo": "https://api.sportnet.online/data/ppo/fc-vion-zlate-moravce.futbalnet.sk/logo",
+          "p": 19,
+          "w": 9,
+          "d": 1,
+          "l": 9,
+          "score": "60:52",
+          "pts": 28,
+          "isCurrent": false
+        },
+        {
+          "pos": 16,
+          "team": "TJ Nové Sady",
+          "logo": "https://api.sportnet.online/data/ppo/tj-nove-sady.futbalnet.sk/logo",
+          "p": 18,
+          "w": 8,
+          "d": 2,
+          "l": 8,
+          "score": "37:40",
+          "pts": 26,
+          "isCurrent": false
+        },
+        {
+          "pos": 17,
+          "team": "FC Čechynce",
+          "logo": "https://api.sportnet.online/data/ppo/fc-cechynce.futbalnet.sk/logo",
+          "p": 11,
+          "w": 8,
+          "d": 1,
+          "l": 2,
+          "score": "40:10",
+          "pts": 25,
+          "isCurrent": false
+        },
+        {
+          "pos": 18,
+          "team": "FC Cabaj-Čápor",
+          "logo": "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
+          "p": 13,
+          "w": 7,
+          "d": 3,
+          "l": 3,
+          "score": "33:16",
+          "pts": 24,
+          "isCurrent": false
+        },
+        {
+          "pos": 19,
+          "team": "FK Močenok",
+          "logo": "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo",
+          "p": 14,
+          "w": 7,
+          "d": 1,
+          "l": 6,
+          "score": "29:33",
+          "pts": 22,
+          "isCurrent": false
+        },
+        {
+          "pos": 20,
+          "team": "FK Nitra B",
+          "logo": "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo",
+          "p": 18,
+          "w": 7,
+          "d": 0,
+          "l": 11,
+          "score": "44:61",
+          "pts": 21,
+          "isCurrent": false
+        },
+        {
+          "pos": 21,
+          "team": "Futbalový klub KFC HORNÁ KRÁĽOVÁ",
+          "logo": "https://api.sportnet.online/data/ppo/fk-kfc-tibi-horna-kralova.futbalnet.sk/logo",
+          "p": 19,
+          "w": 6,
+          "d": 3,
+          "l": 10,
+          "score": "29:49",
+          "pts": 21,
+          "isCurrent": false
+        },
+        {
+          "pos": 22,
+          "team": "TJ Družstevník Rišňovce",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-risnovce.futbalnet.sk/logo",
+          "p": 18,
+          "w": 6,
+          "d": 0,
+          "l": 12,
+          "score": "41:38",
+          "pts": 18,
+          "isCurrent": false
+        },
+        {
+          "pos": 23,
+          "team": "OFK Sľažany",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "p": 17,
+          "w": 5,
+          "d": 0,
+          "l": 12,
+          "score": "28:50",
+          "pts": 15,
+          "isCurrent": false
+        },
+        {
+          "pos": 24,
+          "team": "BFC - OÚ Dolné Obdokovce",
+          "logo": "https://api.sportnet.online/data/ppo/bfc-ou-dolne-obdokovce.futbalnet.sk/logo",
+          "p": 14,
+          "w": 4,
+          "d": 0,
+          "l": 10,
+          "score": "18:39",
+          "pts": 12,
+          "isCurrent": false
+        },
+        {
+          "pos": 25,
+          "team": "FK Vlčany",
+          "logo": "https://api.sportnet.online/data/ppo/fk-vlcany.futbalnet.sk/logo",
+          "p": 14,
+          "w": 3,
+          "d": 2,
+          "l": 9,
+          "score": "21:37",
+          "pts": 11,
+          "isCurrent": false
+        },
+        {
+          "pos": 26,
+          "team": "TJ Družstevník Vráble - Horný Ohaj",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-vrable-horny-ohaj.futbalnet.sk/logo",
+          "p": 13,
+          "w": 3,
+          "d": 1,
+          "l": 9,
+          "score": "11:42",
+          "pts": 10,
+          "isCurrent": false
+        },
+        {
+          "pos": 27,
+          "team": "FK Slovan Duslo Šaľa B",
+          "logo": "https://api.sportnet.online/data/ppo/fk-slovan-duslo-sala.futbalnet.sk/logo",
+          "p": 14,
+          "w": 3,
+          "d": 1,
+          "l": 10,
+          "score": "26:77",
+          "pts": 10,
+          "isCurrent": false
+        },
+        {
+          "pos": 28,
+          "team": "'Združenie FC Výčapy - Opatovce'",
+          "logo": "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo",
+          "p": 14,
+          "w": 1,
+          "d": 2,
+          "l": 11,
+          "score": "5:76",
+          "pts": 5,
+          "isCurrent": false
+        },
+        {
+          "pos": 29,
+          "team": "TJ Slovan Zbehy",
+          "logo": "https://api.sportnet.online/data/ppo/tj-slovan-zbehy.futbalnet.sk/logo",
+          "p": 11,
+          "w": 1,
+          "d": 1,
+          "l": 9,
+          "score": "14:58",
+          "pts": 4,
+          "isCurrent": false
+        },
+        {
+          "pos": 30,
+          "team": "OFK Hosťová",
+          "logo": "https://api.sportnet.online/data/ppo/ofk-hostova.futbalnet.sk/logo",
+          "p": 14,
+          "w": 1,
+          "d": 1,
+          "l": 12,
+          "score": "9:55",
+          "pts": 4,
+          "isCurrent": false
+        },
+        {
+          "pos": 31,
+          "team": "FK DYNAMO Trnovec nad Váhom",
+          "logo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "p": 11,
+          "w": 1,
+          "d": 0,
+          "l": 10,
+          "score": "5:87",
+          "pts": 3,
+          "isCurrent": false
+        },
+        {
+          "pos": 32,
+          "team": "ŠK Magnus (futbal)",
+          "logo": "https://api.sportnet.online/data/ppo/sk-magnus-futbal.futbalnet.sk/logo",
+          "p": 11,
+          "w": 0,
+          "d": 1,
+          "l": 10,
+          "score": "6:65",
+          "pts": 1,
+          "isCurrent": false
+        },
+        {
+          "pos": 33,
+          "team": "TJ Družstevník Šurianky",
+          "logo": "https://api.sportnet.online/data/ppo/tj-druzstevnik-surianky.futbalnet.sk/logo",
+          "p": 15,
+          "w": 0,
+          "d": 1,
+          "l": 14,
+          "score": "13:109",
+          "pts": 1,
+          "isCurrent": false
+        },
+        {
+          "pos": 34,
+          "team": "Futbalový klub FK Babindol",
+          "logo": "https://api.sportnet.online/data/ppo/issf_club_14227/logo",
+          "p": 8,
+          "w": 0,
+          "d": 0,
+          "l": 8,
+          "score": "0:24",
+          "pts": 0,
+          "isCurrent": false
+        },
+        {
+          "pos": 35,
+          "team": "FC Neded",
+          "logo": "https://api.sportnet.online/data/ppo/fc-neded.futbalnet.sk/logo",
+          "p": 14,
+          "w": 0,
+          "d": 0,
+          "l": 14,
+          "score": "3:86",
+          "pts": 0,
+          "isCurrent": false
+        }
       ],
-      matches: [
-        { id: "m-u9-b082c1a8", round: "2. turnaj", date: "19.09.2026", time: "09:00", homeTeam: "ŠK Nitra-Dolné Krškany", homeLogo: "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "1 : 2", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-b083ed2a", round: "2. turnaj", date: "19.09.2026", time: "09:00", homeTeam: "FC Cabaj-Čápor", homeLogo: "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "1 : 1", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-f027b32c", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "OFK Čakajovce", homeLogo: "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "3 : 7", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-f028d4c6", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "FK DYNAMO Trnovec nad Váhom", homeLogo: "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "0 : 16", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-f0269750", round: "3. turnaj", date: "03.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FK Nitra B", awayLogo: "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo", score: "2 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-a782d784", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "TJ Slovan Čeľadice", awayLogo: "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo", score: "1 : 6", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-a782bd9d", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "'Združenie FC Výčapy - Opatovce'", awayLogo: "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo", score: "9 : 1", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-a782a100", round: "4. turnaj", date: "17.10.2026", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Sľažany", awayLogo: "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo", score: "3 : 0", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "finished" },
-        { id: "m-u9-85f6c480", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "OFK Hosťová", awayLogo: "https://api.sportnet.online/data/ppo/ofk-hostova.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u9-85f6b598", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "FK Močenok", homeLogo: "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo", awayTeam: "ŠK Junior Ivanka pri Nitre", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", score: "", isHome: false, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" },
-        { id: "m-u9-85f6ab1c", round: "5. turnaj", date: "20.03.2027", time: "09:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "BFC - OÚ Dolné Obdokovce", awayLogo: "https://api.sportnet.online/data/ppo/bfc-ou-dolne-obdokovce.futbalnet.sk/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "matches": [
+        {
+          "id": "m-u9-b082c1a8",
+          "round": "2. turnaj",
+          "date": "19.09.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Nitra-Dolné Krškany",
+          "homeLogo": "https://api.sportnet.online/data/ppo/sk-nitra-dolne-krskany.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "1 : 2",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-b083ed2a",
+          "round": "2. turnaj",
+          "date": "19.09.2026",
+          "time": "09:00",
+          "homeTeam": "FC Cabaj-Čápor",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fc-cabaj-capor.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "1 : 1",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-f027b32c",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "OFK Čakajovce",
+          "homeLogo": "https://api.sportnet.online/data/ppo/ofk-cakajovce.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "3 : 7",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-f028d4c6",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "FK DYNAMO Trnovec nad Váhom",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-dynamo-trnovec-nad-vahom.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "0 : 16",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-f0269750",
+          "round": "3. turnaj",
+          "date": "03.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FK Nitra B",
+          "awayLogo": "https://api.sportnet.online/data/ppo/cermansky-fk-nitra.futbalnet.sk/logo",
+          "score": "2 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-a782d784",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "TJ Slovan Čeľadice",
+          "awayLogo": "https://api.sportnet.online/data/ppo/tj-slovan-celadice.futbalnet.sk/logo",
+          "score": "1 : 6",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-a782bd9d",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "'Združenie FC Výčapy - Opatovce'",
+          "awayLogo": "https://api.sportnet.online/data/ppo/zdruzenie-fc-vycapy-opatovce.futbalnet.sk/logo",
+          "score": "9 : 1",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-a782a100",
+          "round": "4. turnaj",
+          "date": "17.10.2026",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Sľažany",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-slazany.futbalnet.sk/logo",
+          "score": "3 : 0",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "finished"
+        },
+        {
+          "id": "m-u9-85f6c480",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "OFK Hosťová",
+          "awayLogo": "https://api.sportnet.online/data/ppo/ofk-hostova.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u9-85f6b598",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "FK Močenok",
+          "homeLogo": "https://api.sportnet.online/data/ppo/fk-mocenok.futbalnet.sk/logo",
+          "awayTeam": "ŠK Junior Ivanka pri Nitre",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "score": "",
+          "isHome": false,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        },
+        {
+          "id": "m-u9-85f6ab1c",
+          "round": "5. turnaj",
+          "date": "20.03.2027",
+          "time": "09:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "BFC - OÚ Dolné Obdokovce",
+          "awayLogo": "https://api.sportnet.online/data/ppo/bfc-ou-dolne-obdokovce.futbalnet.sk/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Viktor Halás", pos: "Brankár", year: 2017 },
-        { number: 4, name: "Oliver Varga", pos: "Hráč v poli", year: 2017 },
-        { number: 6, name: "Tomáš Balla", pos: "Hráč v poli", year: 2018 },
-        { number: 8, name: "Dávid Tóth", pos: "Hráč v poli", year: 2017 },
-        { number: 10, name: "Filip Kováč", pos: "Hráč v poli", year: 2018 }
-      ],
-      staff: [
-        { role: "Hlavný tréner", name: "Andrej Szabó", license: "UEFA Grassroots C", phone: "+421 911 888 999", email: "andrej.szabo@skjuniorivanka.sk" }
+      "roster": [],
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Andrej Szabó",
+          "license": "UEFA Grassroots C",
+          "phone": "+421 911 888 999",
+          "email": "andrej.szabo@skjuniorivanka.sk"
+        }
       ]
     },
-
     "u7": {
-      key: "u7",
-      name: "Futbalová školička U7",
-      badge: "Školička • Zábava a pohyb",
-      code: "U7",
-      category: "Futbalová školička U7",
-      league: "Regionálne miniturnaje a prípravné zápasy",
-      coach: "Marek Varga",
-      description: "Prvé futbalové kroky pre najmenších chlapcov a dievčatá vo veku 4 až 6 rokov.",
-      trainings: "Streda a Piatok o 15:30",
-      color: "#FF3388",
-      sportnetSlug: "",
-      table: [],
-      matches: [
-        { id: "m-u7-01", round: "Priateľský turnaj", date: "18.04.2027", time: "10:00", homeTeam: "ŠK Junior Ivanka pri Nitre", homeLogo: "https://api.sportnet.online/data/ppo/issf_club_11050/logo", awayTeam: "FC Nitra U7", awayLogo: "https://api.sportnet.online/data/ppo/issf_club_10103/logo", score: "", isHome: true, venue: "Futbalový areál ŠK Junior Ivanka pri Nitre", status: "scheduled" }
+      "key": "u7",
+      "name": "Futbalová školička U7",
+      "badge": "Školička • Zábava a pohyb",
+      "code": "U7",
+      "category": "Futbalová školička U7",
+      "league": "Regionálne miniturnaje a prípravné zápasy",
+      "coach": "Marek Varga",
+      "description": "Prvé futbalové kroky pre najmenších chlapcov a dievčatá vo veku 4 až 6 rokov.",
+      "trainings": "Streda a Piatok o 15:30",
+      "color": "#FF3388",
+      "sportnetSlug": "",
+      "table": [],
+      "matches": [
+        {
+          "id": "m-u7-01",
+          "round": "Priateľský turnaj",
+          "date": "18.04.2027",
+          "time": "10:00",
+          "homeTeam": "ŠK Junior Ivanka pri Nitre",
+          "homeLogo": "https://api.sportnet.online/data/ppo/issf_club_11050/logo",
+          "awayTeam": "FC Nitra U7",
+          "awayLogo": "https://api.sportnet.online/data/ppo/issf_club_10103/logo",
+          "score": "",
+          "isHome": true,
+          "venue": "Futbalový areál ŠK Junior Ivanka pri Nitre",
+          "status": "scheduled"
+        }
       ],
-      roster: [
-        { number: 1, name: "Maxim Balla", pos: "Hráč v poli", year: 2019 },
-        { number: 2, name: "Sebastián Tóth", pos: "Hráč v poli", year: 2019 },
-        { number: 3, name: "Lukáš Varga", pos: "Hráč v poli", year: 2020 },
-        { number: 4, name: "Matej Horváth", pos: "Hráč v poli", year: 2020 }
-      ],
-      staff: [
-        { role: "Hlavný tréner", name: "Marek Varga", license: "Pedagogické vzdelanie & Grassroots", phone: "+421 910 111 222", email: "skolicka@skjuniorivanka.sk" }
+      "roster": [],
+      "staff": [
+        {
+          "role": "Hlavný tréner",
+          "name": "Marek Varga",
+          "license": "Pedagogické vzdelanie & Grassroots",
+          "phone": "+421 910 111 222",
+          "email": "skolicka@skjuniorivanka.sk"
+        }
       ]
     }
   },
-
-  // 7. ČLÁNKY A AKTUALITY
-  articles: [
+  "articles": [],
+  "gallery": [],
+  "sponsors": [
     {
-        "id":  "art-01",
-        "title":  "Historická jesenná časť ŠK Junior: Naše tímy bojujú o popredné priečky",
-        "summary":  "Hodnotenie prvej polovice sezóny 2026/2027 vo všetkých kategóriách od dospelých až po prípravky. Prehľad úspechov, strelcov a plán zimnej prípravy.",
-        "date":  "08.11.2026",
-        "category":  "A-tím",
-        "image":  "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
-        "content":  "Jesenná časť súťažného ročníka 2026/2027 sa nezmazateľne zapíše do kroniky ŠK Junior Ivanka pri Nitre. Seniorský A-tím v VIII. A lige Macron ukázal obrovskú bojovnosť, zatiaľ čo mládežnícke kategórie potvrdili stabilitu v krajských aj oblastných súťažiach.\n\nPrezident klubu Marián Varga zhodnotil uplynulé mesiace: \u0027Naším hlavným cieľom bolo priniesť do Ivanky radosť z futbalu a dať šancu mladým hráčom. Výsledky ukazujú, že nastavená koncepcia systematickej práce s mládežou prináša ovocie.\u0027"
+      "name": "Obec Ivanka pri Nitre",
+      "logo": "data:image/png;base64,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",
+      "tier": "Generálny partner",
+      "url": "",
+      "desc": ""
     },
     {
-        "id":  "art-02",
-        "title":  "Mládežnícka akadémia ŠK Junior opäť potvrdila kvalitu v III. lige",
-        "summary":  "Kategórie U15 a U13 zvládli náročné kolá krajskej súťaže a udržiavajú sa v popredí tabuľky.",
-        "date":  "02.11.2026",
-        "category":  "Mládež",
-        "image":  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
-        "content":  "Starší žiaci U15 pod vedením Jozefa Kováča predviedli dominantnú hru založenú na presnej kombinácii a vysokej aktivite bez lopty. Mladší žiaci U13 nadviazali skvelým tímovým výkonom. Akadémia tak pokračuje v napĺňaní svojej vízie rozvoja moderného a dynamického futbalu."
-    },
-    {
-        "id":  "art-03",
-        "title":  "Nábor do futbalovej školičky U7 a prípravky prebieha celoročne",
-        "summary":  "Hľadáme nové talenty! Privítame chlapcov a dievčatá ročníkov 2018 až 2021 so záujmom o šport a pohyb.",
-        "date":  "25.10.2026",
-        "category":  "Klub",
-        "image":  "SK_Junior_logo.jpg",
-        "content":  "Futbalový klub ŠK Junior Ivanka pri Nitre srdečne pozýva všetky deti na ukážkové tréningy futbalovej školičky. Naším cieľom nie je len výchova futbalistov, ale predovšetkým budovanie lásky k pohybu, disciplíny a kamarátstiev na celý život. Tréningy prebiehajú pod vedením kvalifikovaných trénerov a pedagógov."
+      "name": "Smash Bros",
+      "logo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/7QCEUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAGgcAigAYkZCTUQwYTAwMGE0ZjAyMDAwMDI5MWYwMDAwMzMzNzAwMDA3NjQ2MDAwMGExNGMwMDAwZTQ2NzAwMDAyNjhmMDAwMGYwYWMwMDAwZjBiMzAwMDA0Y2I2MDAwMGUxZDUwMDAwAP/bAIQABQYGCwgLCwsLCw0LCwsNDg4NDQ4ODw0ODg4NDxAQEBEREBAQEA8TEhMPEBETFBQTERMWFhYTFhUVFhkWGRYWEgEFBQUKBwoICQkICwgKCAsKCgkJCgoMCQoJCgkMDQsKCwsKCw0MCwsICwsMDAwNDQwMDQoLCg0MDQ0MExQTExOc/8IAEQgEnASbAwEiAAIRAQMRAf/EARoAAQACAwEBAQAAAAAAAAAAAAAGBwQFCAMBAgEBAAIDAQEAAAAAAAAAAAAAAAEEAgMFBgcQAAEEAQIFBAEEAgIDAAAAAAMAAQIEBRETBhASFBUgMDM0MiEiIzEWQCRQYHDQEQABAgMCBgsPAwMDBQAAAAACAQMABBIFEQYTISIyQhQgMUFSYnKSotHhEBYjMFFTVHGBgpGhscHwFTNhQEOyNLDSUGDC8fISAAIBAgMGBQMDAwUAAAAAAAECAAMRBBIhExQiMVFSIDJBQmIQMGFAUHIjM3GCkZKisBMAAQICBAsHAgUEAQUBAAAAAQACESEDEjFBECAiMjNRYXGBkaETMEJyscHRUuEjYoKSslBzovDxBDRAcNBj/9oADAMBAAIRAxIAAAGKjzn2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A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/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A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",
+      "tier": "Partner mládeže",
+      "url": "",
+      "desc": ""
     }
-],
-
-  // 8. FOTOGALÉRIA (S PODPOROU CELÝCH ALBUMOV A 30+ FOTOGRAFIÍ)
-  gallery: [
-    {
-        "id":  "alb-01",
-        "title":  "Jesenný turnaj prípraviek U11 a U9 v Ivanke pri Nitre",
-        "category":  "Mládež",
-        "date":  "24.10.2026",
-        "image":  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800",
-        "description":  "Kompletný fotoreport z vydareného turnaja našich nádejí.",
-        "photos":  [
-                       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
-                       "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
-                       "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
-                       "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1200",
-                       "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200",
-                       "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
-                   ]
-    },
-    {
-        "id":  "alb-02",
-        "title":  "Zápas dorastu U19 a ligové momenty",
-        "category":  "Zápasy",
-        "date":  "15.11.2026",
-        "image":  "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800",
-        "description":  "Zábery z ligového zápasu a tímových akcií.",
-        "photos":  [
-                       "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200",
-                       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
-                       "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200"
-                   ]
-    },
-    {
-        "id":  "alb-03",
-        "title":  "Tréningový kemp a areál ŠK Junior",
-        "category":  "Klub",
-        "date":  "15.09.2026",
-        "image":  "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800",
-        "description":  "Tréningy všetkých kategórií a život v areáli klubu.",
-        "photos":  [
-                       "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200",
-                       "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=1200"
-                   ]
-    }
-],
-
-  // 9. SPONZORI A PARTNERI
-  sponsors: [
-    {
-        "name":  "Obec Ivanka pri Nitre",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Generálny partner",
-        "url":  "https://ivankaprinitre.sk",
-        "desc":  "Podpora športovania detí a rozvoja futbalového areálu"
-    },
-    {
-        "name":  "Macron Slovensko",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Hlavný športový partner",
-        "url":  "https://macron.sk",
-        "desc":  "Oficiálny dodávateľ dresov a športového vybavenia"
-    },
-    {
-        "name":  "Nitriansky samosprávny kraj",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Partner mládeže",
-        "url":  "https://unsk.sk",
-        "desc":  "Podpora mládežníckych projektov a turnajov"
-    },
-    {
-        "name":  "Západoslovenský futbalový zväz",
-        "logo":  "SK_Junior_logo.jpg",
-        "tier":  "Oficiálny partner",
-        "url":  "https://zsfz.sk",
-        "desc":  "Zastrešenie krajských majstrovských súťaží"
-    }
-],
-
-  // 10. METADÁTA PRE AUTOMATICKÚ SYNCHRONIZÁCIU
-  dataVersion: 80,
-  lastSyncTimestamp: Date.now()
+  ],
+  "dataVersion": 324,
+  "lastSyncTimestamp": 1795697986051
 };
 
 // Pomocné funkcie pre prácu s dátami a localStorage
@@ -844,11 +3430,7 @@ function getClubData() {
     try {
       const parsed = JSON.parse(stored);
       if (parsed) {
-        // SMART MERGE: Športové dáta zo Sportnetu berieme vždy z najnovšieho CLUB_DATA,
-        // zatiaľ čo klubové úpravy (vedenie, sponzori, články, galéria, súpisky) zachovávame z lokálnych úprav.
         const merged = { ...CLUB_DATA, ...parsed };
-
-        // 1. Zaručíme najnovšie športové dáta (tabuľky, zápasy) pre všetky tímy zo Sportnetu
         if (CLUB_DATA.teams) {
           merged.teams = merged.teams || {};
           for (const key in CLUB_DATA.teams) {
@@ -860,55 +3442,25 @@ function getClubData() {
               merged.teams[key].lastMatch = CLUB_DATA.teams[key].lastMatch;
               merged.teams[key].nextMatch = CLUB_DATA.teams[key].nextMatch;
               if (parsed.teams && parsed.teams[key]) {
-                if (parsed.teams[key].roster && parsed.teams[key].roster.length > 0) {
-                  merged.teams[key].roster = parsed.teams[key].roster;
-                }
-                if (parsed.teams[key].staff && parsed.teams[key].staff.length > 0) {
-                  merged.teams[key].staff = parsed.teams[key].staff;
-                }
+                if (parsed.teams[key].roster && parsed.teams[key].roster.length > 0) merged.teams[key].roster = parsed.teams[key].roster;
+                if (parsed.teams[key].staff && parsed.teams[key].staff.length > 0) merged.teams[key].staff = parsed.teams[key].staff;
               }
             }
           }
         }
-
-        // 2. Widgety zápasov na úvodnej stránke
         if (CLUB_DATA.lastMatch) merged.lastMatch = CLUB_DATA.lastMatch;
         if (CLUB_DATA.nextMatch) merged.nextMatch = CLUB_DATA.nextMatch;
         if (CLUB_DATA.upcomingMatches) merged.upcomingMatches = CLUB_DATA.upcomingMatches;
-
-        // 3. Vedenie klubu, história, partneri a sponzori:
-        // VŽDY zachováme to, čo je uložené v pamäti prehliadača (localStorage)
-        if (parsed.about) {
-          merged.about = merged.about || {};
-          if (Array.isArray(parsed.about.management) && parsed.about.management.length > 0) {
-            merged.about.management = parsed.about.management;
-          }
-          if (Array.isArray(parsed.about.historyTimeline) && parsed.about.historyTimeline.length > 0) {
-            merged.about.historyTimeline = parsed.about.historyTimeline;
-          }
-          if (Array.isArray(parsed.about.partners) && parsed.about.partners.length > 0) {
-            merged.about.partners = parsed.about.partners;
-          }
-        }
-        if (Array.isArray(parsed.sponsors) && parsed.sponsors.length > 0) {
-          merged.sponsors = parsed.sponsors;
-        } else if (parsed.about && Array.isArray(parsed.about.partners) && parsed.about.partners.length > 0) {
-          merged.sponsors = parsed.about.partners;
-        }
-        if (Array.isArray(parsed.articles) && parsed.articles.length > 0) {
-          merged.articles = parsed.articles;
-        }
-        if (Array.isArray(parsed.gallery) && parsed.gallery.length > 0) {
-          merged.gallery = parsed.gallery;
-        }
-        if (parsed.clubInfo) {
-          merged.clubInfo = { ...CLUB_DATA.clubInfo, ...parsed.clubInfo };
-        }
-
+        if (parsed.about?.management?.length > 0) { merged.about = merged.about || {}; merged.about.management = parsed.about.management; }
+        if (parsed.about?.historyTimeline?.length > 0) { merged.about = merged.about || {}; merged.about.historyTimeline = parsed.about.historyTimeline; }
+        if (parsed.about?.partners?.length > 0) { merged.about = merged.about || {}; merged.about.partners = parsed.about.partners; }
+        if (parsed.sponsors?.length > 0) merged.sponsors = parsed.sponsors;
+        if (parsed.articles?.length > 0) merged.articles = parsed.articles;
+        if (parsed.gallery?.length > 0) merged.gallery = parsed.gallery;
         return merged;
       }
     } catch (e) {
-      console.warn("Chyba načítania údajov z localStorage, použijú sa východzie:", e);
+      console.warn("Chyba:", e);
     }
   }
   return CLUB_DATA;
@@ -917,18 +3469,7 @@ function getClubData() {
 function saveClubData(data) {
   data.dataVersion = (data.dataVersion || 80) + 1;
   data.lastSyncTimestamp = Date.now();
-  if (data.about && Array.isArray(data.about.partners)) {
-    data.sponsors = data.about.partners.map(p => ({
-      name: p.name,
-      logo: p.logo || "SK_Junior_logo.jpg",
-      tier: p.tier || "Partner",
-      url: p.url || "",
-      desc: p.desc || ""
-    }));
-  }
   localStorage.setItem("sk_junior_club_data", JSON.stringify(data));
-
-  // Ak bežíme na webhostingu s PHP, odošleme zmeny na trvalé uloženie do club_custom_data.json na serveri
   try {
     const payload = {
       clubInfo: data.clubInfo,
