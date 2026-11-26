@@ -3,14 +3,18 @@
 // S PLNÝM PÁROVANÍM A IMPORTOM ZO SPORTNET FUTBALNET
 // ==============================================================
 
-let currentData = getClubData();
+let currentData = typeof getClubData === "function" ? getClubData() : (typeof CLUB_DATA !== "undefined" ? CLUB_DATA : {});
 let activeTeamKey = "a-tim";
 let activeGalleryCategory = "all";
 let activeNewsCategory = "all";
 let activeTableMode = "custom"; // "custom" (Klubový dizajn) alebo "widget" (Oficiálny Sportnet)
 
 document.addEventListener("DOMContentLoaded", () => {
-  currentData = getClubData();
+  if (typeof getClubData === "function") {
+    currentData = getClubData();
+  } else if (typeof CLUB_DATA !== "undefined") {
+    currentData = CLUB_DATA;
+  }
   initClubInfo();
   initNavigation();
   initHomeMatchCenter();
