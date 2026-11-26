@@ -1154,7 +1154,8 @@ function downloadCustomDataJson() {
     partners: currentData.about?.partners || [],
     sponsors: currentData.sponsors || [],
     articles: currentData.articles || [],
-    gallery: currentData.gallery || []
+    gallery: currentData.gallery || [],
+    teams: currentData.teams || {}
   };
   const jsonStr = JSON.stringify(exportData, null, 2);
   const blob = new Blob([jsonStr], { type: "application/json;charset=utf-8" });
