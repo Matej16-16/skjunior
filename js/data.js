@@ -840,32 +840,18 @@ const CLUB_DATA = {
       "staff": [
         {
           "role": "Hlavný tréner",
-          "name": "Marián Varga",
-          "license": "UEFA B licencia",
-          "phone": "+421 910 907 795",
-          "email": "marian.varga@skjuniorivanka.sk"
+          "name": "Jakub Blaži",
+          "license": "UEFA C licencia",
+          "phone": "+421 903 064 907",
+          "email": ""
         },
         {
           "role": "Asistent trénera",
-          "name": "Peter Novák",
-          "license": "UEFA Grassroots C",
-          "phone": "+421 905 123 456",
-          "email": "peter.novak@skjuniorivanka.sk"
+          "name": "Mário Šmitala",
+          "license": "",
+          "phone": "",
+          "email": ""
         },
-        {
-          "role": "Vedúci mužstva",
-          "name": "František Tóth",
-          "license": "Funkcionárska licencia SFZ",
-          "phone": "+421 911 234 567",
-          "email": "spravca@skjuniorivanka.sk"
-        },
-        {
-          "role": "Klubový lekár / Masér",
-          "name": "MUDr. Ján Blaško",
-          "license": "Zdravotná spôsobilosť",
-          "phone": "+421 903 555 777",
-          "email": "zdravotnik@skjuniorivanka.sk"
-        }
       ]
     },
     "u19": {
@@ -1277,25 +1263,11 @@ const CLUB_DATA = {
       "staff": [
         {
           "role": "Hlavný tréner",
-          "name": "Peter Novák",
-          "license": "UEFA B licencia",
-          "phone": "+421 905 123 456",
-          "email": "peter.novak@skjuniorivanka.sk"
+          "name": "Mário Šmitala",
+          "license": "UEFA C licencia",
+          "phone": "+421 903 762 085",
+          "email": ""
         },
-        {
-          "role": "Asistent trénera",
-          "name": "Marek Jančo",
-          "license": "UEFA Grassroots C",
-          "phone": "+421 911 333 444",
-          "email": "marek.janco@skjuniorivanka.sk"
-        },
-        {
-          "role": "Vedúci mužstva",
-          "name": "Ladislav Moravčík",
-          "license": "Funkcionárska licencia SFZ",
-          "phone": "+421 902 444 666",
-          "email": "u19@skjuniorivanka.sk"
-        }
       ]
     },
     "u15": {
@@ -1831,25 +1803,11 @@ const CLUB_DATA = {
       "staff": [
         {
           "role": "Hlavný tréner",
-          "name": "Jozef Kováč",
-          "license": "UEFA B licencia",
-          "phone": "+421 903 987 654",
-          "email": "jozef.kovac@skjuniorivanka.sk"
+          "name": "Róbert Machalik",
+          "license": "",
+          "phone": "",
+          "email": ""
         },
-        {
-          "role": "Asistent trénera",
-          "name": "Michal Tóth",
-          "license": "UEFA Grassroots C",
-          "phone": "+421 915 222 333",
-          "email": "michal.toth@skjuniorivanka.sk"
-        },
-        {
-          "role": "Vedúci mužstva",
-          "name": "Ivan Halás",
-          "license": "Funkcionárska licencia SFZ",
-          "phone": "+421 908 111 222",
-          "email": "u15@skjuniorivanka.sk"
-        }
       ]
     },
     "u13": {
@@ -2385,18 +2343,11 @@ const CLUB_DATA = {
       "staff": [
         {
           "role": "Hlavný tréner",
-          "name": "Michal Tóth",
-          "license": "UEFA B licencia",
-          "phone": "+421 915 222 333",
-          "email": "michal.toth@skjuniorivanka.sk"
+          "name": "Marko Minarčiny",
+          "license": "UEFA Grassroot",
+          "phone": "",
+          "email": ""
         },
-        {
-          "role": "Asistent trénera",
-          "name": "Tomáš Horváth",
-          "license": "UEFA Grassroots C",
-          "phone": "+421 904 444 555",
-          "email": "tomas.horvath@skjuniorivanka.sk"
-        }
       ]
     },
     "u11": {
@@ -3182,17 +3133,17 @@ const CLUB_DATA = {
       "staff": [
         {
           "role": "Hlavný tréner",
-          "name": "Tomáš Horváth",
-          "license": "UEFA B licencia",
-          "phone": "+421 904 444 555",
-          "email": "tomas.horvath@skjuniorivanka.sk"
+          "name": "Tomáš Solčan",
+          "license": "",
+          "phone": "",
+          "email": ""
         },
         {
-          "role": "Asistent trénera",
-          "name": "Jozef Kováč",
-          "license": "UEFA B licencia",
-          "phone": "+421 903 987 654",
-          "email": "jozef.kovac@skjuniorivanka.sk"
+          "role": "Hlavný tréner",
+          "name": "Pavol Imrišek",
+          "license": "",
+          "phone": "",
+          "email": ""
         }
       ]
     },
@@ -3869,10 +3820,10 @@ const CLUB_DATA = {
       "staff": [
         {
           "role": "Hlavný tréner",
-          "name": "Andrej Szabó",
+          "name": "Ivan Guzmický",
           "license": "UEFA Grassroots C",
-          "phone": "+421 911 888 999",
-          "email": "andrej.szabo@skjuniorivanka.sk"
+          "phone": "",
+          "email": ""
         }
       ]
     },
@@ -3911,8 +3862,8 @@ const CLUB_DATA = {
           "role": "Hlavný tréner",
           "name": "Jakub Blaži",
           "license": "Grassroots",
-          "phone": "+421 910 111 222",
-          "email": "skolicka@skjuniorivanka.sk"
+          "phone": "+421 903 064 907",
+          "email": ""
         }
       ]
     }
