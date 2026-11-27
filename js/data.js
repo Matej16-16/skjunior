@@ -50,14 +50,14 @@ const CLUB_DATA = {
       },
       {
         "name": "Matej Blaži",
-        "role": "Funkcionár",
+        "role": "Klubový manažér",
         "phone": "+421 910 907 795",
         "email": "matejblazi@gmail.com",
         "bio": ""
       },
       {
         "name": "Jakub Blaži",
-        "role": "Funkcionár",
+        "role": "Vedúci šporotvého úseku",
         "phone": "+421 903 064 907",
         "email": "jakubblazi8@gmail.com",
         "bio": ""
